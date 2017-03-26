@@ -1,3 +1,5 @@
 # search-trajectory-kBCT
 undergraduate-project
-Roy7wt
+
+[ ] Implementation the similar trajectory searching by locations
+	[ ] Trajectory Simplification Part
