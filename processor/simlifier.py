@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import operator
 from helper import *
 
 
@@ -8,47 +9,61 @@ class Simplifier(object):
 
     # Other parameters can passed:
     # 1) segmentation number
-    def ts_algorithm(self, trajectory):
 
+    def ts_algorithm(self, trajectory, length=40):
+        trajectory_segs = [trajectory[x:x + length] for x in range(0, len(trajectory), length)]
+        ts_res = []
+        for trajectory_seg in trajectory_segs:
+            ts_res.extend(self.ts_algorithm_per(trajectory_seg))
+        return ts_res
+
+    def ts_algorithm_per(self, trajectory):
         # Decide the simplification rate, personalized
-        if len(trajectory) <= 15:
-            return trajectory
-        elif 15 < len(trajectory) <= 50:
-            m = len(trajectory) / 2
-        else:
-            m = len(trajectory) / 5
+        len_traj = len(trajectory)
+        m = len_traj / 8
 
         # update heading_direction, neighbor_heading_change
-        dict_list = []
+        traj_list = []
         prev_hd = self.heading_direction(trajectory[0], trajectory[1])
         for i in range(0, len(trajectory) - 1):
             hd = self.heading_direction(trajectory[i], trajectory[i + 1])  # 0 -> 1
             nhc, prev_hd = hd - prev_hd, hd  # Neighbor Heading Change
-            dict_list.append({'point': trajectory[i], 'hd': hd, 'nhc': nhc})
-        dict_list.append({'point': trajectory[-1], 'hd': 0, 'nhc': 0})
+            traj_list.append({'point': trajectory[i], 'hd': hd, 'nhc': nhc})
+        traj_list.append({'point': trajectory[-1], 'hd': 0, 'nhc': 0})
 
         # update accumulated_heading_change, heading_change
-        for i in range(0, len(dict_list)):
-            ahc = self.accumulated_heading_change(i, dict_list)
-            dict_list[i].update({'ahc': ahc})
-            dict_list[i].update({'hc': abs(dict_list[i]['nhc']) + abs(ahc)})
+        for i in range(0, len(traj_list)):
+            ahc = self.accumulated_heading_change(i, traj_list)
+            traj_list[i].update({'ahc': ahc})
+            traj_list[i].update({'hc': abs(traj_list[i]['nhc']) + abs(ahc)})
 
         # update neighbor_distance
-        prev_point, curr_point, next_point = '', dict_list[0]['point'], dict_list[1]['point']
-        dict_list[0].update({'nd': Helper.lnglat2distance(curr_point[0], curr_point[1], next_point[0], next_point[1])})
+        prev_point, curr_point, next_point = '', traj_list[0]['point'], traj_list[1]['point']
+        traj_list[0].update({'nd': Helper.lnglat2distance(curr_point[0], curr_point[1], next_point[0], next_point[1])})
         prev_point, curr_point = curr_point, next_point
-        for i in range(1, len(dict_list) - 1):
-            next_point = dict_list[i + 1]['point']
+        for i in range(1, len(traj_list) - 1):
+            next_point = traj_list[i + 1]['point']
             nd = Helper.lnglat2distance(prev_point[0], prev_point[1], curr_point[0], curr_point[1]) + \
                  Helper.lnglat2distance(curr_point[0], curr_point[1], next_point[0], next_point[1])
-            dict_list[i].update({'nd': nd})
+            traj_list[i].update({'nd': nd})
             prev_point, curr_point = curr_point, next_point
-        dict_list[-1].update({'nd': Helper.lnglat2distance(prev_point[0], prev_point[1], curr_point[0], curr_point[1])})
+        traj_list[-1].update({'nd': Helper.lnglat2distance(prev_point[0], prev_point[1], curr_point[0], curr_point[1])})
 
-        print dict_list
+        # flowchart of ts_algorithm
+        segs = self.segmentation(traj_list)
+        seg_list = self.distribute_points(segs, m)
+        selected_point = []
+        for seg in seg_list:
+            for point in self.select_points(seg):
+                selected_point.append(point)
 
-    def segmentation(self, trajectory, seg_length=7):
-        return [trajectory[x:x + seg_length] for x in range(0, len(trajectory), seg_length)]
+        # the head point may not be count because the initial heading direction
+        if len(selected_point) == 0 or selected_point[0] != trajectory[0]:
+            selected_point.insert(0, trajectory[0])
+        return selected_point
+
+    def segmentation(self, traj_list, seg_length=6):
+        return [traj_list[x:x + seg_length] for x in range(0, len(traj_list), seg_length)]
 
     def get_distance(self, seg):
         distance = 0
@@ -56,30 +71,48 @@ class Simplifier(object):
             distance += Helper.lnglat2distance(seg[i][0], seg[i][1], seg[i + 1][0], seg[i + 1][1])
         return distance
 
-    def get_heading_change(self, seg):
-        total = 0
-        for i in range(0, len(seg) - 1):
-            total += seg[i][2]
-        return float(total) / len(seg) - 1
-
     def distribute_points(self, segs, m):
+        seg_list = []
         total_weight = 0
-        weight_list = []
         for seg in segs:
-            distance = self.get_distance(seg)  # distance of segment
-            alpha = self.get_heading_change(seg)  # average heading change
-            weight = distance * alpha
-            weight_list.append(weight)
-            total_weight += weight
+            points = []
+            seg_dis, seg_ahc = 0, seg[0]['nhc']
+            prev_point = seg[0]['point']
+            for point_dict in seg:
+                # preset
+                point = point_dict['point']
+                points.append({'point': point, 'w': point_dict['nd'] * point_dict['hc']})
+                # points.append({'point': point, 'w': point_dict['hc']})
 
-        dict_list = []
-        for i in range(0, len(segs)):
-            for item in segs[i]:
-                del item[-1]
-            normalized_weight = float(weight_list[i]) / total_weight
-            dict_list.append({'point': segs[i], 'w': normalized_weight, 'hc': normalized_weight * m})
+                # distance
+                seg_dis += Helper.lnglat2distance(prev_point[0], prev_point[1], point[0], point[1])
+                prev_point = point
 
-        return dict_list
+                # average Heading change
+                seg_ahc += abs(point_dict['nhc'])
+            seg_ahc /= len(seg)
+            seg_weight = seg_dis * seg_ahc
+            seg_list.append({'points': points, 'seg_d': seg_dis, 'seg_ahc': seg_ahc, 'seg_w': seg_weight})
+            total_weight += seg_weight
+
+        for seg in seg_list:
+            seg['seg_w'] /= total_weight  # normalize weight
+            seg.update({'seg_hc': seg['seg_w'] * m})  # assign headcount
+
+        return seg_list
+
+    def select_points(self, seg):  # return a simplified segment S'
+        simplified_points = []
+        headcount, points = seg['seg_hc'], seg['points']
+
+        for i in range(0, len(points)):
+            points[i].update({'index': i})
+
+        points = sorted(points, key=operator.itemgetter('w'), reverse=True)[0: min(int(headcount), len(points))]
+        points = sorted(points, key=operator.itemgetter('index'))
+        for point in points:
+            simplified_points.append(point['point'])
+        return simplified_points
 
     # longitude-x 经度 latitude-y 纬度
     def heading_direction(self, cur, nxt):
@@ -98,6 +131,8 @@ class Simplifier(object):
                 return 90
             elif lng_nxt < lng_cur:
                 return 270
+            elif lng_nxt == lng_cur:
+                return 0
 
         angle = atan(delta_lng / delta_lat) * 180 / pi  # |x|/|y|
         if angle < 0:
@@ -108,7 +143,6 @@ class Simplifier(object):
         elif angle > 0:
             if lng_nxt < lng_cur:
                 angle += 180
-
         return angle
 
     def accumulated_heading_change(self, index, dict_list, tau=3):
@@ -120,3 +154,39 @@ class Simplifier(object):
 
     def heading_change(self, l):
         return abs(l['nhc']) + abs(l['ahc'])
+
+    '''
+    Recursion, replaced by TS-Algorithm
+    '''
+
+    # DouglasPeucker Trajectory Simplification/Compression
+    def DouglasPeucker(self, points, start_index, end_index, epsilon=1e-03):
+        index = start_index
+        max_dist = 0
+
+        for i in range(start_index + 1, end_index):
+            temp_dist = self.point_line_distance(points[i], points[start_index], points[end_index])
+            if temp_dist > max_dist:
+                index = i
+                max_dist = temp_dist
+
+        if max_dist > epsilon:
+            res1 = self.DouglasPeucker(points, start_index, index, epsilon)
+            res2 = self.DouglasPeucker(points, index, end_index, epsilon)
+            final_res = []
+            for point_in_res1 in res1[:-1]:
+                final_res.append(point_in_res1)
+            for point_in_res2 in res2:
+                final_res.append(point_in_res2)
+            return final_res
+        else:
+            return [points[start_index], points[end_index]]
+
+    def point_line_distance(self, p, start, end):
+        # If the start point is the same as the end point
+        if start[0] == end[0] and start[1] == end[1]:
+            return sqrt(pow(p[0] - start[0], 2) + pow(p[1] - start[1], 2))
+
+        n = float(abs((end[0] - start[0]) * (start[1] - p[1]) - (start[0] - p[0]) * (end[1] - start[1])))
+        d = float(sqrt((end[0] - start[0]) * (end[0] - start[0]) + (end[1] - start[1]) * (end[1] - start[1])))
+        return n / d
