@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
+import os
 import time
-from math import radians, cos, sin, asin, sqrt, atan, tan, pi
+from math import radians, cos, sin, asin, sqrt
+
+import math
 
 
 class Helper(object):
@@ -12,6 +15,8 @@ class Helper(object):
     '''
     @staticmethod
     def file2points(path):
+        assert os.path.exists(path)
+
         points = []
         with open(path, 'r') as f:
             for line in f:
@@ -52,4 +57,9 @@ class Helper(object):
         c = 2 * asin(sqrt(a))
         r = 6371  # radius of the earth
         return c * r * 1000  # unit:meter
+
+    @staticmethod
+    def lnglat_eucildean_distance(p, q):
+        return math.sqrt(pow(p[0] - q[0], 2) + pow(p[1] - q[1], 2))
+
 
