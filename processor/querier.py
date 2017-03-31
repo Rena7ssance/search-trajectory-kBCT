@@ -5,60 +5,82 @@ import math
 
 import operator
 from rtree import index
-
 from backend.helper import Helper
 
 
 class Querier(object):
-    def __init__(self, prepath):
+    def __init__(self, prepath, rtreepath):
         # prepath 'data/trajectory/sim_trajectory_per_day/shanghai/2015-04/01'
         self._prepath = prepath
+        self._rtreepath = rtreepath
+        self._files = os.listdir(prepath)
+
+    '''
+    GETTER functions
+    '''
+
+    # TODO change
+    def get_rtree(self):
+        rtree_properties = index.Property()
+        rtree_properties.dat_extension = 'data'
+        rtree_properties.idx_extension = 'index'
+        rtree = index.Index(self._rtreepath, properties=rtree_properties)
+        return rtree
+
+    """
+    class function: Incremental K-Nearest Neighbor based Algorithm
+    retreve the candidate trajectories in a filter-and-refine fashion
+    """
 
     def iknn_algorithm(self, query_points, k):
-
         _lambda, m = k, len(query_points)
         lowerbound = {}
-        count = 0
 
         lambda_delta, lambda_delta_prev = {}, {}
         for i in range(0, len(query_points)):
             lambda_delta.update({i: _lambda})
             lambda_delta_prev.update({i: 0})
 
+        count = 0
         while True:
             # list_lambda is union of lambda_nn_i. list_candidate is union of trajectory_scanned_i
             list_lambda, list_candidate = [], []
 
+            #
             # for query_point in query_points:
             #     lambda_nn_i, trajectory_scanned_i = self.knn_algorithm(query_point, _lambda)
             #     list_lambda.append(lambda_nn_i)
             #     list_candidate.append(trajectory_scanned_i)
+            # candidate = [trajectory for sub_list in list_candidate for trajectory in sub_list]
+            #
 
-            # Optimization
+            # Optimization: specified delta for each query point
             for i in range(0, len(query_points)):
                 lambda_nn_i, trajectory_scanned_i = self.knn_algorithm(query_points[i], lambda_delta[i])
                 list_lambda.append(lambda_nn_i)
                 list_candidate.append(trajectory_scanned_i)
+            candidate = [trajectory for candicate_i in list_candidate for trajectory in candicate_i]
 
-            candidate = [trajectory for sub_list in list_candidate for trajectory in sub_list]
-            list(set(candidate))
-
+            # remove the duplicate elements in candidate
+            candidate = list(set(candidate))
             if len(candidate) >= k:
-                # compute LB[] for all the trajectory, LB = {'traj': lb}
+
+                # compute lower bound for all the trajectory, LB = {'trajectory': lb}
                 for trajectory in candidate:
                     lowerbound.update({trajectory: self.compute_lb(trajectory, list_candidate, query_points)})
 
-                # [('traj', lb)]
-                lowerbound_sorted = sorted(lowerbound.items(), key=operator.itemgetter(1), reverse=True)
-                k_lowerbound = lowerbound_sorted[0:k]
+                # compute upper bound
+                ub_n = Querier.compute_ub_n(query_points, list_lambda)
 
-                # compute UB_n
-                upperbound = Querier.compute_ub_n(query_points, list_lambda)
-                if k_lowerbound[-1][1] >= upperbound:
+                # find the k largest potential candidate
+                lb_sorted = sorted(lowerbound.items(), key=operator.itemgetter(1), reverse=True)
+                k_lb = lb_sorted[0:k]
+                if k_lb[-1][1] >= ub_n:
                     return self.refine(candidate, list_candidate, query_points, list_lambda, k)
             #
             # count += 1
-            # _lambda += k * pow(2, count)  # TODO optimize
+            # _lambda += m * k * pow(2, count)
+            #
 
             # Optimization
             count += 1
@@ -82,31 +104,26 @@ class Querier(object):
                 delta_i = delta * (mu * (dec_rate_list[i] / dec_rate) + nu * (ret_rate_list[i] / ret_rate))
                 lambda_delta.update({i: int(current_lambda + delta_i)})
 
-    # retrieve the λ-NN(q_i) of q_i and then generate the child candidate set
+    """
+    class function: nearest-neighbor algorithm
+    retrieve the λ-NN(q_i) of q_i and then generate the child candidate set
+    """
+
     # TODO date parameter, now is preset 2015-04/01
     def knn_algorithm(self, query_point, _lambda):
         query_lng, query_lat = float(query_point[0]), float(query_point[1])
+        lambda_nn, trajectory_scanned = [], []
+        query_res = self.get_rtree().nearest((query_lng, query_lat), _lambda, objects=True)
 
-        rtree_properties = index.Property()
-        rtree_properties.dat_extension = 'data'
-        rtree_properties.idx_extension = 'index'
-
-        # TODO rTree path
-        rtree = index.Index('data/rtree/shanghai/2015-04/01', properties=rtree_properties)
-
-        # λ-NN(q_i) = {q^1_i, q^2_i, ... q^λ_i}
-        lambda_nn = []
-        # scanned trajectory which contains the λ-NN(q_i),
-        trajectory_scanned = []
-
-        lambda_nearst = rtree.nearest((query_lng, query_lat), _lambda, objects=True)
-        for item in lambda_nearst:
+        for item in query_res:
             lambda_nn.append([item.bbox[0], item.bbox[1]])
-            file_index = item.id / pow(10, 11)  # TODO item id <= Processor.construct rTree
-            trajectory = os.listdir(self._prepath)[file_index]  # TODO prepath
-            trajectory_scanned.append(trajectory)
-
+            idx = item.id / pow(10, 11)  # TODO optimise rtree id
+            trajectory_scanned.append(self._files[idx])
         return lambda_nn, trajectory_scanned
+
+    """
+    class function: computer the lower bound of similarity for each trajectory
+    """
 
     def compute_lb(self, trajectory, list_candidate, query_points):
         assert len(list_candidate) == len(query_points)
@@ -118,6 +135,10 @@ class Querier(object):
             if trajectory in list_candidate[i]:
                 lower_bound += math.pow(math.e, -(Querier.compute_distance_q(query_points[i], trajectory_points)))
         return lower_bound
+
+    """
+    class function: computer the upper bound of similarity for each trajectory
+    """
 
     def computer_ub(self, trajectory, list_candidate, query_points, list_lambda):
         assert len(list_candidate) == len(query_points)
@@ -134,13 +155,9 @@ class Querier(object):
                                         -(Helper.lnglat_eucildean_distance(query_points[i], list_lambda[i][-1])))
         return upper_bound
 
-    @staticmethod
-    def compute_ub_n(query_points, list_lambda):
-        assert len(query_points) == len(list_lambda)
-        ub_n = 0
-        for i in range(len(query_points)):
-            ub_n += math.pow(math.e, (-1) * Helper.lnglat_eucildean_distance(query_points[i], list_lambda[i][-1]))
-        return ub_n
+    """
+    class function: refinement procedure is to examine the exact similarity
+    """
 
     # TODO choose similarity function without order restriction
     def refine(self, candidate, list_candidate, query_points, list_lambda, k):
@@ -168,7 +185,22 @@ class Querier(object):
                 if i == len(upperbound_sorted) - 1 or min_ub > upperbound_sorted[i + 1][1]:
                     return sorted(k_BCT.items(), key=operator.itemgetter(1), reverse=True)
 
-    # compute the min distance between a trajectory and a point = min(distance_e(trajectory,point))
+    """
+    class function: determine an upper bound ub_n of similarity for all the non-scanned trajectoies
+    """
+
+    @staticmethod
+    def compute_ub_n(query_points, list_lambda):
+        assert len(query_points) == len(list_lambda)
+        ub_n = 0
+        for i in range(0, len(query_points)):
+            ub_n += math.pow(math.e, (-1) * Helper.lnglat_eucildean_distance(query_points[i], list_lambda[i][-1]))
+        return ub_n
+
+    """
+    compute the min distance between a trajectory and a point = min(distance_e(trajectory,point))
+    """
+
     @staticmethod
     def compute_distance_q(point, trajectory_points):
         min_dist = sys.maxint
@@ -179,7 +211,10 @@ class Querier(object):
                 min_dist = dist
         return min_dist
 
-    # similarity without order restriction
+    """
+    function: similarity without order restriction
+    """
+
     @staticmethod
     def similarity(trajectory_points, query_points):
         ret = 0
@@ -187,7 +222,10 @@ class Querier(object):
             ret += math.pow(math.e, -Querier.compute_distance_q(query_point, trajectory_points))
         return ret
 
-    # similarity for ordered query locations
+    """
+    function: similarity with order restriction
+    """
+
     @staticmethod
     def similarity_order(trajectory_points, query_points):
         if len(trajectory_points) == 0 or len(query_points) == 0:

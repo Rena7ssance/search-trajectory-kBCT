@@ -66,21 +66,22 @@ class Processor(object):
             os.makedirs(path)
 
         for user in os.listdir(self.dir_path):
-
             # direction: data/raw_trajectory/city/yyyy-mm/user_id
             user_path = '%s/%s' % (path, user[:-4])
             if not os.path.exists(user_path):
                 os.mkdir(user_path)
 
-            count = -1
+            count = 0
             trajectory = []
             with open('%s/%s' % (self.dir_path, user), 'r') as fr:
                 obd_dict = {}
                 day = '00'
                 for line in fr:
                     if line == '\n':
-                        count += 1
+
+                        # TODO choose kind of simplification method
                         simplified_traj = Simplifier.ts_algorithm(trajectory)
+                        # simplified_traj = Simplifier.dp_algorithm(trajectory, 0, len(trajectory)-1)
 
                         # path: data/sim_trajectory/city/yyyy-mm/user_id/day-count.txt
                         with open('%s/r%d %s.txt' % (user_path, count, day), 'w') as fw:
@@ -89,6 +90,7 @@ class Processor(object):
                                          % (point[0], point[1], Helper.time2int(obd_dict.get(str(point)))))
                             trajectory = []
                         fw.close()
+                        count += 1
 
                     else:
                         lng, lat, obd_time = line.strip('\n').split('\t')

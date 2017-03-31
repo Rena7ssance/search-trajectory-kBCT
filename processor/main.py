@@ -21,12 +21,24 @@ if __name__ == '__main__':
     # p.per_user2per_day()
     # p.construct_rtree()
 
-    from time import time
-    q = Querier(prepath='data/trajectory/sim_trajectory_per_day/shanghai/2015-04/01')
-    t0 = time()
-    a = q.iknn_algorithm([[121.65047, 31.271888], [121.551866,31.213136], [121.435922, 31.196443]], 5)
-    t1 = time()
-    print 'function takes %f' % (t1 - t0)
-    for item in a:
-        print Helper.file2points('data/trajectory/sim_trajectory_per_day/shanghai/2015-04/01/%s' % item[0])
-        print
+    # from time import time
+    #
+    # q = Querier(prepath='data/trajectory/sim_trajectory_per_day/shanghai/2015-04/01',
+    #             rtreepath='data/rtree/shanghai/2015-04/01')
+    # t0 = time()
+    # query_points = [[121.359331, 31.184999], [121.360705, 31.287742], [121.406314,31.227461], [121.50284, 31.294784]]
+    # a = q.iknn_algorithm(query_points, 3)
+    # t1 = time()
+    # print 'function takes %f' % (t1 - t0)
+    #
+    # for item in a:
+    #     print Helper.file2points('data/trajectory/sim_trajectory_per_day/shanghai/2015-04/01/%s' % item[0])
+    #     print
+
+    points = Helper.file2points('/Users/apple/Projects/PycharmProjects/search-trajectory-kBCT/backend/data/test_data/test.txt')
+    a_points = [list(Helper.wgs_2_gcj(point[0], point[1])) for point in points]
+
+    print points
+    print
+    print a_points
+

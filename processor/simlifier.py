@@ -12,10 +12,10 @@ class Simplifier(object):
 
     # Other parameters can passed:
     @staticmethod
-    def ts_algorithm(trajectory, length=60):
+    def ts_algorithm(trajectory, length=75):
 
         # No need to simplify the trajectory
-        if len(trajectory) <= 10:
+        if len(trajectory) <= 5:
             return trajectory
 
         trajectory_segs = [trajectory[x:x + length] for x in range(0, len(trajectory), length)]
@@ -31,12 +31,12 @@ class Simplifier(object):
 
         # Decide the simplification rate, personalized
         len_traj = len(trajectory)
-        if len_traj <= 15:
-            m = len_traj / 5
-        elif 15 <= trajectory < 30:
+        if len_traj <= 25:
+            m = len_traj / 8
+        elif 25 <= trajectory < 45:
             m = len_traj / 15
         else:
-            m = len_traj / 20
+            m = len_traj / 25
 
         # update heading_direction, neighbor_heading_change
         traj_list = []
