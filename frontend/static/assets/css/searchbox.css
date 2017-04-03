@@ -1,0 +1,276 @@
+    .searchboxshadow.round {
+        border-radius: 3px!important
+    }
+
+    .searchbox {
+        position: relative;
+        z-index: 2201;
+        width: 360px;
+        height: 45px;
+        background: #fff;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .15);
+        border-radius: 3px
+    }
+
+    .searchbox .logo {
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 8px;
+        width: 34px;
+        height: 34px;
+        z-index: 99999;
+        cursor: pointer
+    }
+
+    .searchbox .iptbox {
+        position: absolute;
+        left: 50px;
+        top: 0;
+        width: 265px;
+        height: 45px;
+        box-sizing: border-box;
+        z-index: 2202;
+        border-radius: 2px
+    }
+
+    .searchbox #nearby,
+    .searchbox #nearbybox {
+        position: absolute;
+        top: 0;
+        width: 310px;
+        height: 45px;
+        box-sizing: border-box
+    }
+
+    .searchbox #nearbybox {
+        left: 50px;
+        z-index: 2210;
+        background: #fff;
+        display: none
+    }
+
+    .searchbox #nearby {
+        left: 0;
+        transition: width .2s ease;
+        font-size: 14px
+    }
+
+    .searchbox #nearbyipt {
+        position: relative;
+        top: 12.5px;
+        box-sizing: border-box;
+        text-indent: 2px;
+        border: none;
+        height: 20px;
+        line-height: 20px;
+        padding: 0;
+        width: 120px
+    }
+
+    .searchbox #nearbyclosewrap {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: #f8f8f8;
+        border-radius: 0 2px 2px 0
+    }
+
+    .searchbox #nearbyclose {
+        position: absolute;
+        top: 8.5px;
+        right: 10px;
+        font-size: 15px;
+        padding: 3px 5px;
+        cursor: pointer
+    }
+
+    .searchbox #nearbybtn {
+        position: absolute;
+        right: 45px;
+        top: 0;
+        z-index: 9308;
+        box-sizing: border-box;
+        width: 45px;
+        height: 45px
+    }
+
+    .searchbox #nearbybtn .nearbylogo {
+        position: absolute;
+        top: 8.5px;
+        right: 8px;
+        font-size: 19px;
+        color: #919095;
+        padding: 0 5px
+    }
+
+    .searchbox #nearbybtn .nearbylogo:hover {
+        color: #70b9f9;
+        cursor: pointer
+    }
+
+    .searchbox #nearbyloading {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        z-index: 2215;
+        display: none
+    }
+
+    .searchbox #nearby span {
+        position: relative;
+        top: 12.5px;
+        color: #aaa
+    }
+
+    .searchbox #nearby .poiname {
+        color: #333
+    }
+
+    #searchloading {
+        position: absolute;
+        top: 15px;
+        right: 16px;
+        z-index: 2212;
+        display: none
+    }
+
+    .searchbox #searchipt {
+        position: absolute;
+        top: 12.5px;
+        left: 0;
+        box-sizing: border-box;
+        text-indent: 2px;
+        z-index: 2200;
+        border: none;
+        width: 219px;
+        height: 20px;
+        line-height: 20px;
+        padding: 0;
+        letter-spacing: .5px;
+        font-size: 14px
+    }
+
+    .searchbox #searchipt::-webkit-input-placeholder {
+        font-size: 14px;
+        color: #b7b8b9;
+        font-weight: 200;
+        letter-spacing: 1px;
+        opacity: .8!important
+    }
+
+    .searchbox .direntry:hover,
+    .themex .searchbox .searchlogo:hover {
+        opacity: .8
+    }
+
+    .searchbox .iptbox #searchipt:-moz-placeholder {
+        font-size: 13px;
+        color: #b7b8b9;
+        font-weight: 200;
+        letter-spacing: 1px
+    }
+
+    .searchbox .iptbox #searchipt::-moz-placeholder {
+        font-size: 13px;
+        color: #b7b8b9;
+        font-weight: 200;
+        letter-spacing: 1px
+    }
+
+    .searchbox .iptbox #searchipt:-ms-input-placeholder {
+        font-size: 13px;
+        color: #b7b8b9;
+        font-weight: 200;
+        letter-spacing: 1px
+    }
+
+    .searchbox .iptbox #searchbtn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 9308;
+        box-sizing: border-box;
+        width: 45px;
+        height: 45px
+    }
+
+    .searchbox .searchlogo {
+        position: absolute;
+        top: 8.5px;
+        right: 8px;
+        font-size: 19px;
+        color: #7c8196;
+        padding: 0 5px
+    }
+
+    .searchbox .searchlogo:hover {
+        color: #42a5f5;
+        cursor: pointer
+    }
+
+    .searchbox .direntry {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-align: center;
+        background-color: #f8f8f8;
+        border-radius: 0 3px 3px 0
+    }
+
+    .searchbox .direntry .close-btn {
+        position: absolute;
+        top: 8.5px;
+        right: 10px;
+        font-size: 15px;
+        display: none;
+        padding: 3px 5px;
+        cursor: pointer
+    }
+
+    .searchbox .direntry.in-main {
+        background: #fff
+    }
+
+    .searchbox .direntry.in-dir .close-btn,
+    .searchbox .direntry.in-main .close-btn {
+        display: inline-block;
+        color: #78909c
+    }
+
+    .searchbox .direntry.in-main .close-btn:hover {
+        color: #90a4ae
+    }
+
+    .themex .searchbox,
+    .themex .searchbox .searchlogo {
+        color: #fff
+    }
+
+    .searchbox .direntry .fa-dir {
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        width: 16.5px;
+        height: 18px;
+        padding: 5px;
+        cursor: pointer
+    }
+
+    .searchbox .direntry.in-dir .fa-dir,
+    .searchbox .direntry.in-main .fa-dir {
+        display: none
+    }
+
+    .searchbox #separator {
+        position: absolute;
+        right: 38px;
+        top: 11px;
+        height: 24px;
+        width: 1px;
+        background: #ccc
+    }
