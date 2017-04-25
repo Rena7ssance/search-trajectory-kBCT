@@ -141,42 +141,6 @@ class Processor(object):
                                  % (point[0], point[1], int(obd_time_dict.get(str(point)))))
                 fw.close()
 
-
-                # for user in os.listdir(self.dir_path):
-                #     # direction: data/raw_trajectory/city/yyyy-mm/user_id
-                #     user_path = '%s/%s' % (path, user[:-4])
-                #     if not os.path.exists(user_path):
-                #         os.mkdir(user_path)
-                #
-                #     count = 0
-                #     trajectory = []
-                #     with open('%s/%s' % (self.dir_path, user), 'r') as fr:
-                #         obd_dict = {}
-                #         day = '00'
-                #         for line in fr:
-                #             if line == '\n':
-                #
-                #                 # TODO choose kind of simplification method
-                #                 simplified_traj = Simplifier.ts_algorithm(trajectory)
-                #                 # simplified_traj = Simplifier.dp_algorithm(trajectory, 0, len(trajectory)-1)
-                #
-                #                 # path: data/sim_trajectory/city/yyyy-mm/user_id/day-count.txt
-                #                 with open('%s/r%d %s.txt' % (user_path, count, day), 'w') as fw:
-                #                     for point in simplified_traj:
-                #                         fw.write('%f\t%f\t%d\n'
-                #                                  % (point[0], point[1], Helper.time2int(obd_dict.get(str(point)))))
-                #                     trajectory = []
-                #                 fw.close()
-                #                 count += 1
-                #
-                #             else:
-                #                 lng, lat, obd_time = line.strip('\n').split('\t')
-                #                 if day != obd_time[8:10]:
-                #                     day = obd_time[8:10]
-                #                 point = [float(lng), float(lat)]
-                #                 obd_dict.update({str(point): obd_time})
-                #                 trajectory.append(point)
-
     # trajectory per user restored into trajectory per day
     def per_user2per_day(self):
         path_per_user = re.compile('raw_trajectory').sub('sim_trajectory_per_user', self.dir_path)

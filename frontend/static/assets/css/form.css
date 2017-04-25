@@ -1,0 +1,198 @@
+#planForm {
+    position: relative;
+    padding: 5px;
+    padding-bottom: 68px;
+    background: #3d93fd;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.line-search {
+    position: relative;
+    margin-top: 15px;
+}
+
+.line-search-left,
+.line-search-right {
+    position: absolute;
+}
+
+.line-search-form {
+    margin: 0 10px;
+}
+
+.line-search-form p.line_serch_ipt {
+    position: relative;
+    height: 35px;
+    line-height: 34px;
+    width: 200px;
+    font-size: 14px;
+    color: #acd7ff;
+    background-color: #3587eb;
+    border-radius: 2px;
+    margin-bottom: 10px
+}
+
+.line_serch_ipt .del-item {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    background-image: url(/assets/img/trajectory/account.png);
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    right: 12px;
+    top: 10px;
+    cursor: pointer;
+    display: none
+}
+
+.line-search-form p input {
+    width: 78%;
+    height: 34px;
+    line-height: 32px;
+    border: none;
+    background: transparent;
+    text-indent: 5px;
+    color: #acd7ff;
+    padding: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.line-search-form p label {
+    margin-left: 10px;
+}
+
+.line-search-form p input.active {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0
+}
+
+.line-search-form p.line_serch_ipt.line-search-point{
+    position: relative;
+    height: 34px;
+    line-height: 34px;
+    width: 200px;
+    font-size: 14px;
+    color: #acd7ff;
+    background-color: #3587eb;
+    border-radius: 2px;
+    margin-bottom: 10px
+}
+
+.line-search-form p.line_serch_ipt.line-lng-lat {
+    position: relative;
+    height: 34px;
+    line-height: 34px;
+    width: 200px;
+    font-size: 14px;
+    color: #acd7ff;
+    background-color: #3587eb;
+    border-radius: 2px;
+    margin-bottom: 10px
+}
+
+.line-search-submit {
+    position: absolute;
+    margin-top: 17px;
+    border-bottom: none;
+    width: 200px
+}
+
+.line-search-submit .dir_submit {
+    display: inline-block;
+    float: right;
+    padding: 0 25px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #559ffb;
+    border: none;
+    border-radius: 0px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .21);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .21);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .21)
+}
+
+.icon_plus {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    left: 5px;
+    bottom: 50%;
+    margin-bottom: -10px;
+    margin-right:   8px;
+    background: url(../img/trajectory/plus-box-outline.png) 50% no-repeat;
+    img/trajectory/account.png background-size: 20px 20px;
+    cursor: pointer;
+}
+
+.icon_minus {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    left: 5px;
+    bottom: 50%;
+    margin-bottom: -10px;
+    margin-right: 8px;
+    background: url(../img/trajectory/minus-box-outline.png) 50% no-repeat;
+    img/trajectory/account.png background-size: 20px 20px;
+    cursor: pointer;
+}
+
+.icon_reset {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    left: 5px;
+    bottom: 50%;
+    margin-bottom: -10px;
+    margin-right: 8px;
+    background: url(../img/trajectory/backup-restore.png) 50% no-repeat;
+    img/trajectory/account.png background-size: 20px 20px;
+    cursor: pointer;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+}
+
+input:focus {
+    -webkit-appearance: textfield;
+    background-color: white;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-style: inset;
+    border-right-style: inset;
+    border-bottom-style: inset;
+    border-left-style: inset;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-bottom-color: initial;
+    border-left-color: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    cursor: auto;
+}

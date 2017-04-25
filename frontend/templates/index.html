@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <title>DASHGUM - FREE Bootstrap Admin Template</title>
+    <title>Trajectory</title>
     <!-- Bootstrap core CSS -->
     <!--<link href="assets/css/bootstrap.css" rel="stylesheet">-->
     <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet">
@@ -28,6 +28,9 @@
     <!--<link href="assets/css/style-responsive.css" rel="stylesheet">-->
     <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='assets/css/style-responsive.css') }}" rel="stylesheet">
+
+    <!-- plan form -->
+    <link href="{{ url_for('static', filename='assets/css/form.css') }}" rel="stylesheet">
 
     <!--<script src="assets/js/chart-master/Chart.js"></script>-->
     <script src="{{ url_for('static', filename='assets/js/chart-master/Chart.js') }}"></script>
@@ -352,7 +355,7 @@
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
         <!--logo start-->
-        <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+        <a href="index.html" class="logo"><b>Similarity Trajectory</b></a>
         <!--logo end-->
         <div class="nav notify-row" id="top_menu">
             <!--  notification start -->
@@ -498,19 +501,32 @@
             </ul>
             <!--  notification end -->
         </div>
+        {% if session.logged_in %}
         <div class="top-menu">
             <ul class="nav pull-right top-menu">
-                <li><a class="logout" href="login.html">Logout</a></li>
+                <li><a class="logout" href="/logout">Log out</a></li>
             </ul>
         </div>
         <div class="top-menu">
             <ul class="nav pull-right top-menu">
-                <li><a id='test' class="logout">test</a></li>
-                <li>
-                    <button id="button">button</button>
-                </li>
+                <li><a class="logout" href="JavaScript:void(0);" onclick="_search()">Search</a></li>
             </ul>
         </div>
+        {% else %}
+        <div class="top-menu">
+            <ul class="nav pull-right top-menu">
+                <li><a class="logout" href="/login">Log in</a></li>
+            </ul>
+        </div>
+        {% endif %}
+        <!--<div class="top-menu">-->
+        <!--<ul class="nav pull-right top-menu">-->
+        <!--<li><a id='test' class="logout">test</a></li>-->
+        <!--<li>-->
+        <!--<button id="button">button</button>-->
+        <!--</li>-->
+        <!--</ul>-->
+        <!--</div>-->
 
     </header>
     <!--header end-->
@@ -521,15 +537,23 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                 <p class="centered">
-                    <a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a>
+                    <img src="{{ url_for('static', filename='assets/img/trajectory/account.png') }}" class="img-circle"
+                         width="60">
                 </p>
-                <h5 class="centered">Marcel Newman</h5>
+
+                {% if username is none %}
+                <h5 class="centered" href="/login">Please Log In</h5>
+                {% else %}
+                <h5 class="centered">{{ username }}</h5>
+                {% endif %}
+
                 <li class="mt">
-                    <a class="active" href="index.html">
+                    <a class="active" href="/index">
                         <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
+                        <span>Map</span>
                     </a>
                 </li>
+                <!--
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-desktop"></i>
@@ -592,6 +616,7 @@
                         <li><a href="chartjs.html">Chartjs</a></li>
                     </ul>
                 </li>
+                -->
             </ul>
             <!-- sidebar menu end-->
         </div>
@@ -608,29 +633,9 @@
                         <div class="col-md-12 md">
                             <div id="map-container" style="height:750px;">
                             </div>
-                            <div class="col-md-6 md" id="myPageTop"
-                                 style="z-index: 9999;margin-right:15px;opacity:0.5;">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <label>按关键字搜索：</label>
-                                        </td>
-                                        <td class="column2">
-                                            <label>左击获取经纬度：</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="text" placeholder="请输入关键字进行搜索" id="tipinput">
-                                        </td>
-                                        <td class="column2">
-                                            <input type="text" readonly="true" id="lnglat">
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
                         </div>
                     </div>
+
                     <div class="row mtbox">
                         <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
                             <div class="box1">
@@ -691,14 +696,6 @@
                                         color: "#fdfdfd"
                                     }];
                                     var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
-
-
-
-
-
-
-
-
                                 </script>
                             </div>
                             <! --/grey-panel -->
@@ -769,6 +766,8 @@
 
 
 
+
+
                                 </script>
                                 <p>April 17, 2014</p>
                                 <footer>
@@ -819,27 +818,79 @@
                 <!-- Right -->
                 <div class="col-lg-3 ds">
                     <!--COMPLETED ACTIONS DONUTS CHART-->
-                    <h3>NOTIFICATIONS</h3>
-                    <!-- First Action -->
+                    <h3>History Trajectory</h3>
+                    {% if trajectories is none %}
+                    {% else %}
+                    {% for trajectory in trajectories %}
                     <div class="desc">
-                        <button id="traj-btn">P006000300000186/r1 01.txt</button>
+                        <!--<button>{{ trajectory }}</button>-->
                         <div class="thumb">
                             <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                         </div>
-                        <div class="details">
-                            <p>
-                                <h> Location</h>
-                                <muted>2 Minutes Ago</muted>
-                                <br/>
-                                <a href="" id >James Brown</a> subscribed to your newsletter.
-                                <br/>
-                            </p>
+                        <div class="details" id="{{ username }}/{{trajectory.r}} {{trajectory.date}}">
+                            <h>{{ Month }}/{{ trajectory.date }}/2017</h>
+                            <!--<muted>{{ trajectory }}</muted>-->
+                            <!--<br/>-->
+                            <!--<a href="" id >{{ trajectory }}</a>-->
+                            <!--<br/>-->
                         </div>
                     </div>
+                    {% endfor %}
+                    {% endif %}
 
+                    <hr>
+                    <h3>Location Markers</h3>
+
+                    <div id="planForm">
+                        <!--<ul class="tabs dir_tab col3 z-depth-1 clearfix" id="trafficTab">-->
+                            <!--<li><a id="carTab" class="palntype_tab icon-car icondirtip current"-->
+                                   <!--href="javascript:void(0)" data-type="car"></a></li>-->
+                            <!--<li><a id="busTab" class="palntype_tab icon-bus icondirtip" href="javascript:void(0)"-->
+                                   <!--data-type="bus"></a></li>-->
+                            <!--<li><a id="walkTab" class="palntype_tab icon-walk icondirtip" href="javascript:void(0)"-->
+                                   <!--data-type="walk"></a></li>-->
+                        <!--</ul>-->
+                        <i class="dir_close iconfont icon-close"></i>
+                        <div class="line-search">
+                            <div class="line-search-left icon_exchange" id="dir_exchange">
+                                <i class="iconfont icon-switchroute"></i>
+                            </div>
+                            <div class="line-search-form">
+                                <p class="line_serch_ipt line-lng-lat">
+                                    <label>经纬 </label>
+                                    <input type="text" class="dir_ipt" id="lng_lat" placeholder="经纬度坐标" value="" autocomplete="off">
+                                    <!--<span class="del-item" style="display: none;"></span>-->
+                                </p>
+
+                                <p class="line_serch_ipt line-search-from">
+                                <label>起  </label>
+                                    <input type="text" class="dir_ipt" id="dir_from_ipt" dirtype="from" placeholder="请输入起点" value="" autocomplete="off">
+                                    <!--<span class="del-item" style="display: none;"></span>-->
+                                </p>
+                                <div class="passList">
+
+                                </div>
+                                <p class="line_serch_ipt line-search-to">
+                                    <label>终  </label>
+                                    <input type="text" class="dir_ipt" id="dir_to_ipt" dirtype="to" placeholder="请输入终点" value="" autocomplete="off">
+                                    <!--<span class="del-item" style="display: none;"></span>-->
+                                </p>
+
+                                <p class="line-search-submit">
+                                    <a href="javascript:void(0)" class="icon_plus" onclick="_searchFormAppend()"></a>
+                                    <a href="javascript:void(0)" class="icon_minus" onclick="_searchFormRemove()"></a>
+                                    <a href="javascript:void(0)" class="icon_reset" onclick="_searchFormReset()"></a>
+                                    <a href="javascript:void(0)" class="dir_submit" onclick="_search()">查询</a>
+                                    <span class="fa-spin"></span>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
                     <!-- USERS ONLINE SECTION -->
+                    <!--
                     <h3>TEAM MEMBERS</h3>
-                    <!-- First Member -->
                     <div class="desc">
                         <div class="thumb">
                             <img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
@@ -851,7 +902,7 @@
                             </p>
                         </div>
                     </div>
-
+                    -->
                 </div>
             </div>
         </section>
@@ -909,27 +960,6 @@
 <!--<script src="assets/js/zabuto_calendar.js"></script>-->
 <script src="{{ url_for('static', filename='assets/js/zabuto_calendar.js') }}"></script>
 
-
-<!--<script type="text/javascript">-->
-<!--$(document).ready(function() {-->
-<!--var unique_id = $.gritter.add({-->
-<!--// (string | mandatory) the heading of the notification-->
-<!--title: 'Welcome to Dashgum!',-->
-<!--// (string | mandatory) the text inside the notification-->
-<!--text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',-->
-<!--// (string | optional) the image to display on the left-->
-<!--image: 'assets/img/ui-sam.jpg',-->
-<!--// (bool | optional) if you want it to fade out on its own or just sit there-->
-<!--sticky: true,-->
-<!--// (int | optional) the time you want it to be alive for before fading out-->
-<!--time: '',-->
-<!--// (string | optional) the class name you want to apply to that specific message-->
-<!--class_name: 'my-sticky-class'-->
-<!--});-->
-
-<!--return false;-->
-<!--});-->
-<!--</script>-->
 <script type="application/javascript">
     $(document).ready(function() {
         $("#date-popover").popover({
@@ -970,6 +1000,8 @@
         var to = $("#" + id).data("to");
         console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
     }
+
+
 
 
 

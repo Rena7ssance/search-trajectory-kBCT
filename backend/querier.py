@@ -175,7 +175,9 @@ class Querier(object):
             trajectory = upperbound_sorted[i][0]
             trajectory_path = '%s/%s' % (self._prepath, trajectory)
             trajectory_points = Helper.file2points(trajectory_path)
-            similarity = Querier.similarity(trajectory_points, query_points)
+
+            similarity = Querier.similarity(trajectory_points, query_points) # Without order
+            # similarity = Querier.similarity_order(trajectory_points, query_points)  # With order
 
             if i < k:
                 k_BCT.update({upperbound_sorted[i][0]: similarity})

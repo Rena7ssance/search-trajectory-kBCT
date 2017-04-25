@@ -1,9 +1,21 @@
+var regionCity = 'Shanghai';
+var map;
+
+var markers = {}
+var pointCount = 0;
+var formCount = 0;
+var isMarkerSearched = false;
+
+var trajectoryPoints = [];
+var date;
+var trajectoryPath;
+
+var strokeColors = ['#CD2626', '#458B74', '#3366FF',]
+
 $(document).ready(function() {
 
-    var regionCity = 'Shanghai';
-
     // load the map
-    var map = new AMap.Map('map-container', {
+    map = new AMap.Map('map-container', {
         resizeEnable: true,
         scrollWheel: false,
         center: [121.476764, 31.225834],
@@ -17,20 +29,38 @@ $(document).ready(function() {
 
     // click the map to get the longitude and latitude
     var _clickEventListener = function(e) {
+
         var lng = e.lnglat.getLng();
         var lat = e.lnglat.getLat();
-        document.getElementById("lnglat").value = lng + ',' + lat;
+
+        var lnglat = document.getElementById("lng_lat");
+        $("#lng_lat").attr({"placeholder":"", "value":lng+","+lat})
         addMarker(lng, lat);
     }
     map.on('click', _clickEventListener);
 
-    var markers = {}
-    var pointCount = 0;
+
+    // Add Location markers on the map
     function addMarker(longitude, latitude) {
+
+        // Guarantee when adding markers, there is no point in trajectory points
+
+        if (isMarkerSearched) {
+            map.clearMap();
+            isMarkerSearched = false;
+        }
+
+        if (Object.keys(trajectoryPoints).length != 0) {
+            map.clearMap();
+            trajectoryPoints = [];
+        }
+
+
         marker = new AMap.Marker({
             icon: "../static/assets/img/trajectory/map-marker24.png",
             position: [longitude, latitude]
         });
+        console.log("yes");
         marker.setMap(map);
         markers[pointCount] = [longitude, latitude];
         pointCount += 1;
@@ -73,75 +103,183 @@ $(document).ready(function() {
         });
     });
 
+    // from input
+    map.plugin(['AMap.Autocomplete', 'AMap.PlaceSearch'], function() {
+        var autoOptions = {
+            city: regionCity, // specify the search region
+            input: "dir_from_ipt"
+        };
+        autocomplete = new AMap.Autocomplete(autoOptions);
+        var placeSearch = new AMap.PlaceSearch({
+            city: regionCity,
+            map: map
+        })
+        AMap.event.addListener(autocomplete, "select", function(e) {
+            //TODO Personalized function
+            if (e.poi && e.poi.location) {
+                map.setZoom(14.5);
+                map.setCenter(e.poi.location);
+            }
+            // Show some potential points
+            //placeSearch.search(e.poi.name)
+        });
+    });
 
-    var strokeColors = ['#CD2626', '#458B74', '#3366FF',]
-    $("#button").click(function(){
-//        console.log(Object.keys(markers).length);
-        var temp, type;
-        if (markers.length != 0) {
-            temp = trajectoryPoints;
-            type = 't'
-        } else {
-            temp = markers;
-            type ='p'
-        }
+    // to input
+    map.plugin(['AMap.Autocomplete', 'AMap.PlaceSearch'], function() {
+        var autoOptions = {
+            city: regionCity, // specify the search region
+            input: "dir_to_ipt"
+        };
+        autocomplete = new AMap.Autocomplete(autoOptions);
+        var placeSearch = new AMap.PlaceSearch({
+            city: regionCity,
+            map: map
+        })
+        AMap.event.addListener(autocomplete, "select", function(e) {
+            //TODO Personalized function
+            if (e.poi && e.poi.location) {
+                map.setZoom(14.5);
+                map.setCenter(e.poi.location);
+            }
+            // Show some potential points
+            //placeSearch.search(e.poi.name)
+        });
+    });
 
+    // Display the trajectory
+    $(function(){
+        $(".details").each(function() {
+            $(this).click(function() {
+                // Gurantee when display the trajectory points, there is markers
+                if (Object.keys(markers).length != 0) {
+                    markers = {};
+                }
+                map.clearMap();
+                trajectoryPoints = [];
+                date = $(this).attr("id").split(" ")[1].substring(0,2)
+                console.log(date);
+                trajectoryPath = $(this).attr("id") + ".txt";
 
-        $.post(
-            'search',
-            {
-                queryPoints: JSON.stringify(temp),
-                queryType: type
-            },
-            function(data) {
-                $.each(data, function(index) {
-                    var pathData = data[index];
+                $.post(
+                    'display',
+                    {filepath: trajectoryPath},
+                    function(data) {
+
+                    // assign the trajectory displayed for searching
+                    trajectoryPoints = data.slice(0);
                     var polyline = new AMap.Polyline({
-                            path: pathData, //设置线覆盖物路径 #
-                            strokeColor: strokeColors[index], //线颜色
-                            strokeOpacity: 2, //线透明度
-                            strokeWeight: 6-(index*2), //线宽
-                            strokeStyle: "solid", //线样式
-                            strokeDasharray: [10, 5] //补充线样式
-                        });
-                     polyline.setMap(map);
-                })
-            },
-            'json'
-        );
+                        path: data, //设置线覆盖物路径 #
+                        strokeColor: '#000000', //线颜色
+                        strokeOpacity: 1, //线透明度
+                        strokeWeight: 6, //线宽
+                        strokeStyle: "solid", //线样式
+                        strokeDasharray: [10, 5] //补充线样式
+                    });
+                    map.setZoom(12);
+                    map.setCenter(data[Object.keys(data).length/2]);
+                    polyline.setMap(map);
+                },
+                'json'
+                );
+            });
+        });
+    });
 
-        //TODO
-        markers = []
-    })
-
-    var trajectoryPoints;
-    $("#traj-btn").click(function(){
-        $.post(
-            'display',
-            {filepath: $("#traj-btn").text()},
-            function(data) {
-
-                // assign the trajectory displayed for searching
-                trajectoryPoints = data.slice(0);
-                var polyline = new AMap.Polyline({
-                    path: data, //设置线覆盖物路径 #
-                    strokeColor: '#000000', //线颜色
-                    strokeOpacity: 1, //线透明度
-                    strokeWeight: 6, //线宽
-                    strokeStyle: "solid", //线样式
-                    strokeDasharray: [10, 5] //补充线样式
-                });
-                map.setZoom(13);
-                map.setCenter(data[data.length/2]);
-                polyline.setMap(map);
-            },
-            'json'
-        );
-    })
-
-
-    function reset() {
-        map.clearMap();
-        markers = [];
-    }
 })
+
+// Search Part
+function _search() {
+    var temp, type;
+    if (Object.keys(markers).length == 0) {
+        temp = trajectoryPoints;
+        type = 't'
+    } else {
+        temp = markers;
+        type ='p';
+        date = '01';
+    }
+    $.post(
+        'search',
+        {
+            queryPoints: JSON.stringify(temp),
+            queryType: type,
+            queryDate: date
+        },
+        function(data) {
+            $.each(data, function(index) {
+                var pathData = data[index];
+                var polyline = new AMap.Polyline({
+                        path: pathData, //设置线覆盖物路径 #
+                        strokeColor: strokeColors[index], //线颜色
+                        strokeOpacity: 2, //线透明度
+                        strokeWeight: 6-(index*2), //线宽
+                        strokeStyle: "solid", //线样式
+                        strokeDasharray: [10, 5] //补充线样式
+                    });
+                polyline.setMap(map);
+            })
+            map.setZoom(11);
+            map.setCenter([121.47199,31.231973]);
+        },
+        'json'
+    );
+
+    //TODO
+    isMarkerSearched = true;
+    markers = {};
+}
+
+function _searchFormAppend() {
+    formCount += 1;
+    var inputId = 'input-' + formCount;
+    var content = "<p class=\"line_serch_ipt line-search-point\"><label>途径  </label><input type=\"text\" class=\"dir_ipt\" id=\"" + inputId + "\" dirtype=\"from\" placeholder=\"请输入途径点\" value=\"\" autocomplete=\"off\"></p>"
+
+    $(".passList").append(content);
+    map.plugin(['AMap.Autocomplete', 'AMap.PlaceSearch'], function() {
+        var autoOptions = {
+            city: regionCity, // specify the search region
+            input: inputId
+        };
+        autocomplete = new AMap.Autocomplete(autoOptions);
+        var placeSearch = new AMap.PlaceSearch({
+            city: regionCity,
+            map: map
+        })
+        AMap.event.addListener(autocomplete, "select", function(e) {
+            //TODO Personalized function
+            if (e.poi && e.poi.location) {
+                map.setZoom(14.5);
+                map.setCenter(e.poi.location);
+            }
+        });
+    });
+}
+
+function _searchFormRemove() {
+//    var pId = 'p' + formCount;
+    var passList = document.getElementsByClassName('passList')[0]
+    if (passList.lastChild) {
+        passList.removeChild(passList.lastChild);
+        formCount -= 1;
+    }
+}
+
+function _searchFormReset() {
+    map.clearMap();
+    markers = {}
+    pointCount = 0;
+    isMarkerSearched = false;
+    trajectoryPoints = [];
+
+    $("#lng_lat").attr({"placeholder":"经纬度坐标", "value":""})
+    $("#dir_from_ipt").attr({"placeholder":"请输入起点", "value":""})
+    //$("#dir_to_ipt").attr({"placeholder":"请输入终点", "value": ""})
+    $("#dir_to_ipt").val("")
+    console.log($("#dir_to_ipt").val())
+
+    for (var i = 1; i <= formCount; i++) {
+        var inputId = "#input-" + i;
+        $(inputId).attr({"placeholder":"请输入起点", "value":""})
+    }
+}

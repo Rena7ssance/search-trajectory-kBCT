@@ -34,15 +34,44 @@ if __name__ == '__main__':
     # print points
     # query_points = Simplifier.dp_algorithm(points, 0, len(points) - 1, epsilon=1e-02)
 
+
     from time import time
+
     q = Querier(prepath='data/trajectory/sim_trajectory_per_day/shanghai/2015-04/01',
                 rtreepath='data/rtree/shanghai/2015-04/01')
     t0 = time()
-    query_points = [[121.359331, 31.184999], [121.360705, 31.287742], [121.406314, 31.227461], [121.50284, 31.294784]]
-    a = q.iknn_algorithm(query_points, 7)
+
+    # query_points = [[121.359331, 31.184999], [121.360705, 31.287742], [121.406314, 31.227461], [121.50284, 31.294784]]
+    # query_points = [[121.359331, 31.184999], [121.360705, 31.287742], [121.50284, 31.294784]]
+
+    # query_points = [[121.449803,31.225391], [121.446351,31.231352]]
+    '''
+    query_points = [[121.420210, 30.940452], [120.889590, 30.911189], [120.268870, 30.562625]]
+    a = q.iknn_algorithm(query_points, 3)
     t1 = time()
     print 'function takes %f' % (t1 - t0)
     for item in a:
-        print item[0]
-        print Helper.file2points('data/trajectory/sim_trajectory_per_day/shanghai/2015-04/01/%s' % item[0])
-        print
+        print item
+        # print Helper.file2points('data/trajectory/sim_trajectory_per_day/shanghai/2015-04/01/%s' % item[0])
+    '''
+    querys = [[[121.359331, 31.184999], [121.360705, 31.287742], [121.50284, 31.294784]],
+              [[121.449803, 31.225391], [121.446351, 31.231352]],
+              [[121.420210, 30.940452], [120.889590, 30.911189], [120.268870, 30.562625]],
+              [[121.449803, 31.225391], [121.446351, 31.231352]]]
+    for query in querys:
+        a = q.iknn_algorithm(query, 5)
+
+        print a
+
+    '''
+    from rtree import index
+    rtree_properties = index.Property()
+    rtree_properties.dat_extension = 'data'
+    rtree_properties.idx_extension = 'index'
+    rtree = index.Index("data/rtree/shanghai/2015-04/01", properties=rtree_properties)
+
+    query_res = rtree.nearest((121.384531,31.275859), 5, objects=True)
+
+    for item in query_res:
+        print item.bbox[0], item.bbox[1]
+    '''
