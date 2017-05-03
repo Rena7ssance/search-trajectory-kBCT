@@ -17,7 +17,6 @@ class Helper(object):
     @staticmethod
     def file2points(path):
         assert os.path.exists(path)
-
         points = []
         with open(path, 'r') as f:
             for line in f:

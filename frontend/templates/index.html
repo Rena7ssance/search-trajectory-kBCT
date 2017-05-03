@@ -8,6 +8,11 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <title>Trajectory</title>
+
+
+    <!-- Date Picker-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- Bootstrap core CSS -->
     <!--<link href="assets/css/bootstrap.css" rel="stylesheet">-->
     <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet">
@@ -66,280 +71,280 @@
         /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
         .searchboxshadow.round {
-        border-radius: 3px!important
+            border-radius: 3px !important
         }
 
         .searchbox {
-        position: relative;
-        z-index: 2201;
-        width: 360px;
-        height: 45px;
-        background: #fff;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, .15);
-        border-radius: 3px
+            position: relative;
+            z-index: 2201;
+            width: 360px;
+            height: 45px;
+            background: #fff;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, .15);
+            border-radius: 3px
         }
 
         .searchbox .logo {
-        display: block;
-        position: absolute;
-        top: 6px;
-        left: 8px;
-        width: 34px;
-        height: 34px;
-        z-index: 99999;
-        cursor: pointer
+            display: block;
+            position: absolute;
+            top: 6px;
+            left: 8px;
+            width: 34px;
+            height: 34px;
+            z-index: 99999;
+            cursor: pointer
         }
 
         .searchbox .iptbox {
-        position: absolute;
-        left: 50px;
-        top: 0;
-        width: 265px;
-        height: 45px;
-        box-sizing: border-box;
-        z-index: 2202;
-        border-radius: 2px
+            position: absolute;
+            left: 50px;
+            top: 0;
+            width: 265px;
+            height: 45px;
+            box-sizing: border-box;
+            z-index: 2202;
+            border-radius: 2px
         }
 
         .searchbox #nearby,
         .searchbox #nearbybox {
-        position: absolute;
-        top: 0;
-        width: 310px;
-        height: 45px;
-        box-sizing: border-box
+            position: absolute;
+            top: 0;
+            width: 310px;
+            height: 45px;
+            box-sizing: border-box
         }
 
         .searchbox #nearbybox {
-        left: 50px;
-        z-index: 2210;
-        background: #fff;
-        display: none
+            left: 50px;
+            z-index: 2210;
+            background: #fff;
+            display: none
         }
 
         .searchbox #nearby {
-        left: 0;
-        transition: width .2s ease;
-        font-size: 14px
+            left: 0;
+            transition: width .2s ease;
+            font-size: 14px
         }
 
         .searchbox #nearbyipt {
-        position: relative;
-        top: 12.5px;
-        box-sizing: border-box;
-        text-indent: 2px;
-        border: none;
-        height: 20px;
-        line-height: 20px;
-        padding: 0;
-        width: 120px
+            position: relative;
+            top: 12.5px;
+            box-sizing: border-box;
+            text-indent: 2px;
+            border: none;
+            height: 20px;
+            line-height: 20px;
+            padding: 0;
+            width: 120px
         }
 
         .searchbox #nearbyclosewrap {
-        width: 45px;
-        height: 45px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        background-color: #f8f8f8;
-        border-radius: 0 2px 2px 0
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: #f8f8f8;
+            border-radius: 0 2px 2px 0
         }
 
         .searchbox #nearbyclose {
-        position: absolute;
-        top: 8.5px;
-        right: 10px;
-        font-size: 15px;
-        padding: 3px 5px;
-        cursor: pointer
+            position: absolute;
+            top: 8.5px;
+            right: 10px;
+            font-size: 15px;
+            padding: 3px 5px;
+            cursor: pointer
         }
 
         .searchbox #nearbybtn {
-        position: absolute;
-        right: 45px;
-        top: 0;
-        z-index: 9308;
-        box-sizing: border-box;
-        width: 45px;
-        height: 45px
+            position: absolute;
+            right: 45px;
+            top: 0;
+            z-index: 9308;
+            box-sizing: border-box;
+            width: 45px;
+            height: 45px
         }
 
         .searchbox #nearbybtn .nearbylogo {
-        position: absolute;
-        top: 8.5px;
-        right: 8px;
-        font-size: 19px;
-        color: #919095;
-        padding: 0 5px
+            position: absolute;
+            top: 8.5px;
+            right: 8px;
+            font-size: 19px;
+            color: #919095;
+            padding: 0 5px
         }
 
         .searchbox #nearbybtn .nearbylogo:hover {
-        color: #70b9f9;
-        cursor: pointer
+            color: #70b9f9;
+            cursor: pointer
         }
 
         .searchbox #nearbyloading {
-        position: absolute;
-        top: 8px;
-        right: 10px;
-        z-index: 2215;
-        display: none
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            z-index: 2215;
+            display: none
         }
 
         .searchbox #nearby span {
-        position: relative;
-        top: 12.5px;
-        color: #aaa
+            position: relative;
+            top: 12.5px;
+            color: #aaa
         }
 
         .searchbox #nearby .poiname {
-        color: #333
+            color: #333
         }
 
         #searchloading {
-        position: absolute;
-        top: 15px;
-        right: 16px;
-        z-index: 2212;
-        display: none
+            position: absolute;
+            top: 15px;
+            right: 16px;
+            z-index: 2212;
+            display: none
         }
 
         .searchbox #searchipt {
-        position: absolute;
-        top: 12.5px;
-        left: 0;
-        box-sizing: border-box;
-        text-indent: 2px;
-        z-index: 2200;
-        border: none;
-        width: 219px;
-        height: 20px;
-        line-height: 20px;
-        padding: 0;
-        letter-spacing: .5px;
-        font-size: 14px
+            position: absolute;
+            top: 12.5px;
+            left: 0;
+            box-sizing: border-box;
+            text-indent: 2px;
+            z-index: 2200;
+            border: none;
+            width: 219px;
+            height: 20px;
+            line-height: 20px;
+            padding: 0;
+            letter-spacing: .5px;
+            font-size: 14px
         }
 
         .searchbox #searchipt::-webkit-input-placeholder {
-        font-size: 14px;
-        color: #b7b8b9;
-        font-weight: 200;
-        letter-spacing: 1px;
-        opacity: .8!important
+            font-size: 14px;
+            color: #b7b8b9;
+            font-weight: 200;
+            letter-spacing: 1px;
+            opacity: .8 !important
         }
 
         .searchbox .direntry:hover,
         .themex .searchbox .searchlogo:hover {
-        opacity: .8
+            opacity: .8
         }
 
         .searchbox .iptbox #searchipt:-moz-placeholder {
-        font-size: 13px;
-        color: #b7b8b9;
-        font-weight: 200;
-        letter-spacing: 1px
+            font-size: 13px;
+            color: #b7b8b9;
+            font-weight: 200;
+            letter-spacing: 1px
         }
 
         .searchbox .iptbox #searchipt::-moz-placeholder {
-        font-size: 13px;
-        color: #b7b8b9;
-        font-weight: 200;
-        letter-spacing: 1px
+            font-size: 13px;
+            color: #b7b8b9;
+            font-weight: 200;
+            letter-spacing: 1px
         }
 
         .searchbox .iptbox #searchipt:-ms-input-placeholder {
-        font-size: 13px;
-        color: #b7b8b9;
-        font-weight: 200;
-        letter-spacing: 1px
+            font-size: 13px;
+            color: #b7b8b9;
+            font-weight: 200;
+            letter-spacing: 1px
         }
 
         .searchbox .iptbox #searchbtn {
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 9308;
-        box-sizing: border-box;
-        width: 45px;
-        height: 45px
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 9308;
+            box-sizing: border-box;
+            width: 45px;
+            height: 45px
         }
 
         .searchbox .searchlogo {
-        position: absolute;
-        top: 8.5px;
-        right: 8px;
-        font-size: 19px;
-        color: #7c8196;
-        padding: 0 5px
+            position: absolute;
+            top: 8.5px;
+            right: 8px;
+            font-size: 19px;
+            color: #7c8196;
+            padding: 0 5px
         }
 
         .searchbox .searchlogo:hover {
-        color: #42a5f5;
-        cursor: pointer
+            color: #42a5f5;
+            cursor: pointer
         }
 
         .searchbox .direntry {
-        width: 45px;
-        height: 45px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        text-align: center;
-        background-color: #f8f8f8;
-        border-radius: 0 3px 3px 0
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-align: center;
+            background-color: #f8f8f8;
+            border-radius: 0 3px 3px 0
         }
 
         .searchbox .direntry .close-btn {
-        position: absolute;
-        top: 8.5px;
-        right: 10px;
-        font-size: 15px;
-        display: none;
-        padding: 3px 5px;
-        cursor: pointer
+            position: absolute;
+            top: 8.5px;
+            right: 10px;
+            font-size: 15px;
+            display: none;
+            padding: 3px 5px;
+            cursor: pointer
         }
 
         .searchbox .direntry.in-main {
-        background: #fff
+            background: #fff
         }
 
         .searchbox .direntry.in-dir .close-btn,
         .searchbox .direntry.in-main .close-btn {
-        display: inline-block;
-        color: #78909c
+            display: inline-block;
+            color: #78909c
         }
 
         .searchbox .direntry.in-main .close-btn:hover {
-        color: #90a4ae
+            color: #90a4ae
         }
 
         .themex .searchbox,
         .themex .searchbox .searchlogo {
-        color: #fff
+            color: #fff
         }
 
         .searchbox .direntry .fa-dir {
-        position: absolute;
-        top: 9px;
-        right: 9px;
-        width: 16.5px;
-        height: 18px;
-        padding: 5px;
-        cursor: pointer
+            position: absolute;
+            top: 9px;
+            right: 9px;
+            width: 16.5px;
+            height: 18px;
+            padding: 5px;
+            cursor: pointer
         }
 
         .searchbox .direntry.in-dir .fa-dir,
         .searchbox .direntry.in-main .fa-dir {
-        display: none
+            display: none
         }
 
         .searchbox #separator {
-        position: absolute;
-        right: 38px;
-        top: 11px;
-        height: 24px;
-        width: 1px;
-        background: #ccc
+            position: absolute;
+            right: 38px;
+            top: 11px;
+            height: 24px;
+            width: 1px;
+            background: #ccc
         }
     </style>
 </head>
@@ -447,11 +452,11 @@
                         <li>
                             <a href="index.html#">
                                 <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
-                                    <span class="subject">
+                                <span class="subject">
                                     <span class="from">Zac Snider</span>
                                     <span class="time">Just now</span>
                                     </span>
-                                    <span class="message">
+                                <span class="message">
                                         Hi mate, how is everything?
                                     </span>
                             </a>
@@ -459,11 +464,11 @@
                         <li>
                             <a href="index.html#">
                                 <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
-                                    <span class="subject">
+                                <span class="subject">
                                     <span class="from">Divya Manian</span>
                                     <span class="time">40 mins.</span>
                                     </span>
-                                    <span class="message">
+                                <span class="message">
                                      Hi, I need your help with this.
                                     </span>
                             </a>
@@ -471,11 +476,11 @@
                         <li>
                             <a href="index.html#">
                                 <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
-                                    <span class="subject">
+                                <span class="subject">
                                     <span class="from">Dan Rogers</span>
                                     <span class="time">2 hrs.</span>
                                     </span>
-                                    <span class="message">
+                                <span class="message">
                                         Love your new Dashboard.
                                     </span>
                             </a>
@@ -483,11 +488,11 @@
                         <li>
                             <a href="index.html#">
                                 <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
-                                    <span class="subject">
+                                <span class="subject">
                                     <span class="from">Dj Sherman</span>
                                     <span class="time">4 hrs.</span>
                                     </span>
-                                    <span class="message">
+                                <span class="message">
                                         Please, answer asap.
                                     </span>
                             </a>
@@ -760,14 +765,6 @@
                                     var myDoughnut = new Chart(document.getElementById("serverstatus02").getContext("2d")).Doughnut(doughnutData);
 
 
-
-
-
-
-
-
-
-
                                 </script>
                                 <p>April 17, 2014</p>
                                 <footer>
@@ -818,6 +815,70 @@
                 <!-- Right -->
                 <div class="col-lg-3 ds">
                     <!--COMPLETED ACTIONS DONUTS CHART-->
+
+                    <h3>Location Markers</h3>
+                    <div id="planForm">
+                        <!--<ul class="tabs dir_tab col3 z-depth-1 clearfix" id="trafficTab">-->
+                        <!--<li><a id="carTab" class="palntype_tab icon-car icondirtip current"-->
+                        <!--href="javascript:void(0)" data-type="car"></a></li>-->
+                        <!--<li><a id="busTab" class="palntype_tab icon-bus icondirtip" href="javascript:void(0)"-->
+                        <!--data-type="bus"></a></li>-->
+                        <!--<li><a id="walkTab" class="palntype_tab icon-walk icondirtip" href="javascript:void(0)"-->
+                        <!--data-type="walk"></a></li>-->
+                        <!--</ul>-->
+                        <i class="dir_close iconfont icon-close"></i>
+                        <div class="line-search">
+                            <div class="line-search-left icon_exchange" id="dir_exchange">
+                                <i class="iconfont icon-switchroute"></i>
+                            </div>
+                            <div class="line-search-form">
+                                <p class="line_serch_ipt line-lng-lat">
+                                    <label>日期 </label>
+                                    <input type="text" class="dir_ipt" id="date" placeholder="日期" value="2015-04-02" style="text-align: center">
+                                    <!--<span class="del-item" style="display: none;"></span>-->
+                                </p>
+
+                                <p class="line_serch_ipt line-lng-lat">
+                                    <label>经纬 </label>
+                                    <input type="text" class="dir_ipt" id="lng_lat" placeholder="经纬度坐标" value=""
+                                           autocomplete="off" style="text-align: center">
+                                    <!--<span class="del-item" style="display: none;"></span>-->
+                                </p>
+
+                                <p class="line_serch_ipt line-search-from">
+                                    <label>起点 </label>
+                                    <input type="text" class="dir_ipt" id="dir_from_ipt" dirtype="from"
+                                           placeholder="请输入起点" value="" autocomplete="off" style="text-align: center">
+                                    <!--<span class="del-item" style="display: none;"></span>-->
+                                </p>
+                                <div class="passList">
+
+                                </div>
+                                <p class="line_serch_ipt line-search-to">
+                                    <label>终点 </label>
+                                    <input type="text" class="dir_ipt" id="dir_to_ipt" dirtype="to"
+                                           placeholder="请输入终点"
+                                           value="" autocomplete="off" style="text-align: center">
+                                    <!--<span class="del-item" style="display: none;"></span>-->
+                                </p>
+
+                                <p class="line-search-submit">
+                                    <a href="javascript:void(0)" class="icon_plus"
+                                       onclick="_searchFormAppend()"></a>
+                                    <a href="javascript:void(0)" class="icon_minus"
+                                       onclick="_searchFormRemove()"></a>
+                                    <a href="javascript:void(0)" class="icon_reset"
+                                       onclick="_searchFormReset()"></a>
+                                    <a href="javascript:void(0)" class="dir_submit" onclick="_search()">查询</a>
+                                    <span class="fa-spin"></span>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr>
+
                     <h3>History Trajectory</h3>
                     {% if trajectories is none %}
                     {% else %}
@@ -839,55 +900,6 @@
                     {% endif %}
 
                     <hr>
-                    <h3>Location Markers</h3>
-
-                    <div id="planForm">
-                        <!--<ul class="tabs dir_tab col3 z-depth-1 clearfix" id="trafficTab">-->
-                            <!--<li><a id="carTab" class="palntype_tab icon-car icondirtip current"-->
-                                   <!--href="javascript:void(0)" data-type="car"></a></li>-->
-                            <!--<li><a id="busTab" class="palntype_tab icon-bus icondirtip" href="javascript:void(0)"-->
-                                   <!--data-type="bus"></a></li>-->
-                            <!--<li><a id="walkTab" class="palntype_tab icon-walk icondirtip" href="javascript:void(0)"-->
-                                   <!--data-type="walk"></a></li>-->
-                        <!--</ul>-->
-                        <i class="dir_close iconfont icon-close"></i>
-                        <div class="line-search">
-                            <div class="line-search-left icon_exchange" id="dir_exchange">
-                                <i class="iconfont icon-switchroute"></i>
-                            </div>
-                            <div class="line-search-form">
-                                <p class="line_serch_ipt line-lng-lat">
-                                    <label>经纬 </label>
-                                    <input type="text" class="dir_ipt" id="lng_lat" placeholder="经纬度坐标" value="" autocomplete="off">
-                                    <!--<span class="del-item" style="display: none;"></span>-->
-                                </p>
-
-                                <p class="line_serch_ipt line-search-from">
-                                <label>起  </label>
-                                    <input type="text" class="dir_ipt" id="dir_from_ipt" dirtype="from" placeholder="请输入起点" value="" autocomplete="off">
-                                    <!--<span class="del-item" style="display: none;"></span>-->
-                                </p>
-                                <div class="passList">
-
-                                </div>
-                                <p class="line_serch_ipt line-search-to">
-                                    <label>终  </label>
-                                    <input type="text" class="dir_ipt" id="dir_to_ipt" dirtype="to" placeholder="请输入终点" value="" autocomplete="off">
-                                    <!--<span class="del-item" style="display: none;"></span>-->
-                                </p>
-
-                                <p class="line-search-submit">
-                                    <a href="javascript:void(0)" class="icon_plus" onclick="_searchFormAppend()"></a>
-                                    <a href="javascript:void(0)" class="icon_minus" onclick="_searchFormRemove()"></a>
-                                    <a href="javascript:void(0)" class="icon_reset" onclick="_searchFormReset()"></a>
-                                    <a href="javascript:void(0)" class="dir_submit" onclick="_search()">查询</a>
-                                    <span class="fa-spin"></span>
-                                </p>
-
-                            </div>
-
-                        </div>
-                    </div>
                     <!-- USERS ONLINE SECTION -->
                     <!--
                     <h3>TEAM MEMBERS</h3>
@@ -961,21 +973,21 @@
 <script src="{{ url_for('static', filename='assets/js/zabuto_calendar.js') }}"></script>
 
 <script type="application/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#date-popover").popover({
             html: true,
             trigger: "manual"
         });
         $("#date-popover").hide();
-        $("#date-popover").click(function(e) {
+        $("#date-popover").click(function (e) {
             $(this).hide();
         });
 
         $("#my-calendar").zabuto_calendar({
-            action: function() {
+            action: function () {
                 return myDateFunction(this.id, false);
             },
-            action_nav: function() {
+            action_nav: function () {
                 return myNavFunction(this.id);
             },
             ajax: {
@@ -1002,19 +1014,15 @@
     }
 
 
-
-
-
-
-
-
-
 </script>
 <script language="javascript">
 
 </script>
 <!--<script src="assets/js/trajectory/trajectory-process.js"></script>-->
 <script src="{{ url_for('static', filename='assets/js/trajectory/trajectory-process.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/datepicker/moment.js') }}"></script>
+
 
 </body>
 

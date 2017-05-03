@@ -10,16 +10,10 @@ from backend.helper import Helper
 
 class Querier(object):
     def __init__(self, prepath, rtreepath):
-        # prepath 'data/trajectory/sim_trajectory_per_day/shanghai/2015-04/01'
         self._prepath = prepath
         self._rtreepath = rtreepath
         self._files = os.listdir(prepath)
 
-    '''
-    GETTER functions
-    '''
-
-    # TODO change
     def get_rtree(self):
         rtree_properties = index.Property()
         rtree_properties.dat_extension = 'data'
@@ -30,13 +24,13 @@ class Querier(object):
     """
     class function: Incremental K-Nearest Neighbor based Algorithm
     retrieve the candidate trajectories in a filter-and-refine fashion
-
     Return format: list(["obd_id rx", similarity])
     """
 
     def iknn_algorithm(self, query_points, k):
         _lambda, m = k, len(query_points)
         lowerbound = {}
+        rtree = self.get_rtree()
 
         lambda_delta, lambda_delta_prev = {}, {}
         for i in range(0, len(query_points)):
@@ -57,8 +51,9 @@ class Querier(object):
             #
 
             # Optimization: specified delta for each query point
+
             for i in range(0, len(query_points)):
-                lambda_nn_i, trajectory_scanned_i = self.knn_algorithm(query_points[i], lambda_delta[i])
+                lambda_nn_i, trajectory_scanned_i = self.knn_algorithm(rtree, query_points[i], lambda_delta[i])
                 list_lambda.append(lambda_nn_i)
                 list_candidate.append(trajectory_scanned_i)
             candidate = [trajectory for candicate_i in list_candidate for trajectory in candicate_i]
@@ -79,10 +74,7 @@ class Querier(object):
                 k_lb = lb_sorted[0:k]
                 if k_lb[-1][1] >= ub_n:
                     return self.refine(candidate, list_candidate, query_points, list_lambda, k)
-            #
-            # count += 1
-            # _lambda += m * k * pow(2, count)
-            #
+
 
             # Optimization
             count += 1
@@ -112,10 +104,10 @@ class Querier(object):
     """
 
     # TODO date parameter, now is preset 2015-04/01
-    def knn_algorithm(self, query_point, _lambda):
+    def knn_algorithm(self, rtree, query_point, _lambda):
         query_lng, query_lat = float(query_point[0]), float(query_point[1])
         lambda_nn, trajectory_scanned = [], []
-        query_res = self.get_rtree().nearest((query_lng, query_lat), _lambda, objects=True)
+        query_res = rtree.nearest((query_lng, query_lat), _lambda, objects=True)
 
         for item in query_res:
             lambda_nn.append([item.bbox[0], item.bbox[1]])

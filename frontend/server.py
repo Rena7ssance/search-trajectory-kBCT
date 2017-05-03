@@ -77,25 +77,31 @@ def search_post_request():
     elif query_type == 't':
         # Search similar trajectory by a specified trajectory
         query_points = json.loads(request.form['queryPoints'])
-        query_points = Simplifier.dp_algorithm(query_points, 0, len(query_points) - 1, epsilon=5e-02)
+        print query_points
+        print
+        query_points = Simplifier.dp_algorithm(query_points, 0, len(query_points) - 1, epsilon=1e-04)
         print query_points
 
-    querier = Querier(prepath='../backend/data/trajectory/sim_trajectory_per_day/shanghai/2015-04/%s' % query_date,
-                      rtreepath='../backend/data/rtree/shanghai/2015-04/%s' % query_date)  # date
+    year, month, day = query_date.split('-')
+    prepath = '../backend/data/trajectory/sim_trajectory_per_day/shanghai/%s-%s/%s' % (year, month, day)
+    rtreepath = '../backend/data/rtree/shanghai/%s-%s/%s' % (year, month, day)
+    querier = Querier(prepath=prepath,
+                      rtreepath=rtreepath)
     query_results = querier.iknn_algorithm(query_points, 3)
+
     points_results = []
     for item in query_results:
         user, r = item[0].split(' ')
-        path = '../backend/data/trajectory/trajectory_per_user/shanghai/2015-04/'
-        trajectory = '%s/%s/%s %s.txt' % (path, user, r, query_date)
+        path = '../backend/data/trajectory/trajectory_per_user/shanghai/%s-%s/' % (year, month)
+        trajectory = '%s/%s/%s %s.txt' % (path, user, r, day)
         points_results.append(Helper.file2points(trajectory))
     return json.dumps(points_results)
-
 
 
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('page_not_found.html'), 404
+
 
 if __name__ == '__main__':
     app.run()
