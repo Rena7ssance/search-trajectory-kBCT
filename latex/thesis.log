@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  5 MAY 2017 16:37
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  6 MAY 2017 14:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2423,11 +2423,6 @@ File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 ))
 \g__fontspec_family_TeXGyreTermes_int=\count446
 .................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font TeX Gyre Termes/B (it probably doesn't exist).
-.................................................
-.................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'TeXGyreTermes(0)' created for font 'TeX Gyre Termes' with
@@ -2437,7 +2432,11 @@ File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 . - 'normal' (m/n) with NFSS spec.: <->"TeX Gyre
 . Termes/OT:script=latn;language=DFLT;mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.: <->"TeX Gyre
-. Termes/OT:script=latn;language=DFLT;mapping=tex-text;+smcp;"- 'italic'
+. Termes/OT:script=latn;language=DFLT;mapping=tex-text;+smcp;"- 'bold' (bx/n)
+. with NFSS spec.: <->"TeX Gyre
+. Termes/B/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: <->"TeX Gyre
+. Termes/B/OT:script=latn;language=DFLT;mapping=tex-text;+smcp;"- 'italic'
 . (m/it) with NFSS spec.: <->"TeX Gyre
 . Termes/I/OT:script=latn;language=DFLT;mapping=tex-text;"
 . - 'italic small caps'  (m/itsc) with NFSS spec.: <->"TeX Gyre
@@ -2812,10 +2811,6 @@ File: pdf/authorization.pdf Graphic file (type QTm)
 \openout2 = `tex/abstract.aux'.
 
  (./tex/abstract.tex
-
-LaTeX Font Warning: Font shape `EU1/TeXGyreTermes(0)/bx/n' undefined
-(Font)              using `EU1/TeXGyreTermes(0)/m/n' instead on input line 6.
-
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -2871,23 +2866,60 @@ File: figure/sjtubanner.png Graphic file (type QTm)
  (./tex/introduction.tex
 第一章
 File: figure/chapter01/paradigm.png Graphic file (type QTm)
-<use  "figure/chapter01/paradigm.png" >)
+<use  "figure/chapter01/paradigm.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 26--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+
+ []
+
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" >
-[1
+<use  "figure/sjtubanner.png" > [1
 
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
+
+ []
+
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [2]
+<use  "figure/sjtubanner.png" > [2]
+File: figure/chapter01/search-example.png Graphic file (type QTm)
+
+<use  "figure/chapter01/search-example.png" >
+Overfull \hbox (14.4277pt too wide) in paragraph at lines 55--56
+[]\EU1/FandolSong-Regular(0)/m/n/10.53937 大 体 上，| \EU1/TeXGyreTermes(0)/m/n/10.
+53937 k \EU1/FandolSong-Regular(0)/m/n/10.53937 条 最 佳 连 接 轨 迹 查 询 基 于 的 地 理 位 置
+ 点 需 要 具 备 必 要 的 经 纬 度 信 息 $\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 latit
+ude; longitude\OT1/cmr/m/n/10.53937 )$\EU1/FandolSong-Regular(0)/m/n/10.53937 。
+|
+ []
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [3]
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
+
+ []
+
+)
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [4]
 \openout2 = `tex/relatedwork.aux'.
 
  (./tex/relatedwork.tex
 第二章
 )
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [3
+ <use  "figure/sjtubanner.png" > [5
 
 
 
@@ -2898,7 +2930,7 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 第三章
 )
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [4
+ <use  "figure/sjtubanner.png" > [6
 
 
 
@@ -2909,7 +2941,7 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 第四章
 )
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [5
+ <use  "figure/sjtubanner.png" > [7
 
 
 
@@ -2920,7 +2952,7 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 第五章
 )
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [6
+ <use  "figure/sjtubanner.png" > [8
 
 
 
@@ -2932,7 +2964,7 @@ LaTeX Warning: Empty bibliography on input line 94.
 
 (./tex/ack.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [7
+ <use  "figure/sjtubanner.png" > [9
 
 
 
@@ -2953,9 +2985,6 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.65625pt have occurred.
 
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package logreq Info: Writing requests to 'thesis.run.xml'.
@@ -2963,12 +2992,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51654 strings out of 493591
- 1024607 string characters out of 6143547
- 1390167 words of memory out of 5000000
- 54201 multiletter control sequences out of 15000+600000
- 21459 words of font info for 131 fonts, out of 8000000 for 9000
+ 51678 strings out of 493591
+ 1025955 string characters out of 6143547
+ 1391725 words of memory out of 5000000
+ 54216 multiletter control sequences out of 15000+600000
+ 21515 words of font info for 138 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  71i,18n,85p,10440b,3284s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (13 pages).
+Output written on thesis.pdf (15 pages).
