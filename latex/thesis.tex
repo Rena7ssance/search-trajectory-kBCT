@@ -19,9 +19,16 @@
 %   submit			% 定稿提交的论文，插入签名扫描版的原创性声明、授权声明 
 % ]
 
+%%%%%roy7wt%%%%%
+%
+% 参考文献问题:
+% 1)首先在每章前加入\bibliographystyle{sjtu2};
+% 2)要用make clean thesis.pdf编译
+%
+
 % 逐个导入参考文献数据库
-% \addbibresource{bib/thesis.bib}
-% \addbibresource{bib/chap2.bib}
+\addbibresource{bib/thesis.bib} %届时可以自行修改或者重新一个新的
+%\addbibresource{bib/chap2.bib}
 
 \begin{document}
 
@@ -69,7 +76,7 @@
 \pagestyle{main}
 \include{tex/introduction}
 \include{tex/relatedwork}
-%\include{tex/implementation}
+\include{tex/implementation}
 %\include{tex/experiment}
 %\include{tex/conclusion}
 %\include{tex/example}

@@ -1,0 +1,5 @@
+[0] Config.pm:343> INFO - This is Biber 2.5
+[0] Config.pm:346> INFO - Logfile is 'thesis.blg'
+[51] biber-darwin:290> INFO - === Mon May  8, 2017, 14:47:35
+[77] Biber.pm:351> INFO - Reading 'thesis.bcf'
+[185] Utils.pm:149> WARN - No data sources defined!

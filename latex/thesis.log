@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  6 MAY 2017 20:20
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  9 MAY 2017 00:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2486,39 +2486,39 @@ LaTeX Warning: Label `sec:requirements' multiply defined.
 
 LaTeX Warning: Label `sec:requirements' multiply defined.
 
-) (./tex/relatedwork.aux) (./tex/ack.aux))
+) (./tex/relatedwork.aux) (./tex/implementation.aux) (./tex/ack.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 26.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 33.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 33.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 26.
+LaTeX Info: Redefining \selectfont on input line 33.
 .................................................
 . fontspec info: "setup-math"
 . 
@@ -2526,63 +2526,63 @@ LaTeX Info: Redefining \selectfont on input line 26.
 .................................................
 \symlegacymaths=\mathgroup12
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 26.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 26.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 26.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 26.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 26.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 26.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 26.
-LaTeX Font Info:    Redeclaring math accent \check on input line 26.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 26.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 26.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 26.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 26.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 26.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 33.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 33.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 33.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 33.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 33.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 33.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 33.
+LaTeX Font Info:    Redeclaring math accent \check on input line 33.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 33.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 33.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 33.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 33.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 26.
+(Font)              `operators' in the math version `normal' on input line 33.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> EU1/TeXGyreTermes(0)/m/n on input line 
-26.
+33.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 26.
+(Font)              `operators' in the math version `bold' on input line 33.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> EU1/TeXGyreTermes(0)/m/n on input line
- 26.
+ 33.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  EU1/TeXGyreTermes(0)/m/n --> EU1/TeXGyreTermes(0)/m/n o
-n input line 26.
+n input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> EU1/TeXGyreTermes(0)/m/it on input lin
-e 26.
+e 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> EU1/TeXGyreTermes(0)/bx/n on input lin
-e 26.
+e 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 26.
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 26.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 33.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  EU1/TeXGyreTermes(0)/m/n --> EU1/TeXGyreTermes(0)/bx/n 
-on input line 26.
+on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> EU1/TeXGyreTermes(0)/bx/it on input l
-ine 26.
+ine 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 26.
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 26.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 33.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -2622,7 +2622,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 26.
+(lastpage)             ! on input line 33.
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
@@ -2630,13 +2630,14 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `thesis.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'thesis.bbl' not found.
-No file thesis.bbl.
-Package biblatex Info: Reference section=0 on input line 26.
-Package biblatex Info: Reference segment=0 on input line 26.
+Package biblatex Info: ... file 'thesis.bbl' found.
+(./thesis.bbl)
+Package biblatex Info: Reference section=0 on input line 33.
+Package biblatex Info: Reference segment=0 on input line 33.
 \c@lstlisting=\count458
 \AtBeginShipoutBox=\box113
-Package hyperref Info: Link coloring ON on input line 26.
+Package hyperref Info: Link coloring ON on input line 33.
+
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -2645,9 +2646,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count459
 )
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write6
@@ -2671,35 +2672,35 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 ) ABD: EveryShipout initializing macros
 \c__siunitx_mathsf_int=\count460
-LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 26.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 33.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 26.
+(Font)              size <10.95> substituted on input line 33.
 
-LaTeX Font Info:    Try loading font information for U+wasy on input line 26.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 33.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
 
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 26.
+(Font)              size <10.95> substituted on input line 33.
 
 \c__siunitx_mathtt_int=\count461
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 26.
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 33.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmtt.fd
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2917,7 +2918,7 @@ File: figure/sjtubanner.png Graphic file (type QTm)
  (./tex/relatedwork.tex
 第二章
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
 
  []
 
@@ -2925,11 +2926,11 @@ File: figure/chapter02/definition.png Graphic file (type QTm)
 <use  "figure/chapter02/definition.png" >
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 20.
+(Font)              size <8> substituted on input line 21.
 
 
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 20.
+(Font)              size <8> substituted on input line 21.
 
 File: figure/sjtubanner.png Graphic file (type QTm)
 <use  "figure/sjtubanner.png" > [5
@@ -2942,21 +2943,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--27
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
 
  []
 
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 40.
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
 File: figure/sjtubanner.png Graphic file (type QTm)
 <use  "figure/sjtubanner.png" > [6]
-Underfull \hbox (badness 10000) in paragraph at lines 62--64
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 46.
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
 
  []
 
 File: figure/chapter02/rtree.png Graphic file (type QTm)
 <use  "figure/chapter02/rtree.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 73--75
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
  []
 
@@ -2964,14 +2971,57 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 <use  "figure/sjtubanner.png" > [7])
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" > [8]
+\openout2 = `tex/implementation.aux'.
 
-LaTeX Warning: Empty bibliography on input line 94.
+
+(./tex/implementation.tex
+\c@definition=\count465
+
+第三章
+File: figure/chapter03/similarity.png Graphic file (type QTm)
+<use  "figure/chapter03/similarity.png" >
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" >
+[9
+
+
+
+]
+Overfull \hbox (3.9292pt too wide) in paragraph at lines 49--50
+[]\EU1/FandolSong-Regular(0)/m/n/10.53937 有 序 查 询 的 相 似 性 计 算 和 无 序 查 询 也 有 区 别
+。|  给 定 一 组 有 序 的 查 询 点 $\OML/cmm/m/it/10.53937 Q[] \OT1/cmr/m/n/10.53937 = \OM
+S/cmsy/m/n/10.53937 f\OML/cmm/m/it/10.53937 q[]; q[]; q[]; []  ; q[]\OMS/cmsy/m
+/n/10.53937 g$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+
+ []
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [10]
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [11]
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+
+ []
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [12]
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [13])
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [14]
+
+LaTeX Warning: Empty bibliography on input line 101.
 
 \openout2 = `tex/ack.aux'.
 
 (./tex/ack.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [9
+ <use  "figure/sjtubanner.png" > [15
 
 
 
@@ -2979,12 +3029,12 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 ]
 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 136.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
 (./thesis.aux (./tex/id.aux) (./tex/abstract.aux) (./tex/introduction.aux)
-(./tex/relatedwork.aux) (./tex/ack.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 129.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 129.
+(./tex/relatedwork.aux) (./tex/implementation.aux) (./tex/ack.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 136.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 136.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2998,12 +3048,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51740 strings out of 493591
- 1027489 string characters out of 6143547
- 1383596 words of memory out of 5000000
- 54274 multiletter control sequences out of 15000+600000
- 27843 words of font info for 168 fonts, out of 8000000 for 9000
+ 51841 strings out of 493591
+ 1030885 string characters out of 6143547
+ 1389344 words of memory out of 5000000
+ 54351 multiletter control sequences out of 15000+600000
+ 27875 words of font info for 172 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  71i,18n,85p,10440b,3284s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (15 pages).
+Output written on thesis.pdf (21 pages).
