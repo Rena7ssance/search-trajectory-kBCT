@@ -17,5 +17,11 @@
 \contentsline {chapter}{\numberline {第三章\hspace {0.3em}}相似轨迹查询方法实现}{9}{chapter.3}
 \contentsline {section}{\numberline {3.1}k最佳连接}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}相似轨迹查询处理过程}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}增长型k最近邻查询方法}{11}{subsection.3.2.1}
-\contentsline {chapter}{致\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}谢}{15}{appendix*.4}
+\contentsline {subsection}{\numberline {3.2.1}问题概述}{11}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}生成轨迹备选集}{12}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}增长型k最近邻查询算法}{14}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}轨迹筛选算法}{15}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}算法优化}{17}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}$\lambda $动态增长优化}{17}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}基于动态规划实现有序查询}{18}{subsection.3.3.2}
+\contentsline {chapter}{致\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}谢}{21}{appendix*.4}

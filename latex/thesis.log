@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  9 MAY 2017 00:21
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  11 MAY 2017 21:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2768,44 +2768,11 @@ File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \FN@pp@footnotehinttrue 
 
 
-]
-File: pdf/original.pdf Graphic file (type QTm)
- <use  "pdf/original.pdf" >
-File: pdf/original.pdf Graphic file (type QTm)
- <use  "pdf/original.pdf" >
-File: pdf/original.pdf Graphic file (type QTm)
+] [2
 
-<use  "pdf/original.pdf"  page1>
-File: pdf/original.pdf Graphic file (type QTm)
- <use  "pdf/original.pdf"  page1>
-File: pdf/original.pdf Graphic file (type QTm)
 
-<use  "pdf/original.pdf"  page1>
-File: pdf/original.pdf Graphic file (type QTm)
- <use  "pdf/original.pdf"  page1>
-File: pdf/original.pdf Graphic file (type QTm)
+] [3
 
-<use  "pdf/original.pdf"  page1> [2
-
-]
-File: pdf/authorization.pdf Graphic file (type QTm)
- <use  "pdf/authorization.pdf" >
-File: pdf/authorization.pdf Graphic file (type QTm)
-
-<use  "pdf/authorization.pdf" >
-File: pdf/authorization.pdf Graphic file (type QTm)
- <use  "pdf/authorization.pdf"  page1>
-File: pdf/authorization.pdf Graphic file (type QTm)
-
-<use  "pdf/authorization.pdf"  page1>
-File: pdf/authorization.pdf Graphic file (type QTm)
- <use  "pdf/authorization.pdf"  page1>
-File: pdf/authorization.pdf Graphic file (type QTm)
-
-<use  "pdf/authorization.pdf"  page1>
-File: pdf/authorization.pdf Graphic file (type QTm)
- <use  "pdf/authorization.pdf"  page1>
-[3
 
 ]
 \openout2 = `tex/abstract.aux'.
@@ -2978,42 +2945,117 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 \c@definition=\count465
 
 第三章
-File: figure/chapter03/similarity.png Graphic file (type QTm)
-<use  "figure/chapter03/similarity.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" >
-[9
+<use  "figure/sjtubanner.png" > [9
 
 
 
 ]
-Overfull \hbox (3.9292pt too wide) in paragraph at lines 49--50
+File: figure/chapter03/similarity.png Graphic file (type QTm)
+ <use  "figure/chapter03/similarity.png" >
+Overfull \hbox (3.9292pt too wide) in paragraph at lines 54--55
 []\EU1/FandolSong-Regular(0)/m/n/10.53937 有 序 查 询 的 相 似 性 计 算 和 无 序 查 询 也 有 区 别
 。|  给 定 一 组 有 序 的 查 询 点 $\OML/cmm/m/it/10.53937 Q[] \OT1/cmr/m/n/10.53937 = \OM
 S/cmsy/m/n/10.53937 f\OML/cmm/m/it/10.53937 q[]; q[]; q[]; []  ; q[]\OMS/cmsy/m
 /n/10.53937 g$
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--85
-
- []
-
 File: figure/sjtubanner.png Graphic file (type QTm)
 <use  "figure/sjtubanner.png" > [10]
-File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [11]
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
+Underfull \hbox (badness 10000) in paragraph at lines 109--143
 
  []
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [12]
+<use  "figure/sjtubanner.png" > [11]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [13])
-File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [12]
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
+
+ []
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [13]
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
+
+ []
+
+File: figure/sjtubanner.png Graphic file (type QTm)
 <use  "figure/sjtubanner.png" > [14]
+Underfull \hbox (badness 10000) in paragraph at lines 239--241
+
+ []
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [15]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 301.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 301.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 301.
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [16]
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [17]
+Underfull \hbox (badness 10000) in paragraph at lines 351--354
+
+ []
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [18]
+Overfull \hbox (112.34727pt too wide) in paragraph at lines 384--385
+[]\EU1/FandolSong-Regular(0)/m/n/10.53937 算 法[][]\EU1/TeXGyreTermes(0)/m/n/10.5
+3937 3–4[][]\EU1/FandolSong-Regular(0)/m/n/10.53937 中，| $\OML/cmm/m/it/10.53937
+ M\OT1/cmr/m/n/10.53937 [\OML/cmm/m/it/10.53937 i\OT1/cmr/m/n/10.53937 ][\OML/c
+mm/m/it/10.53937 j\OT1/cmr/m/n/10.53937 ]$ \EU1/FandolSong-Regular(0)/m/n/10.53
+937 是 我 们 需 要 解 决 查 询 问 题 的 子 问 题 的 有 序 相 似 度，|  即 $\OML/cmm/m/it/10.53937 Sim[
+]\OT1/cmr/m/n/10.53937 (\OMS/cmsy/m/n/10.53937 f\OML/cmm/m/it/10.53937 q[]; q[]
+; q[]; []  ; q[]\OMS/cmsy/m/n/10.53937 g\OML/cmm/m/it/10.53937 ; \OMS/cmsy/m/n/
+10.53937 f\OML/cmm/m/it/10.53937 p[]; p[]; p[]; []  ; p[]\OMS/cmsy/m/n/10.53937
+ g\OT1/cmr/m/n/10.53937 )$\EU1/FandolSong-Regular(0)/m/n/10.53937 。|
+ []
+
+
+Overfull \hbox (24.52635pt too wide) in paragraph at lines 384--385
+\OML/cmm/m/it/10.53937 e[] \OT1/cmr/m/n/10.53937 + \OML/cmm/m/it/10.53937 M\OT1
+/cmr/m/n/10.53937 [\OML/cmm/m/it/10.53937 i \OMS/cmsy/m/n/10.53937 ^^@ \OT1/cmr
+/m/n/10.53937 1][\OML/cmm/m/it/10.53937 j\OT1/cmr/m/n/10.53937 ]$ \EU1/FandolSo
+ng-Regular(0)/m/n/10.53937 和 $\OML/cmm/m/it/10.53937 M\OT1/cmr/m/n/10.53937 [\O
+ML/cmm/m/it/10.53937 i\OT1/cmr/m/n/10.53937 ][\OML/cmm/m/it/10.53937 j \OMS/cms
+y/m/n/10.53937 ^^@ \OT1/cmr/m/n/10.53937 1]$ \EU1/FandolSong-Regular(0)/m/n/10.
+53937 的 值 来 决 定 $\OML/cmm/m/it/10.53937 M\OT1/cmr/m/n/10.53937 [\OML/cmm/m/it/1
+0.53937 i\OT1/cmr/m/n/10.53937 ][\OML/cmm/m/it/10.53937 j\OT1/cmr/m/n/10.53937 
+]$ \EU1/FandolSong-Regular(0)/m/n/10.53937 的 最 大 值。|  如 果 值 $\OML/cmm/m/it/10.5
+3937 e[] \OT1/cmr/m/n/10.53937 +
+ []
+
+
+Overfull \hbox (9.79076pt too wide) in paragraph at lines 384--385
+\OML/cmm/m/it/10.53937 M\OT1/cmr/m/n/10.53937 [\OML/cmm/m/it/10.53937 i \OMS/cm
+sy/m/n/10.53937 ^^@ \OT1/cmr/m/n/10.53937 1][\OML/cmm/m/it/10.53937 j\OT1/cmr/m
+/n/10.53937 ]$ \EU1/FandolSong-Regular(0)/m/n/10.53937 较 大，|  我 们 可 以 得 出 目 前 的
+ 一 对 匹 配 点 对 为 $\OML/cmm/m/it/10.53937 < p[]; p[] >$\EU1/FandolSong-Regular(0)/
+m/n/10.53937 ，|  并 令 $\OML/cmm/m/it/10.53937 M\OT1/cmr/m/n/10.53937 [\OML/cmm/m
+/it/10.53937 i\OT1/cmr/m/n/10.53937 ][\OML/cmm/m/it/10.53937 j\OT1/cmr/m/n/10.5
+3937 ] = \OML/cmm/m/it/10.53937 e[] \OT1/cmr/m/n/10.53937 +
+ []
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [19])
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [20]
 
 LaTeX Warning: Empty bibliography on input line 101.
 
@@ -3021,7 +3063,7 @@ LaTeX Warning: Empty bibliography on input line 101.
 
 (./tex/ack.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [15
+ <use  "figure/sjtubanner.png" > [21
 
 
 
@@ -3048,12 +3090,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51841 strings out of 493591
- 1030885 string characters out of 6143547
- 1389344 words of memory out of 5000000
- 54351 multiletter control sequences out of 15000+600000
- 27875 words of font info for 172 fonts, out of 8000000 for 9000
+ 51933 strings out of 493591
+ 1036094 string characters out of 6143547
+ 1391017 words of memory out of 5000000
+ 54446 multiletter control sequences out of 15000+600000
+ 30663 words of font info for 187 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 71i,18n,85p,10440b,3284s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,22n,85p,10440b,3284s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (21 pages).
+Output written on thesis.pdf (27 pages).
