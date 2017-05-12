@@ -29,37 +29,42 @@
 \label{sec:preprocess}
 
 \subsection{WGS84坐标系统转换至GCJ-02坐标系统}
-\label{sec:coord-transform}
+\label{subsec:coord-transform}
 WGS84（World Geodetic System1984）坐标系统是GPS数据所基于的坐标系统，这一坐标系是通过世界卫星观测站所检测到的地理坐标。这一坐标系并不能直接应用在中国国家的地图坐标显示中，因为中国国家会测局在地理信息系统中使用的是基于GCJ-02的坐标系统，这一坐标系统也称为火星坐标系统。如果直接将WGS84坐标数据应用于使用GCJ-02的地图显示接口，则会造成100米到700米范围内的显示误差。同理，用户使用GCJ-02地图点击获得的地理位置查询点也会在相似轨迹查询中因为与WGS84坐标系统的偏差因素造成查询结果的不准确性。在轨迹预处理最开始先将WGS84坐标数据根据已有的算法\footnotemark[1]参考转换成GCJ-02系统下的坐标
 \footnotetext[1]{https://github.com/googollee/eviltransform}
 \\
 
-\subsection{基于地理位置的轨迹简化方法}
-\label{sec:trajectory simplification}
-轨迹简化在本文中是比较重要的预处理过程。在保证轨迹数据可用性的同时也能压缩了原始轨迹数据的大小，可以在存储空间和搜索时间给予算法改善。在本文中，主要采用语义相关的轨迹简化算法，称为$TS$ $algorithm$（TS），它主要思路一条轨迹中重要的或具有特定语义的轨迹点从而进行压缩。TS轨迹简化算法既保证了轨迹的大致路线也保留了重要的特定轨迹点。基于轨迹点的相似轨迹查询用户大概率会使用一些在地理意义上重要的轨迹点，因此选择基于地理语义的轨迹压缩方法能够将轨迹简化结果和相似轨迹查询匹配使用。
 
-该算法\ref{algo:ts}主要分为四个过程：分段、段权值排序、点权值计算和点选择。由于本工作数据集只针对车载轨迹数据，则在第一步只用进行简单的分段操作而不用进行轨迹类型分类操作。而第二步根据设定参数求出每一段的权值并通过算法定义参数保留段轨迹语义。第三步计算每个数据点的权值并通过正则化决定每一段子轨迹内选择保留相对比例的数据点。最后选择符合算法条件的点作为简化结果返回。
-\\
+\subsection{轨迹数据简化}
+\label{subsec:trajectory simplification}
+轨迹数据预处理中，轨迹数据的简化（或压缩）是比较重要一步。轨迹数据简化主要是指在保证轨迹的可利用性与大致准确的同时减少轨迹的点数目，以达到轨迹数据的传输、处理和存储上减少开销的目的。在本文的应用场景中，我们首先采用\emph{Douglas}–\emph{Peucker}算法来完成我们的轨迹简化任务。该算法的主要思路在于将通过分而治之，将曲线轨迹表示成一系列点的方法，从而减少点的数目。如今GPS的数据采样通常较为频繁，因此在我们对轨迹处理的范围上来所，我们可以近似地将我们所运用的数据集中的轨迹看成是一条连续的曲线，通过\emph{Douglas}–\emph{Peucker}算法以及我们人为设定简化阈值，我们可以高效且合理地进行轨迹简化。
 
 \begin{algorithm}
 % \begin{algorithm}[H] % 强制定位
-\caption{轨迹简化（Trajectory Simplification）算法}
-\label{algo:ts}
+\caption{Douglas-Peucker算法}
+\label{algo:dp-ts}
 \begin{algorithmic}[1] %每行显示行号
-\Require 一条原始轨迹数据$Traj$, 简化后轨迹点数目$m$ % 输入
-\Ensure 一条简化后只有$m$个点的轨迹$Traj'$ % 输出
-
-\State $Traj' \gets \emptyset$
-\State $Seg[] \gets Segmentation(Traj)$ //将轨迹Traj分段
-\State DistributePoints(Seg[], m);	//求段权值并参数初始化
-\For{Each Segment $s$ in $Seg[]$}	
-	\State WeightPoints($s$)	//求点权值
-    \State $s'$ $\gets$ SelectPoints($s$)	//选择点组成新的轨迹段
-    \State $Traj'$ $\gets$ $Traj \cup s'$	//合并新轨迹段组成结果
-  \EndFor
+\Require 一条原始轨迹数据$Traj$, 简化阈值$\epsilon$ % 输入
+\Ensure 简化后的轨迹$Traj'$ % 输出
+\State $dis\_max \gets 0$;$index \gets 0$
+\For{$i = 1$ to $Traj.length-1$}
+	\State $temp\_dis \gets$ Traj[i]'s perpendicular Distance to Line(Traj[0], Traj[Traj.length])
+	\If{$temp\_dis > dis\_max$}
+		\State $dis\_max \gets temp\_dis$;$index \gets i$
+	\EndIf
+\EndFor
+\If{$dis\_max > \epsilon$}
+	\State half\_left $\gets Douglas$-$Peucker(Traj[0:index],\epsilon)$;
+	\State half\_right $\gets Douglas$-$Peucker(Traj[index:Traj.length],\epsilon)$;
+	\State $res \gets$ half\_left $\bigcup$ half\_right;
+	\Else
+	\State $res \gets \{Traj[0], Traj[Traj.length]\}$;
+\EndIf	
+\State \textbf{return} $res$;
 \end{algorithmic}
 \end{algorithm}
 
+算法\ref{algo:dp-ts}在首先连接轨迹首尾两点$Traj[0],Traj[Traj.length]$，遍历轨迹一遍得到离线段距离最大的点$Traj[index]$，计算该距离并与预先设定的阈值$\epsilon$比较。如果大于阈值$\epsilon$，则将轨迹以$Traj[index]$为中点分为两端，迭代重复上述工作；如果小于阈值$\epsilon$，则直接将线段段作为曲线的近似以做简化。当曲线完成上述任务，依次连接处理好的子线段，完成轨迹简化任务。
 
 \section{轨迹数据索引与获取}
 \label{sec:index}
