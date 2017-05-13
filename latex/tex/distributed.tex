@@ -54,14 +54,45 @@
 
 \section{分布式相似轨迹查询算法实现}
 \label{sec:distributed algo}
-在之前的工作描述中，我们对于相似轨迹查询的实现总会提及查询点集的数目相对较少这一前提。对于单机处理而言，如果将一整条轨迹的轨迹数据点作为输入或者查询点集过多，由于增长型k最近邻查询会对每一个查询点都进行$\lambda$-NN的搜索处理，因此整个相似轨迹的查询过程会显得相对缓慢。但有些时候，将一条轨迹作为相似轨迹查询的输入的确更简单且更人性化。在硬件设置对算法性能的约束下，借助基于地理位置点的轨迹简化方法，我们可以对前一章所涉及的相似轨迹查询方法通过加入\emph{Spark}分布式集群处理的手段，做到以一条轨迹为输入的相似轨迹查询操作。
+在之前的工作描述中，我们对于相似轨迹查询的实现总会提及查询点集的数目相对较少这一前提。对于单机处理而言，如果将一整条轨迹的轨迹数据点作为输入或者查询点集过多，由于增长型k最近邻查询会对每一个查询点都进行$\lambda$-NN的搜索处理，因此整个相似轨迹的查询过程会显得相对缓慢。但有些时候，将一条轨迹作为相似轨迹查询的输入的确更简单且更人性化。在硬件设置对算法性能的约束下，借助基于地理位置点的轨迹简化方法，我们可以对前一章所涉及的相似轨迹查询方法通过加入\emph{Spark}分布式集群处理的手段，做到以一条轨迹（或数量更多的查询点）为输入的相似轨迹查询操作。具体实现思路在于，通过基于地理位置点的轨迹简化方法将一条轨迹简化为一组数量相对于单机查询要多的查询点集；然后将查询点通过分布式集群操作分配给各个子节点来进行相对于各集群节点的相似轨迹查询操作，各个子节点通过访问HDFS获取轨迹数据和轨迹R树索引；最后将结果以轨迹为关键字，以相似度为权值进行求和，选择相似度和最高的k条轨迹作为查询结果。
 
 \subsection{基于地理位置点的轨迹简化方法}
 \label{subsec:trajectory simplification based on locations}
-轨迹简化在本文中是比较重要的预处理过程。在保证轨迹数据可用性的同时也能压缩了原始轨迹数据的大小，可以在存储空间和搜索时间给予算法改善。在本文中，主要采用语义相关的轨迹简化算法，称为$TS$ $algorithm$（TS），它主要思路一条轨迹中重要的或具有特定语义的轨迹点从而进行压缩。TS轨迹简化算法既保证了轨迹的大致路线也保留了重要的特定轨迹点。基于轨迹点的相似轨迹查询用户大概率会使用一些在地理意义上重要的轨迹点，因此选择基于地理语义的轨迹压缩方法能够将轨迹简化结果和相似轨迹查询匹配使用。
+前文描述的$Douglas$–$Peucker$轨迹简化算法主要是在保留大致形状信息的基础上对减少一些距离较近的轨迹点，从而做到轨迹简化。但对于一条轨迹而言，轨迹除了轨迹点数目这一关键字，其中一些轨迹点也具有一些隐藏的轨迹语义信息。在现实生活中，一些岔路口可能在一条轨迹中称为比较关键和重要点，或者某一个立交交通系统会成为路线中转的关键轨迹点，因此在做轨迹简化中应该尽可能地保留这些点。
 
-该算法\ref{algo:ts}主要分为四个过程：分段、段权值排序、点权值计算和点选择。由于本工作数据集只针对车载轨迹数据，则在第一步只用进行简单的分段操作而不用进行轨迹类型分类操作。而第二步根据设定参数求出每一段的权值并通过算法定义参数保留段轨迹语义。第三步计算每个数据点的权值并通过正则化决定每一段子轨迹内选择保留相对比例的数据点。最后选择符合算法条件的点作为简化结果返回。
-\\
+在本文中，主要采用基于地理位置点的轨迹简化算法，称为$TS$ $algorithm$（TS），借鉴语义的重要性，它主要思路是从一条轨迹中查找重要的或具有特定语义的轨迹点从而进行简化和压缩。TS轨迹简化算法既保证了轨迹的大致路线也保留了重要的特定轨迹点。基于轨迹点的相似轨迹查询用户大概率会使用一些在地理意义上重要的轨迹点，因此选择基于地理语义的轨迹压缩方法能够将轨迹简化结果和相似轨迹查询匹配使用。\emph{TS}轨迹简化方法中，每个轨迹点的前进角度大小（\emph{heading direction degree}）和其余相邻轨迹点之间的距离作为衡量该轨迹点权值的主要因素。通过正则化垂直距离对轨迹点权值的影响，\emph{TS}轨迹简化方法在效果上要优于$Douglas$–$Peucker$算法。
+
+\theoremstyle{definition}
+\begin{definition}
+	\textbf{前进角度}（\emph{Heading direction}）$h$以正北方向为基准，表示一个移动物体之后的行进方向，其中$0^\circ\leq h < 360^\circ$
+\end{definition}
+
+\theoremstyle{definition}
+\begin{definition}
+	\textbf{近邻前进角度改变量}（\emph{Neighbor Heading Change}）$\alpha$是对于某一个轨迹点$p_i$而言，其前进角度$p_{i}.h$和之前一点$p_{i-1}$的前进角度$p_{i-1}.h$的差值，即$p_{i}.h-p_{i-1}.h$，其中其中$-180^\circ < \alpha <180^\circ$
+\end{definition}
+
+\theoremstyle{definition}
+\begin{definition}
+	\textbf{前进角度积累量}（\emph{Accumulated Heading Change}）$\beta$表示轨迹点$p_i$前后范围$\phi$内的近邻前进角度改变量之和，即$p_{i}.\beta=\sum_{k=i-\phi}^{i+\phi}p_{k}.\alpha$。其中的$\phi$为认为预先定义好的整数阈值。
+\end{definition}
+
+\theoremstyle{definition}
+\begin{definition}
+	\textbf{前进量改变值}（\emph{Heading Change}）$\gamma$用近邻前进角度改变量$\alpha$和前进角度积累量$\beta$定义，前进量改变值为后面两者绝对值之和，即有$p.\gamma=|p.\alpha|+|p.\beta|$
+\end{definition}
+
+\theoremstyle{definition}
+\begin{definition}
+	\textbf{近邻距离}（\emph{Neighbor Distance}）是指一个轨迹点$p_i$到前一个轨迹点$p_{i-1}$和后一个轨迹点$p_{i+1}$（如果存在的话）的欧式距离之和，我们用符号$d$代表这一距离和，即$p_{i}.d=Dist_e(p_{i-1},p_{i})+Dist_e(p_{i},p_{i+1})$，其中，$Dist_e$在前文中已有定义，不再赘述。
+\end{definition}
+
+\theoremstyle{definition}
+\begin{definition}
+	\textbf{轨迹点权值}（\emph{Weight}）表明轨迹点$p$的在轨迹简化中重要性大小，通过前进量改变值和近邻距离定义，即$p.\omega = p.d * p.\gamma$。
+\end{definition}
+
+根据上述定义，我们可以设计出基于地理位置点的轨迹点简化算法\ref{algo:ts}。该算法主要分为四个过程：分段、段权值排序、点权值计算和点选择。由于本工作数据集只针对车载轨迹数据，则在第一步只用进行简单的分段操作而不用进行轨迹类型分类操作。而第二步根据设定参数求出每一段的权值并通过算法定义参数保留段轨迹语义。第三步计算每个数据点的权值并通过正则化决定每一段子轨迹内选择保留相对比例的数据点。最后选择符合算法条件的点作为简化结果返回。
 
 \begin{algorithm}
 % \begin{algorithm}[H] % 强制定位
@@ -70,7 +101,6 @@
 \begin{algorithmic}[1] %每行显示行号
 \Require 一条原始轨迹数据$Traj$, 简化后轨迹点数目$m$ % 输入
 \Ensure 一条简化后只有$m$个点的轨迹$Traj'$ % 输出
-
 \State $Traj' \gets \emptyset$
 \State $Seg[] \gets Segmentation(Traj)$ //将轨迹Traj分段
 \State DistributePoints(Seg[], m);	//求段权值并参数初始化
@@ -82,5 +112,47 @@
 \end{algorithmic}
 \end{algorithm}
 
+图\ref{fig:4-3}展示了一条原始数据轨迹$Traj$通过\emph{TS}轨迹简化算法后的结果。
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{chapter04/tsalgo.png}
+  \bicaption[fig:4-3]{这里将出现在插图索引中}{\emph{TS}算法结果样例}{Fig}{An illustration of Trajectory Simplification Algorithm}
+\end{figure}
+
 \subsection{Spark分布式相似轨迹查询}
-\label{subsec:dis algo similar traj}
+\label{subsec:distributed similar}
+\emph{Spark}集群环境使得我们可以将代码分发给各个工作节点使他们处理对数据集相同的操作，这为分布式搜索相似轨迹提供了实现的基础。单机实现相似轨迹搜索为保证运行性能，给定的输入集查询点需要保证数量在某一程度上相对较小。但对于分布式处理而言，这一约束可以通过集群集计算处理予以取消。给定一条原始轨迹$Traj$，我们可以先通过基于地理位置点的轨迹简化在保留轨迹形状和轨迹中的重要位置点的同时，一定程度上减少轨迹数目。事实上，如果集群设备性能较好，我们可以略去集群计算相似轨迹前对轨迹简化这一步骤。由于本文实验设备限制，通过在集群处理前的轨迹简化能在保证结果正确性的过程中，稳定处理性能。因此，我们将轨迹简化作为集群计算前的预处理过程。
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{chapter04/distributed.png}
+  \bicaption[fig:4-4]{这里将出现在插图索引中}{Spark分布式相似轨迹查询}{Fig}{Spark distributed search similar trajectories}
+\end{figure}
+
+图\ref{fig:4-4}为\emph{MapReduce}的大致处理框架，我们根据这一框架设计出分布式查询相似轨迹的大致算法。在算法中，假设我们已经完成对原始轨迹的简化得到已处理好的简化轨迹$Traj'$。首先我们通过\emph{Spark}内的\emph{partition}函数将输入数据分割，并分发给每一个工作节点（\emph{Worker Node}）。对于每一个工作节点而言，他们都有了输入数据的一部分轨迹点。对于每一个工作节点而言，他们都可以将自己所拥有的部分轨迹点作为相似轨迹查询的查询点集，由于工作节点通过设置可以直接访问\emph{HDFS}上已存储的轨迹数据，我们通过主节点（\emph{Master Node}）将增长型k最近邻查询代码分发给每一个工作节点并予以上运行。每个工作节点将针对各自输入查询点集所得出的k条最相似轨迹及其对应的相似度大小作为输出。通过对轨迹作为关键字合并中间查询结果，对相似度求和按相似度大小降序排列轨迹，再从中选取k条轨迹作为最终的结果。
+
+实现细节如算法\ref{algo:distributed sim}所示。其中在运行过程中初始化\emph{Spark}运行所需的上下文变量并设置主节点信息。在\emph{map}阶段对查询点集进行查询搜索，在\emph{reduce}阶段进行关键字合并。
+
+\begin{algorithm}
+% \begin{algorithm}[H] % 强制定位
+\caption{分布式相似轨迹查询算法}
+\label{algo:distributed sim}
+\begin{algorithmic}[1] %每行显示行号
+\Require 相似轨迹查询数目$k$,一条原始轨迹数据$Traj$% 输入
+\Ensure $k$条最相似轨迹$k$-$Trajs$ % 输出
+\State $Traj' \gets TS(Traj)$;
+\State Initialise \emph{Spark} Context $sc$ and set Master information;
+\State $RDD \gets sc.parallelize(Traj', partitionNumber)$;
+\State $res \gets RDD.map(iknn) $ $\qquad$//工作节点分布式进行查询处理
+\State $\qquad\quad.flatMap(lambda x$:$x)$ $\qquad$//查询结果平铺成为一维列表或数组
+\State $\qquad\quad.reduceByKey(lambda x,y$:$x+y)$$\qquad$//以轨迹为关键字做相似度求和
+\State $\quad\qquad.sortBy(lambda x$:$x[1], descending)$$\qquad$//降序排列
+\State $\quad\qquad.collect()$;
+\State \textbf{return} $res$; 
+\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{多请求分布式相似轨迹查询}
+\label{subsec:distributed multiple}

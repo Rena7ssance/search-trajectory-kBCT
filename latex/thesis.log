@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  12 MAY 2017 21:02
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  13 MAY 2017 14:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3081,15 +3081,21 @@ File: figure/chapter04/standalone.png Graphic file (type QTm)
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" >
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 63--65
-
- []
-
-)
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" > [23]
+File: figure/chapter04/tsalgo.png Graphic file (type QTm)
+
+<use  "figure/chapter04/tsalgo.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" > [24]
+File: figure/chapter04/distributed.png Graphic file (type QTm)
+
+<use  "figure/chapter04/distributed.png" >
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" >
+[25])
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [26]
 
 LaTeX Warning: Empty bibliography on input line 102.
 
@@ -3097,7 +3103,7 @@ LaTeX Warning: Empty bibliography on input line 102.
 
 (./tex/ack.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [25
+ <use  "figure/sjtubanner.png" > [27
 
 
 
@@ -3125,12 +3131,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51979 strings out of 493591
- 1037590 string characters out of 6143547
- 1395282 words of memory out of 5000000
- 54473 multiletter control sequences out of 15000+600000
- 30663 words of font info for 187 fonts, out of 8000000 for 9000
+ 51988 strings out of 493591
+ 1037832 string characters out of 6143547
+ 1395450 words of memory out of 5000000
+ 54480 multiletter control sequences out of 15000+600000
+ 30671 words of font info for 188 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  71i,22n,85p,10440b,3284s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (32 pages).
+Output written on thesis.pdf (34 pages).

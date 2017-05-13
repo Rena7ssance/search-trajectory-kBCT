@@ -539,6 +539,7 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT figure/sjtubanner.png
 INPUT thesis.toc
 INPUT thesis.toc
+INPUT figure/sjtubanner.png
 OUTPUT thesis.toc
 INPUT figure/sjtubanner.png
 OUTPUT tex/introduction.aux
@@ -590,6 +591,13 @@ INPUT tex/distributed.tex
 INPUT tex/distributed.tex
 INPUT figure/sjtubanner.png
 INPUT figure/chapter04/clustermanager.png
+INPUT figure/chapter04/standalone.png
+INPUT figure/sjtubanner.png
+INPUT figure/sjtubanner.png
+INPUT figure/chapter04/tsalgo.png
+INPUT figure/sjtubanner.png
+INPUT figure/chapter04/distributed.png
+INPUT figure/sjtubanner.png
 INPUT figure/sjtubanner.png
 OUTPUT tex/ack.aux
 INPUT tex/ack.tex
