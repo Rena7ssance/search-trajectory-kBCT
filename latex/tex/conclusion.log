@@ -1,0 +1,28 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.5.2)  14 MAY 2017 12:04
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**conclusion.tex
+(./conclusion.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+./conclusion.tex:7: Undefined control sequence.
+l.7 \chapter
+            {结论}
+? 
+./conclusion.tex:7: Emergency stop.
+l.7 \chapter
+            {结论}
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 5 strings out of 493014
+ 139 string characters out of 6133352
+ 53601 words of memory out of 5000000
+ 3648 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 5i,0n,1p,69b,8s stack positions out of 5000i,500n,10000p,200000b,80000s
+./conclusion.tex:7:  ==> Fatal error occurred, no output PDF file produced!

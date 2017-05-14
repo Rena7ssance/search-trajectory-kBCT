@@ -33,4 +33,10 @@
 \contentsline {subsection}{\numberline {4.2.1}基于地理位置点的轨迹简化方法}{23}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Spark分布式相似轨迹查询}{25}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}多请求分布式相似轨迹查询}{26}{subsection.4.2.3}
-\contentsline {chapter}{致\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}谢}{27}{appendix*.4}
+\contentsline {section}{\numberline {4.3}本章小结}{26}{section.4.3}
+\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}实验结果}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}xxx}{27}{section.5.1}
+\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}结论}{28}{chapter.6}
+\contentsline {section}{\numberline {6.1}设计思路总结}{28}{section.6.1}
+\contentsline {section}{\numberline {6.2}未来工作展望}{28}{section.6.2}
+\contentsline {chapter}{致\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}谢}{29}{appendix*.4}

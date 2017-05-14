@@ -141,18 +141,23 @@
 \begin{algorithmic}[1] %每行显示行号
 \Require 相似轨迹查询数目$k$,一条原始轨迹数据$Traj$% 输入
 \Ensure $k$条最相似轨迹$k$-$Trajs$ % 输出
-\State $Traj' \gets TS(Traj)$;
+\State $Traj' \gets TS(Traj)$; $\qquad$//简化轨迹
 \State Initialise \emph{Spark} Context $sc$ and set Master information;
 \State $RDD \gets sc.parallelize(Traj', partitionNumber)$;
-\State $res \gets RDD.map(iknn) $ $\qquad$//工作节点分布式进行查询处理
-\State $\qquad\quad.flatMap(lambda x$:$x)$ $\qquad$//查询结果平铺成为一维列表或数组
-\State $\qquad\quad.reduceByKey(lambda x,y$:$x+y)$$\qquad$//以轨迹为关键字做相似度求和
-\State $\quad\qquad.sortBy(lambda x$:$x[1], descending)$$\qquad$//降序排列
+\State $k$-$Trajs$ $\gets RDD.map(iknn) $ $\qquad$//工作节点分布式进行查询处理
+\State $\qquad\quad.flatMap(lambda\quad x$:$x)$ $\qquad$//查询结果平铺成为一维列表或数组
+\State $\qquad\quad.reduceByKey(lambda\quad x,y$:$x+y)$$\qquad$//以轨迹为关键字做相似度求和
+\State $\quad\qquad.sortBy(lambda\quad x$:$x[1], descending)$$\qquad$//降序排列
 \State $\quad\qquad.collect()$;
-\State \textbf{return} $res$; 
+\State \textbf{return} $k$-$Trajs$; 
 \end{algorithmic}
 \end{algorithm}
 
 
 \subsection{多请求分布式相似轨迹查询}
 \label{subsec:distributed multiple}
+从工业应用角度，多用户同时进行相似轨迹处理时，可以针对对多请求的分布式相似轨迹查询处理。将请求数据集根据\emph{Spark}环境默认的分割方法或自定义的分割方法，将多请求分割成多个子集，然后分配个集群中的子节点，让他们各自处理处理一部分请求。在实际生活中，作为一个交付使用的应用，在某个时段可能有多个用户请求发送给服务器端，在配置有集群环境的情况下，可以实现对请求的分布式处理，具体思路类似于上文分布式相似轨迹查询，不予以赘述。
+
+\section{本章小结}
+\label{sec:distributed-conclusion}
+相似轨迹查询这一研究方法属于轨迹数据挖掘其中的分支。而随着如今GPS技术的发展和车载数据的激增，轨迹数据挖掘的数据规模通常较大，因此在处理轨迹数据过程中，单机本地操作或许无法满足轨迹挖掘的特定需求。因此，我们可以通过分布式集群处理的方法来完成大数据轨迹数据挖掘。分布式如今发展较为成熟，为我们提供了许多适应于不同应用的大数据分布式处理框架。根据\emph{MapReduce}的编程模型，我们自定义对输入、中间过程和输出的处理方法，借助分布式框架\emph{Spark}提供的接口方法能够较好的完成本文的相似轨迹查询在分布式上的实现。
