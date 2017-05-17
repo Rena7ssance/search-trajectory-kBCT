@@ -16,5 +16,987 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \sortlist[entry]{none/global/}
+    \entry{zheng2015trajectory}{article}{}
+      \name{author}{1}{}{%
+        {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{61a21d8aba7853cbf9f3f099c48b174f}
+      \strng{fullhash}{61a21d8aba7853cbf9f3f099c48b174f}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Transactions on Intelligent Systems and Technology (TIST)}
+      \field{number}{3}
+      \field{title}{Trajectory data mining: an overview}
+      \field{usera}{J}
+      \field{usere}{Zheng, Yu}
+      \field{userf}{Zheng, Yu}
+      \field{volume}{6}
+      \field{year}{2015}
+      \field{pages}{29}
+      \range{pages}{1}
+      \keyw{zheng2015trajectory}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'zheng2015trajectory'}
+    \endentry
+    \entry{zheng2011computing}{book}{}
+      \name{author}{2}{}{%
+        {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=1be3b9bc3df92cb45255893cafffcc48}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={Xiaofang},
+           given_i={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{63f5e5758c21e1f3f62fe08c6acef8db}
+      \strng{fullhash}{63f5e5758c21e1f3f62fe08c6acef8db}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Computing with spatial trajectories}
+      \field{usera}{M}
+      \field{usere}{Zheng, Yu and Zhou, Xiaofang}
+      \field{userf}{Zheng, Yu and Zhou, Xiaofang}
+      \field{year}{2011}
+      \keyw{zheng2011computing}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'zheng2011computing'}
+    \endentry
+    \entry{agrawal1993efficient}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4b876a40aac16cd3d6b0278b1154b9da}{%
+           family={Agrawal},
+           family_i={A\bibinitperiod},
+           given={Rakesh},
+           given_i={R\bibinitperiod}}}%
+        {{hash=976e034dd29cfc47640ae45c16d21a9d}{%
+           family={Faloutsos},
+           family_i={F\bibinitperiod},
+           given={Christos},
+           given_i={C\bibinitperiod}}}%
+        {{hash=64a439d13c6d223424a43f495d60cd29}{%
+           family={Swami},
+           family_i={S\bibinitperiod},
+           given={Arun},
+           given_i={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f61d2b5ad0e7d981b64de6035e9b5fa3}
+      \strng{fullhash}{f61d2b5ad0e7d981b64de6035e9b5fa3}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Foundations of data organization and algorithms}
+      \field{title}{Efficient similarity search in sequence databases}
+      \field{usera}{J}
+      \field{usere}{Agrawal, Rakesh and Faloutsos, Christos and Swami, Arun}
+      \field{userf}{Agrawal, Rakesh and Faloutsos, Christos and Swami, Arun}
+      \field{year}{1993}
+      \field{pages}{69\bibrangedash 84}
+      \range{pages}{16}
+      \keyw{agrawal1993efficient}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'agrawal1993efficient'}
+    \endentry
+    \entry{chan1999efficient}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=ac5d57b363374b533861b6b48ea01535}{%
+           family={Chan},
+           family_i={C\bibinitperiod},
+           given={Kin-Pong},
+           given_i={K\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=641f60b65677c0901ef1a5bdd6d2e9f8}{%
+           family={Fu},
+           family_i={F\bibinitperiod},
+           given={Ada\bibnamedelima Wai-Chee},
+           given_i={A\bibinitperiod\bibinitdelim W\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{0f767984d19f15587b323f5935a68451}
+      \strng{fullhash}{0f767984d19f15587b323f5935a68451}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Data Engineering, 1999. Proceedings., 15th International Conference on}
+      \field{title}{Efficient time series matching by wavelets}
+      \field{usera}{C}
+      \field{usere}{Chan, Kin-Pong and Fu, Ada Wai-Chee}
+      \field{userf}{Chan, Kin-Pong and Fu, Ada Wai-Chee}
+      \field{year}{1999}
+      \field{pages}{126\bibrangedash 133}
+      \range{pages}{8}
+      \keyw{chan1999efficient}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'chan1999efficient'}
+    \endentry
+    \entry{bernad1996finding}{article}{}
+      \name{author}{1}{}{%
+        {{hash=73161d4bf59aa6939f758e038a9c0924}{%
+           family={Bernad},
+           family_i={B\bibinitperiod},
+           given={DJ},
+           given_i={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {AAAI Press/The MIT Press}%
+      }
+      \strng{namehash}{73161d4bf59aa6939f758e038a9c0924}
+      \strng{fullhash}{73161d4bf59aa6939f758e038a9c0924}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in knowledge discovery and data mining}
+      \field{title}{Finding patterns in time series: a dynamic programming approach}
+      \field{usera}{J}
+      \field{usere}{Bernad, DJ}
+      \field{userf}{Bernad, DJ}
+      \field{year}{1996}
+      \keyw{bernad1996finding}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'bernad1996finding'}
+    \endentry
+    \entry{yanagisawa2003shape}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=64d64f69dc6a78820c865ab98ba006c4}{%
+           family={Yanagisawa},
+           family_i={Y\bibinitperiod},
+           given={Yutaka},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=aa88ce92f08593e1e40aff08b04b9faa}{%
+           family={Akahani},
+           family_i={A\bibinitperiod},
+           given={Jun-ichi},
+           given_i={J\bibinithyphendelim i\bibinitperiod}}}%
+        {{hash=4be022ec31df4a805948e5284808e93b}{%
+           family={Satoh},
+           family_i={S\bibinitperiod},
+           given={Tetsuji},
+           given_i={T\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{d00acd0d171275fac311050bd517a974}
+      \strng{fullhash}{d00acd0d171275fac311050bd517a974}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Mobile Data Management}
+      \field{title}{Shape-based similarity query for trajectory of mobile objects}
+      \field{usera}{C}
+      \field{usere}{Yanagisawa, Yutaka and Akahani, Jun-ichi and Satoh, Tetsuji}
+      \field{userf}{Yanagisawa, Yutaka and Akahani, Jun-ichi and Satoh, Tetsuji}
+      \field{year}{2003}
+      \field{pages}{63\bibrangedash 77}
+      \range{pages}{15}
+      \keyw{yanagisawa2003shape}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'yanagisawa2003shape'}
+    \endentry
+    \entry{cai2004indexing}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=8801decc98cb1c624cafede572ada09d}{%
+           family={Cai},
+           family_i={C\bibinitperiod},
+           given={Yuhan},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=3f272de2725c1e7228c72b16c10b83a8}{%
+           family={Ng},
+           family_i={N\bibinitperiod},
+           given={Raymond},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{a0eecf5dfbf123063757f6ca0d98940f}
+      \strng{fullhash}{a0eecf5dfbf123063757f6ca0d98940f}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2004 ACM SIGMOD international conference on Management of data}
+      \field{title}{Indexing spatio-temporal trajectories with Chebyshev polynomials}
+      \field{usera}{C}
+      \field{usere}{Cai, Yuhan and Ng, Raymond}
+      \field{userf}{Cai, Yuhan and Ng, Raymond}
+      \field{year}{2004}
+      \field{pages}{599\bibrangedash 610}
+      \range{pages}{12}
+      \keyw{cai2004indexing}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'cai2004indexing'}
+    \endentry
+    \entry{vlachos2004rotation}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=3a4c83e1953d7600ad341dae27e9b88a}{%
+           family={Vlachos},
+           family_i={V\bibinitperiod},
+           given={Michail},
+           given_i={M\bibinitperiod}}}%
+        {{hash=a3b0e05489b14b7e94e12640d41a9e3b}{%
+           family={Gunopulos},
+           family_i={G\bibinitperiod},
+           given={Dimitrios},
+           given_i={D\bibinitperiod}}}%
+        {{hash=bb470dbf339eafcd3edd40a0cad18c87}{%
+           family={Das},
+           family_i={D\bibinitperiod},
+           given={Gautam},
+           given_i={G\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{746ef6bf67a23190ce2db7020615021b}
+      \strng{fullhash}{746ef6bf67a23190ce2db7020615021b}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the tenth ACM SIGKDD international conference on Knowledge discovery and data mining}
+      \field{title}{Rotation invariant distance measures for trajectories}
+      \field{usera}{C}
+      \field{usere}{Vlachos, Michail and Gunopulos, Dimitrios and Das, Gautam}
+      \field{userf}{Vlachos, Michail and Gunopulos, Dimitrios and Das, Gautam}
+      \field{year}{2004}
+      \field{pages}{707\bibrangedash 712}
+      \range{pages}{6}
+      \keyw{vlachos2004rotation}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'vlachos2004rotation'}
+    \endentry
+    \entry{sakurai2005ftw}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=8ad08195319f922fa1fd18ae85c5b68e}{%
+           family={Sakurai},
+           family_i={S\bibinitperiod},
+           given={Yasushi},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=9b2a4e7fa8f37e7f0411d37a2acc017f}{%
+           family={Yoshikawa},
+           family_i={Y\bibinitperiod},
+           given={Masatoshi},
+           given_i={M\bibinitperiod}}}%
+        {{hash=976e034dd29cfc47640ae45c16d21a9d}{%
+           family={Faloutsos},
+           family_i={F\bibinitperiod},
+           given={Christos},
+           given_i={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{4636230a32069bdc6c2e03b734b3b341}
+      \strng{fullhash}{4636230a32069bdc6c2e03b734b3b341}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the twenty-fourth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems}
+      \field{title}{FTW: fast similarity search under the time warping distance}
+      \field{usera}{C}
+      \field{usere}{Sakurai, Yasushi and Yoshikawa, Masatoshi and Faloutsos, Christos}
+      \field{userf}{Sakurai, Yasushi and Yoshikawa, Masatoshi and Faloutsos, Christos}
+      \field{year}{2005}
+      \field{pages}{326\bibrangedash 337}
+      \range{pages}{12}
+      \keyw{sakurai2005ftw}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'sakurai2005ftw'}
+    \endentry
+    \entry{vlachos2002discovering}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=3a4c83e1953d7600ad341dae27e9b88a}{%
+           family={Vlachos},
+           family_i={V\bibinitperiod},
+           given={Michail},
+           given_i={M\bibinitperiod}}}%
+        {{hash=0967eea48899f9efc7dd70b6dcfa5376}{%
+           family={Kollios},
+           family_i={K\bibinitperiod},
+           given={George},
+           given_i={G\bibinitperiod}}}%
+        {{hash=a3b0e05489b14b7e94e12640d41a9e3b}{%
+           family={Gunopulos},
+           family_i={G\bibinitperiod},
+           given={Dimitrios},
+           given_i={D\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{214fb9042114f57f84c89b77ee0a4e69}
+      \strng{fullhash}{214fb9042114f57f84c89b77ee0a4e69}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Data Engineering, 2002. Proceedings. 18th International Conference on}
+      \field{title}{Discovering similar multidimensional trajectories}
+      \field{usera}{C}
+      \field{usere}{Vlachos, Michail and Kollios, George and Gunopulos, Dimitrios}
+      \field{userf}{Vlachos, Michail and Kollios, George and Gunopulos, Dimitrios}
+      \field{year}{2002}
+      \field{pages}{673\bibrangedash 684}
+      \range{pages}{12}
+      \keyw{vlachos2002discovering}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'vlachos2002discovering'}
+    \endentry
+    \entry{chen2005robust}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=046842e5933d7131df18c28d8bce94ff}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Lei},
+           given_i={L\bibinitperiod}}}%
+        {{hash=a47466df4d35db988094d82878fce35c}{%
+           family={Özsu},
+           family_i={Ö\bibinitperiod},
+           given={M\bibnamedelima Tamer},
+           given_i={M\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=7abc02670c7185a94d95faee27c727a9}{%
+           family={Oria},
+           family_i={O\bibinitperiod},
+           given={Vincent},
+           given_i={V\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{ae60516ace2049ca72ebe3bb634f1c17}
+      \strng{fullhash}{ae60516ace2049ca72ebe3bb634f1c17}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2005 ACM SIGMOD international conference on Management of data}
+      \field{title}{Robust and fast similarity search for moving object trajectories}
+      \field{usera}{C}
+      \field{usere}{Chen, Lei and Özsu, M Tamer and Oria, Vincent}
+      \field{userf}{Chen, Lei and Özsu, M Tamer and Oria, Vincent}
+      \field{year}{2005}
+      \field{pages}{491\bibrangedash 502}
+      \range{pages}{12}
+      \keyw{chen2005robust}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'chen2005robust'}
+    \endentry
+    \entry{chen2004marriage}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=046842e5933d7131df18c28d8bce94ff}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Lei},
+           given_i={L\bibinitperiod}}}%
+        {{hash=3f272de2725c1e7228c72b16c10b83a8}{%
+           family={Ng},
+           family_i={N\bibinitperiod},
+           given={Raymond},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {VLDB Endowment}%
+      }
+      \strng{namehash}{48f125598af4b38103b595ddd7a19783}
+      \strng{fullhash}{48f125598af4b38103b595ddd7a19783}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Thirtieth international conference on Very large data bases-Volume 30}
+      \field{title}{On the marriage of lp-norms and edit distance}
+      \field{usera}{C}
+      \field{usere}{Chen, Lei and Ng, Raymond}
+      \field{userf}{Chen, Lei and Ng, Raymond}
+      \field{year}{2004}
+      \field{pages}{792\bibrangedash 803}
+      \range{pages}{12}
+      \keyw{chen2004marriage}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'chen2004marriage'}
+    \endentry
+    \entry{frentzos2007index}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=57a8ea7f2d5dd36b759fbc51bc0c60f5}{%
+           family={Frentzos},
+           family_i={F\bibinitperiod},
+           given={Elias},
+           given_i={E\bibinitperiod}}}%
+        {{hash=c2ce235bfccb021bc5790fbcf1fb4941}{%
+           family={Gratsias},
+           family_i={G\bibinitperiod},
+           given={Kostas},
+           given_i={K\bibinitperiod}}}%
+        {{hash=d7855861b77ed6e98f54ca6e9ace4214}{%
+           family={Theodoridis},
+           family_i={T\bibinitperiod},
+           given={Yannis},
+           given_i={Y\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6b5d2c24e151d36f71e220d6d7b71c97}
+      \strng{fullhash}{6b5d2c24e151d36f71e220d6d7b71c97}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Data Engineering, 2007. ICDE 2007. IEEE 23rd International Conference on}
+      \field{title}{Index-based most similar trajectory search}
+      \field{usera}{C}
+      \field{usere}{Frentzos, Elias and Gratsias, Kostas and Theodoridis, Yannis}
+      \field{userf}{Frentzos, Elias and Gratsias, Kostas and Theodoridis, Yannis}
+      \field{year}{2007}
+      \field{pages}{816\bibrangedash 825}
+      \range{pages}{10}
+      \keyw{frentzos2007index}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'frentzos2007index'}
+    \endentry
+    \entry{sankararaman2013model}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=1ecd429441bf7d7e88cdc52acc637e25}{%
+           family={Sankararaman},
+           family_i={S\bibinitperiod},
+           given={Swaminathan},
+           given_i={S\bibinitperiod}}}%
+        {{hash=ea5f0c57a805cea934d528b718f1b996}{%
+           family={Agarwal},
+           family_i={A\bibinitperiod},
+           given={Pankaj\bibnamedelima K},
+           given_i={P\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=8eaebc18bc78b7467f7ac676bb3a272f}{%
+           family={M{ø}lhave},
+           family_i={M\bibinitperiod},
+           given={Thomas},
+           given_i={T\bibinitperiod}}}%
+        {{hash=58b27e155d36d3a188d3ecf4189dd35c}{%
+           family={Pan},
+           family_i={P\bibinitperiod},
+           given={Jiangwei},
+           given_i={J\bibinitperiod}}}%
+        {{hash=50bab407c3cf371d876de44fb06f0442}{%
+           family={Boedihardjo},
+           family_i={B\bibinitperiod},
+           given={Arnold\bibnamedelima P},
+           given_i={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{d50bbd016b787a50f6568664ae4d42d9}
+      \strng{fullhash}{cad1df14a62dd148a51da329fb04d477}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 21st ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems}
+      \field{title}{Model-driven matching and segmentation of trajectories}
+      \field{usera}{C}
+      \field{usere}{Sankararaman, Swaminathan and Agarwal, Pankaj K and M{ø}lhave, Thomas and Pan, Jiangwei and Boedihardjo, Arnold P}
+      \field{userf}{Sankararaman, Swaminathan and Agarwal, Pankaj K and M{ø}lhave, Thomas and Pan, Jiangwei and Boedihardjo, Arnold P}
+      \field{year}{2013}
+      \field{pages}{234\bibrangedash 243}
+      \range{pages}{10}
+      \keyw{sankararaman2013model}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'sankararaman2013model'}
+    \endentry
+    \entry{morse2007efficient}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=81e0c96eafc902b0a79304b6a773c080}{%
+           family={Morse},
+           family_i={M\bibinitperiod},
+           given={Michael\bibnamedelima D},
+           given_i={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=8c97756c7be130e476b752bf27928d5d}{%
+           family={Patel},
+           family_i={P\bibinitperiod},
+           given={Jignesh\bibnamedelima M},
+           given_i={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{ba0520ad416e32ca64194b1266f34544}
+      \strng{fullhash}{ba0520ad416e32ca64194b1266f34544}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2007 ACM SIGMOD international conference on Management of data}
+      \field{title}{An efficient and accurate method for evaluating time series similarity}
+      \field{usera}{C}
+      \field{usere}{Morse, Michael D and Patel, Jignesh M}
+      \field{userf}{Morse, Michael D and Patel, Jignesh M}
+      \field{year}{2007}
+      \field{pages}{569\bibrangedash 580}
+      \range{pages}{12}
+      \keyw{morse2007efficient}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'morse2007efficient'}
+    \endentry
+    \entry{flasklibrary}{misc}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Website}
+      \field{note}{\url{http://werkzeug.pocoo.org/docs/0.12/} \url{http://jinja.pocoo.org/docs/2.9/}}
+      \field{title}{Jinja2 and WSGI}
+      \keyw{flasklibrary,\url{http://werkzeug.pocoo.org/docs/0.12/} \url{http://jinja.pocoo.org/docs/2.9/}}
+    \endentry
+    \entry{dean2008mapreduce}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4aecfb0cc2e1e3b7899129fa2a94e2b8}{%
+           family={Dean},
+           family_i={D\bibinitperiod},
+           given={Jeffrey},
+           given_i={J\bibinitperiod}}}%
+        {{hash=193bcec5240237591ad8fb697869f013}{%
+           family={Ghemawat},
+           family_i={G\bibinitperiod},
+           given={Sanjay},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{59b423e9fed33260f87a089f738c1beb}
+      \strng{fullhash}{59b423e9fed33260f87a089f738c1beb}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the ACM}
+      \field{number}{1}
+      \field{title}{MapReduce: simplified data processing on large clusters}
+      \field{usera}{J}
+      \field{usere}{Dean, Jeffrey and Ghemawat, Sanjay}
+      \field{userf}{Dean, Jeffrey and Ghemawat, Sanjay}
+      \field{volume}{51}
+      \field{year}{2008}
+      \field{pages}{107\bibrangedash 113}
+      \range{pages}{7}
+      \keyw{dean2008mapreduce}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'dean2008mapreduce'}
+    \endentry
+    \entry{zaharia2010spark}{article}{}
+      \name{author}{5}{}{%
+        {{hash=00dc518b94dfa6349c86e70661a1a5ef}{%
+           family={Zaharia},
+           family_i={Z\bibinitperiod},
+           given={Matei},
+           given_i={M\bibinitperiod}}}%
+        {{hash=c5a8ae0d5f065be17aae440a9eb11c79}{%
+           family={Chowdhury},
+           family_i={C\bibinitperiod},
+           given={Mosharaf},
+           given_i={M\bibinitperiod}}}%
+        {{hash=89363e5fed5b1875eb4a68e742544d13}{%
+           family={Franklin},
+           family_i={F\bibinitperiod},
+           given={Michael\bibnamedelima J},
+           given_i={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=8d2fd528d2484047352789c731e250a5}{%
+           family={Shenker},
+           family_i={S\bibinitperiod},
+           given={Scott},
+           given_i={S\bibinitperiod}}}%
+        {{hash=51d9ef26181e2e8a9dc546b401e0bb26}{%
+           family={Stoica},
+           family_i={S\bibinitperiod},
+           given={Ion},
+           given_i={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{537a21dc029a2669abb38468c0e2d1c8}
+      \strng{fullhash}{8234a7d257751a1899f74d65122819de}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{HotCloud}
+      \field{number}{10-10}
+      \field{title}{Spark: Cluster Computing with Working Sets.}
+      \field{usera}{J}
+      \field{usere}{Zaharia, Matei and Chowdhury, Mosharaf and Franklin, Michael J and Shenker, Scott and Stoica, Ion}
+      \field{userf}{Zaharia, Matei and Chowdhury, Mosharaf and Franklin, Michael J and Shenker, Scott and Stoica, Ion}
+      \field{volume}{10}
+      \field{year}{2010}
+      \field{pages}{95}
+      \range{pages}{1}
+      \keyw{zaharia2010spark}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'zaharia2010spark'}
+    \endentry
+    \entry{visvalingam1990douglas}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=05a1fd66648f55e09acdf35954b07114}{%
+           family={Visvalingam},
+           family_i={V\bibinitperiod},
+           given={Mahes},
+           given_i={M\bibinitperiod}}}%
+        {{hash=d8ac1af37623aeb4ca5a35f784b034a5}{%
+           family={Whyatt},
+           family_i={W\bibinitperiod},
+           given={J\bibnamedelima Duncan},
+           given_i={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{6a7648c9c4e6dc171dda685c2192ba7e}
+      \strng{fullhash}{6a7648c9c4e6dc171dda685c2192ba7e}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Computer Graphics Forum}
+      \field{number}{3}
+      \field{title}{The Douglas-Peucker Algorithm for Line Simplification: Re-evaluation through Visualization}
+      \field{usera}{C}
+      \field{usere}{Visvalingam, Mahes and Whyatt, J Duncan}
+      \field{userf}{Visvalingam, Mahes and Whyatt, J Duncan}
+      \field{volume}{9}
+      \field{year}{1990}
+      \field{pages}{213\bibrangedash 225}
+      \range{pages}{13}
+      \keyw{visvalingam1990douglas}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'visvalingam1990douglas'}
+    \endentry
+    \entry{sellis1987r+}{report}{}
+      \name{author}{3}{}{%
+        {{hash=467b30f5fb9a92b4096fd80175143186}{%
+           family={Sellis},
+           family_i={S\bibinitperiod},
+           given={Timos},
+           given_i={T\bibinitperiod}}}%
+        {{hash=2f3ea04fff0faa629ce0d81ee5ef7b59}{%
+           family={Roussopoulos},
+           family_i={R\bibinitperiod},
+           given={Nick},
+           given_i={N\bibinitperiod}}}%
+        {{hash=976e034dd29cfc47640ae45c16d21a9d}{%
+           family={Faloutsos},
+           family_i={F\bibinitperiod},
+           given={Christos},
+           given_i={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad5fe349bd0e39c199189d0f5498ebd4}
+      \strng{fullhash}{ad5fe349bd0e39c199189d0f5498ebd4}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The R+-Tree: A Dynamic Index for Multi-Dimensional Objects.}
+      \field{usera}{R}
+      \field{usere}{Sellis, Timos and Roussopoulos, Nick and Faloutsos, Christos}
+      \field{userf}{Sellis, Timos and Roussopoulos, Nick and Faloutsos, Christos}
+      \field{year}{1987}
+      \keyw{sellis1987r+}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'sellis1987r+'}
+    \endentry
+    \entry{chen2009trajectory}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=5001e8c086c7c7fe0c0cb2fd62fdda94}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Yukun},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=9a9872655291eee880ee43574c72338e}{%
+           family={Jiang},
+           family_i={J\bibinitperiod},
+           given={Kai},
+           given_i={K\bibinitperiod}}}%
+        {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=33d700fe2f0013f7cc19fde393dc0844}{%
+           family={Li},
+           family_i={L\bibinitperiod},
+           given={Chunping},
+           given_i={C\bibinitperiod}}}%
+        {{hash=944469c286535032f6c946dad972fe16}{%
+           family={Yu},
+           family_i={Y\bibinitperiod},
+           given={Nenghai},
+           given_i={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{a9f73c24f02d6f869ed364abd1c6fd37}
+      \strng{fullhash}{f9a8ca5e7236cc17e34b945e52cf90d1}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2009 International Workshop on Location Based Social Networks}
+      \field{title}{Trajectory simplification method for location-based social networking services}
+      \field{usera}{C}
+      \field{usere}{Chen, Yukun and Jiang, Kai and Zheng, Yu and Li, Chunping and Yu, Nenghai}
+      \field{userf}{Chen, Yukun and Jiang, Kai and Zheng, Yu and Li, Chunping and Yu, Nenghai}
+      \field{year}{2009}
+      \field{pages}{33\bibrangedash 40}
+      \range{pages}{8}
+      \keyw{chen2009trajectory}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'chen2009trajectory'}
+    \endentry
+    \entry{qi2015efficient}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=f99fee99b0f29544f05a7ced98a97b42}{%
+           family={Qi},
+           family_i={Q\bibinitperiod},
+           given={Shuyao},
+           given_i={S\bibinitperiod}}}%
+        {{hash=0ee1ec1f313469dcda5368e687a9371d}{%
+           family={Bouros},
+           family_i={B\bibinitperiod},
+           given={Panagiotis},
+           given_i={P\bibinitperiod}}}%
+        {{hash=7893ec0de6b340953c52cf685963c29b}{%
+           family={Sacharidis},
+           family_i={S\bibinitperiod},
+           given={Dimitris},
+           given_i={D\bibinitperiod}}}%
+        {{hash=364fce917c9b4c436a355a46622d38c0}{%
+           family={Mamoulis},
+           family_i={M\bibinitperiod},
+           given={Nikos},
+           given_i={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{42fef10f797411dbd61eaa0be21a36c9}
+      \strng{fullhash}{98a8407be0b282edf0c8abf2ef03fadb}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Symposium on Spatial and Temporal Databases}
+      \field{title}{Efficient point-based trajectory search}
+      \field{usera}{C}
+      \field{usere}{Qi, Shuyao and Bouros, Panagiotis and Sacharidis, Dimitris and Mamoulis, Nikos}
+      \field{userf}{Qi, Shuyao and Bouros, Panagiotis and Sacharidis, Dimitris and Mamoulis, Nikos}
+      \field{year}{2015}
+      \field{pages}{179\bibrangedash 196}
+      \range{pages}{18}
+      \keyw{qi2015efficient}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'qi2015efficient'}
+    \endentry
+    \entry{roussopoulos1995nearest}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=2f3ea04fff0faa629ce0d81ee5ef7b59}{%
+           family={Roussopoulos},
+           family_i={R\bibinitperiod},
+           given={Nick},
+           given_i={N\bibinitperiod}}}%
+        {{hash=9f4873c30e3443a00aa4c72510d767ee}{%
+           family={Kelley},
+           family_i={K\bibinitperiod},
+           given={Stephen},
+           given_i={S\bibinitperiod}}}%
+        {{hash=de2ae29990e69983c61459de93cc410f}{%
+           family={Vincent},
+           family_i={V\bibinitperiod},
+           given={Frédéric},
+           given_i={F\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{c495591499266fe8a4139a6cdd9cf421}
+      \strng{fullhash}{c495591499266fe8a4139a6cdd9cf421}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ACM sigmod record}
+      \field{number}{2}
+      \field{title}{Nearest neighbor queries}
+      \field{usera}{C}
+      \field{usere}{Roussopoulos, Nick and Kelley, Stephen and Vincent, Frédéric}
+      \field{userf}{Roussopoulos, Nick and Kelley, Stephen and Vincent, Frédéric}
+      \field{volume}{24}
+      \field{year}{1995}
+      \field{pages}{71\bibrangedash 79}
+      \range{pages}{9}
+      \keyw{roussopoulos1995nearest}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'roussopoulos1995nearest'}
+    \endentry
+    \entry{chen2010searching}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=d6db146c28d551b285f539d13487a5aa}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Zaiben},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=e4d51f11650e851e72ac4d5731f46dd6}{%
+           family={Shen},
+           family_i={S\bibinitperiod},
+           given={Heng\bibnamedelima Tao},
+           given_i={H\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=1be3b9bc3df92cb45255893cafffcc48}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={Xiaofang},
+           given_i={X\bibinitperiod}}}%
+        {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=0801da56d6877e3eff32e6a6030425d3}{%
+           family={Xie},
+           family_i={X\bibinitperiod},
+           given={Xing},
+           given_i={X\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{1a7d63638ded04e7735ddce722425a43}
+      \strng{fullhash}{2f70567b9030442dc37c84cf14954bd8}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2010 ACM SIGMOD International Conference on Management of data}
+      \field{title}{Searching trajectories by locations: an efficiency study}
+      \field{usera}{C}
+      \field{usere}{Chen, Zaiben and Shen, Heng Tao and Zhou, Xiaofang and Zheng, Yu and Xie, Xing}
+      \field{userf}{Chen, Zaiben and Shen, Heng Tao and Zhou, Xiaofang and Zheng, Yu and Xie, Xing}
+      \field{year}{2010}
+      \field{pages}{255\bibrangedash 266}
+      \range{pages}{12}
+      \keyw{chen2010searching}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'chen2010searching'}
+    \endentry
+    \entry{tang2011retrieving}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=4618bdc69309f3fd0cba8ccd098964c8}{%
+           family={Tang},
+           family_i={T\bibinitperiod},
+           given={Lu-An},
+           given_i={L\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=0801da56d6877e3eff32e6a6030425d3}{%
+           family={Xie},
+           family_i={X\bibinitperiod},
+           given={Xing},
+           given_i={X\bibinitperiod}}}%
+        {{hash=0b662dbfd96e443e0657559c33de2e45}{%
+           family={Yuan},
+           family_i={Y\bibinitperiod},
+           given={Jing},
+           given_i={J\bibinitperiod}}}%
+        {{hash=f180cd4b8fde24b498399bd396ea92a0}{%
+           family={Yu},
+           family_i={Y\bibinitperiod},
+           given={Xiao},
+           given_i={X\bibinitperiod}}}%
+        {{hash=7cacfe272c4d395c979d6aecd2f5ec9c}{%
+           family={Han},
+           family_i={H\bibinitperiod},
+           given={Jiawei},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{dcfcf03bf30d6255c6210be18550f25e}
+      \strng{fullhash}{196901802c0bdb3b2a4a1e7696343bce}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Symposium on Spatial and Temporal Databases}
+      \field{title}{Retrieving k-nearest neighboring trajectories by a set of point locations}
+      \field{usera}{C}
+      \field{usere}{Tang, Lu-An and Zheng, Yu and Xie, Xing and Yuan, Jing and Yu, Xiao and Han, Jiawei}
+      \field{userf}{Tang, Lu-An and Zheng, Yu and Xie, Xing and Yuan, Jing and Yu, Xiao and Han, Jiawei}
+      \field{year}{2011}
+      \field{pages}{223\bibrangedash 241}
+      \range{pages}{19}
+      \keyw{tang2011retrieving}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'tang2011retrieving'}
+    \endentry
+    \entry{shang2014personalized}{article}{}
+      \name{author}{6}{}{%
+        {{hash=35fae3198e9a2bc41a2735679bbd4d1c}{%
+           family={Shang},
+           family_i={S\bibinitperiod},
+           given={Shuo},
+           given_i={S\bibinitperiod}}}%
+        {{hash=dd8746c2eeb6589695818f861a5daedb}{%
+           family={Ding},
+           family_i={D\bibinitperiod},
+           given={Ruogu},
+           given_i={R\bibinitperiod}}}%
+        {{hash=344f5b0e0d962edf27e0a4af939d760a}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Kai},
+           given_i={K\bibinitperiod}}}%
+        {{hash=25e0f09fa11c2ba6a8648b9e88eff012}{%
+           family={Jensen},
+           family_i={J\bibinitperiod},
+           given={Christian\bibnamedelima S},
+           given_i={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=cfeddfb4f7ceacfc0fb41b0b7e7574b9}{%
+           family={Kalnis},
+           family_i={K\bibinitperiod},
+           given={Panos},
+           given_i={P\bibinitperiod}}}%
+        {{hash=1be3b9bc3df92cb45255893cafffcc48}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={Xiaofang},
+           given_i={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{955be3d612c9fe526a3af148c9f3de23}
+      \strng{fullhash}{4f3256cfe338bac6b3aa37be4ab71246}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The VLDB Journal}
+      \field{number}{3}
+      \field{title}{Personalized trajectory matching in spatial networks}
+      \field{usera}{J}
+      \field{usere}{Shang, Shuo and Ding, Ruogu and Zheng, Kai and Jensen, Christian S and Kalnis, Panos and Zhou, Xiaofang}
+      \field{userf}{Shang, Shuo and Ding, Ruogu and Zheng, Kai and Jensen, Christian S and Kalnis, Panos and Zhou, Xiaofang}
+      \field{volume}{23}
+      \field{year}{2014}
+      \field{pages}{449\bibrangedash 468}
+      \range{pages}{20}
+      \keyw{shang2014personalized}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'shang2014personalized'}
+    \endentry
+  \endsortlist
+\endrefsection
 \endinput
 

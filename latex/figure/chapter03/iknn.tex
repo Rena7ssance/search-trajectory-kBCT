@@ -1,0 +1,22 @@
+
+\begin{tikzpicture}[node distance=2cm]
+
+	\node (input) [startstop] {输入轨迹数据类型判断};
+	\node (input_judge) [decision, below of=input,yshift=-0.5cm,aspect=2.5] {是否为用户指定一组轨迹点集?};
+	\node (ts) [process, right of=input_judge,xshift=5cm] {轨迹简化};
+	\node (iknn) [process, below of=input_judge,yshift=-0.5cm]{增长型k相似轨迹查询};
+	\node (bound_judge) [decision, below of=iknn,yshift=-0.5cm,aspect=2.5]{是否满足相似度上下界条件?};
+	\node (refinement)[process, below of=bound_judge,yshift=-0.5cm]{备选轨迹集筛选};
+	\node (output)[startstop, below of=refinement]{k条最相似轨迹输入};
+	
+
+	\draw [arrow] (input) -- (input_judge);
+	\draw [arrow] (input_judge) -- node[anchor=south]{否}(ts);
+	\draw [arrow] (input_judge) -- node[anchor=west]{是}(iknn);
+	\draw [arrow] (ts) |- (iknn);
+	\draw [arrow] (iknn) -- (bound_judge);
+	\draw [arrow] (bound_judge.west) |- node[anchor=south]{否}(iknn.west);
+	\draw [arrow] (bound_judge.south) -- node[anchor=west]{是}(refinement.north);
+	\draw [arrow] (refinement) -- (output);
+\end{tikzpicture}
+

@@ -13,6 +13,10 @@
 \chapter{相似轨迹查询方法实现}
 \label{chap:implementation}
 
+\section{相似轨迹查询问题描述}
+\label{sec:question describe}
+相似轨迹查询传统意义上是根据一条已有历史轨迹，在轨迹数据库中查询出与这一条轨迹在地理位置上形状相似的一条或多条轨迹。在本文中，我们将输入轨迹进一步简化为一组轨迹查询点集$Q$。$Q$在地理位置上保留轨迹原有的形状，通过对点集$Q$进行\emph{k最佳连接}查询，从轨迹数据库$D$中得出k条最相似的轨迹集合$T'$作为输出。由于系统设计与用户的交互，性能指标方面查询结果应满足高效、实时且具有良好的准确性。
+
 \section{k最佳连接}
 \label{sec:k-bct}
 一个轨迹数据库中存储了大量的原始车载GPS轨迹或是已经预处理过的车载GPS轨迹。这里的轨迹由一系列的地理位置点组成$\{p_{1},p_{2},p_{3},\cdots, p_{m}\}$，其中$p_{i}$ $1\leq i \leq m$代表一个由经度和维度构成的地理位置点而$m$代表轨迹中点的数目。本文所定义的k最佳连接查询（k Best-Connected Rrajectory Query）的输入由一组查询点$Q$组成。$q_{j}$ $1 \leq j \leq n$和$p_{i}$定义相同，其中n是查询点的数目。这里用户可以选择选择是否在查询中指定轨迹连接依照查询点的先后顺序，即是否选择查询有序性。若选择查询有序性，则查询点集$Q$为认为是从$q_{1}$到$q_{m}$有序点集。
@@ -48,7 +52,7 @@
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=0.7\textwidth]{chapter03/similarity.png}
-  \bicaption[fig:3-1]{这里将出现在插图索引中}{查询点与轨迹之间的匹配}{Fig}{Match between query points and trajectory}
+  \bicaption[fig:3-1]{查询点与轨迹点之间的匹配}{查询点与轨迹点之间的匹配}{Fig}{Match between query points and trajectory point}
 \end{figure}
 
 有序查询的相似性计算和无序查询也有区别。给定一组有序的查询点$Q_{o} = \{q_{o1},q_{o2},q_{o3},\cdots, q_{on}\}$和一条已有轨迹$R$，我们通过递归思想为有序查询重新定义相似度方程为$Sim_{o}(Q,R)$，式\ref{eq3-3}。其中$Head(x)$函数代表$x$中的第一个点，例如$Head(Q)$是查询点$q_{1}$；同时$Rest(x)$表示$x$去掉x第一个点之后剩余的部分，例如$Rest(Q)$代表\{$q_{2},q_{3},\cdots, q_{n}$\}。在式\ref{eq3-3}中，通过递归的想法，本文将对$Sim_{o}(Q,R)$的求最大值问题分为对两个子问题的求解，即分别计算$Sim_{o}(Rest(Q),R)$和$Sim_{o}(Q,Rest(R))$的最大值问题。当$Head(Q)$和$Head(R)$的两个轨迹点匹配的时候，我们可以将$e^{-D_{e}(Head(Q), Head(R))}$提前计算并加入当后面计算的$Sim_{o}(Rest(Q),R)$之中。在这种情况下，$Head(R)$需要为下一轮的比较计算继续保留，因为对于$Rest(Q)$中的查询点来说，$Head(R)$依旧有可能成为最佳匹配点。而当当$Head(Q)$和$Head(R)$不匹配的时候时我们则跳过$Head(R)$计算$Sim_{o}(Q,Rest(R))$。这种求解思路类似于动态规划的思路，这也为我们再后面优化过程中通过动态规划的来解决这一问题提供了参考。式\ref{eq3-3}结合了动态时间规整（DTW）利用重复点和最长公共子序列（LCSS）省略不匹配点的优点来计算相似度方程。
@@ -137,7 +141,7 @@ Sim_{o}(Q,R)= max \left\{
 		$\mu,\upsilon$ & 优化搜索权值\\
 		\hline
 		\end{tabular}
-	\bicaption[tab-notations]{出现在表目录的标题}{本文符号列表及其对应注释}{Table}{A list of notations and explanations}
+	\bicaption[tab-notations]{公式符号列表及其对应注释}{本文符号列表及其对应注释}{Table}{A list of notations and explanations}
 \end{table}
 \\
 
@@ -409,3 +413,6 @@ UB_{order}(R_c) & = LB_{order}(R_c) + \sum_{1\leq i\leq m\wedge R_c\notin C_i}\b
 
 根据式\ref{eq3-16}将相似度上下界从无序的定义改成有序的定义，则可以在增长型k最近邻查询中加入有序查询限制，即根据查询点集的查询顺序查询最相似的k的轨迹。
 
+\section{本章小结}
+\label{sec:implementation conclusion}
+本章节在相关工作的基础上，定义了一些轨迹相关的符号变量，并基于这些符号变量和已有的相关工作，从问题的本质出发，设计了基于k最近邻查询的增长型k最近邻算法。通过将k最佳连接查询结果等价视作为k最相似轨迹查询结果，实现相似轨迹查询。在实现过程中，通过对搜索范围的剪枝优化、对搜索参数的动态设定和对查询有序性无序性的特殊处理，结合备选和筛选的处理思路，将相似轨迹搜索过程的处理性能实现在用户可接受范围内。在下一章中，本文将拓展基于本章节单机相似轨迹查询实现到分布式处理中，并且将输入从一组位置点集拓展至一条原始轨迹输入，以从用户需求角度实现以一条轨迹作为输入的相似轨迹查询过程。

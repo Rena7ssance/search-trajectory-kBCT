@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  14 MAY 2017 18:25
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  17 MAY 2017 17:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2483,12 +2483,11 @@ LaTeX Warning: Label `sec:requirements' multiply defined.
 
 LaTeX Warning: Label `sec:requirements' multiply defined.
 
+) (./tex/relatedwork.aux) (./tex/implementation2.aux) (./tex/specification.aux
 
-LaTeX Warning: Label `sec:requirements' multiply defined.
+LaTeX Warning: Label `sec:overall description' multiply defined.
 
-) (./tex/relatedwork.aux) (./tex/implementation.aux) (./tex/distributed.aux)
-(./tex/experiment.aux) (./tex/conclusion.aux) (./tex/ack.aux)
-(./tex/end_english_abstract.aux))
+) (./tex/conclusion.aux) (./tex/ack.aux) (./tex/end_english_abstract.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -2633,14 +2632,164 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
-(./thesis.bbl)
+(./thesis.bbl
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'zheng2015trajectory':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'zheng2015trajectory'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'zheng2011computing':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'zheng2011computing'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'agrawal1993efficient':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'agrawal1993efficient'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'chan1999efficient':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'chan1999efficient'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'bernad1996finding':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'bernad1996finding'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'yanagisawa2003shape':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'yanagisawa2003shape'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'cai2004indexing':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'cai2004indexing'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'vlachos2004rotation':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'vlachos2004rotation'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'sakurai2005ftw':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'sakurai2005ftw'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'vlachos2002discovering':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'vlachos2002discovering'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'chen2005robust':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'chen2005robust'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'chen2004marriage':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'chen2004marriage'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'frentzos2007index':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'frentzos2007index'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'sankararaman2013model':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'sankararaman2013model'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'morse2007efficient':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'morse2007efficient'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'dean2008mapreduce':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'dean2008mapreduce'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'zaharia2010spark':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'zaharia2010spark'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'visvalingam1990douglas':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'visvalingam1990douglas'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'sellis1987r+':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'sellis1987r+'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'chen2009trajectory':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'chen2009trajectory'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'qi2015efficient':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'qi2015efficient'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'roussopoulos1995nearest':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'roussopoulos1995nearest'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'chen2010searching':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'chen2010searching'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'tang2011retrieving':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'tang2011retrieving'.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'shang2014personalized':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'shang2014personalized'.
+
+)
 Package biblatex Info: Reference section=0 on input line 33.
 Package biblatex Info: Reference segment=0 on input line 33.
 \c@lstlisting=\count458
 \AtBeginShipoutBox=\box113
 Package hyperref Info: Link coloring ON on input line 33.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -2827,19 +2976,35 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [4]
+<use  "figure/sjtubanner.png" > [4] (./thesis.lof)
+\tf@lof=\write8
+\openout8 = `thesis.lof'.
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [5
+
+] (./thesis.lot)
+\tf@lot=\write9
+\openout9 = `thesis.lot'.
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [6
+
+]
 \openout2 = `tex/introduction.aux'.
 
  (./tex/introduction.tex
 第一章
 File: figure/chapter01/paradigm.png Graphic file (type QTm)
 <use  "figure/chapter01/paradigm.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 26--28
+Underfull \hbox (badness 10000) in paragraph at lines 28--30
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--33
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
  []
 
@@ -2849,16 +3014,15 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 40--42
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [2]
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
 
  []
 
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [2]
 File: figure/chapter01/search-example.png Graphic file (type QTm)
-
 <use  "figure/chapter01/search-example.png" >
-Overfull \hbox (14.4277pt too wide) in paragraph at lines 55--56
+Overfull \hbox (14.4277pt too wide) in paragraph at lines 64--65
 []\EU1/FandolSong-Regular(0)/m/n/10.53937 大 体 上，| \EU1/TeXGyreTermes(0)/m/n/10.
 53937 k \EU1/FandolSong-Regular(0)/m/n/10.53937 条 最 佳 连 接 轨 迹 查 询 基 于 的 地 理 位 置
  点 需 要 具 备 必 要 的 经 纬 度 信 息 $\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 latit
@@ -2868,200 +3032,42 @@ ude; longitude\OT1/cmr/m/n/10.53937 )$\EU1/FandolSong-Regular(0)/m/n/10.53937 �
 
 File: figure/sjtubanner.png Graphic file (type QTm)
 <use  "figure/sjtubanner.png" > [3]
-Underfull \hbox (badness 10000) in paragraph at lines 63--65
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--70
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [4]
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
  []
 
 )
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [4]
+ <use  "figure/sjtubanner.png" > [5]
 \openout2 = `tex/relatedwork.aux'.
 
  (./tex/relatedwork.tex
 第二章
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [6
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--15
 
- []
 
+]
 File: figure/chapter02/definition.png Graphic file (type QTm)
-<use  "figure/chapter02/definition.png" >
+ <use  "figure/chapter02/definition.png" >
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 21.
+(Font)              size <8> substituted on input line 39.
 
 
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 21.
+(Font)              size <8> substituted on input line 39.
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [5
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 25--27
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--36
-
- []
-
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 44.
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
-
- []
-
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [6]
-Underfull \hbox (badness 10000) in paragraph at lines 74--76
-
- []
-
-File: figure/chapter02/rtree.png Graphic file (type QTm)
-<use  "figure/chapter02/rtree.png" >
-File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [7]
-Underfull \hbox (badness 10000) in paragraph at lines 85--87
-
- []
-
-)
-File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [8]
-\openout2 = `tex/implementation.aux'.
-
- (./tex/implementation.tex
-\c@definition=\count465
-
-第三章
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [9
-
-
-
-]
-File: figure/chapter03/similarity.png Graphic file (type QTm)
- <use  "figure/chapter03/similarity.png" >
-Overfull \hbox (3.9292pt too wide) in paragraph at lines 54--55
-[]\EU1/FandolSong-Regular(0)/m/n/10.53937 有 序 查 询 的 相 似 性 计 算 和 无 序 查 询 也 有 区 别
-。|  给 定 一 组 有 序 的 查 询 点 $\OML/cmm/m/it/10.53937 Q[] \OT1/cmr/m/n/10.53937 = \OM
-S/cmsy/m/n/10.53937 f\OML/cmm/m/it/10.53937 q[]; q[]; q[]; []  ; q[]\OMS/cmsy/m
-/n/10.53937 g$
- []
-
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [10]
-Underfull \hbox (badness 10000) in paragraph at lines 109--143
-
- []
-
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [11]
-File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [12]
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
-
- []
-
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [13]
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
-
- []
-
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [14]
-Underfull \hbox (badness 10000) in paragraph at lines 239--241
-
- []
-
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [15]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 301.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 301.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 301.
-
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [16]
-File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [17]
-Underfull \hbox (badness 10000) in paragraph at lines 351--354
-
- []
-
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [18]
-Overfull \hbox (112.34727pt too wide) in paragraph at lines 384--385
-[]\EU1/FandolSong-Regular(0)/m/n/10.53937 算 法[][]\EU1/TeXGyreTermes(0)/m/n/10.5
-3937 3–4[][]\EU1/FandolSong-Regular(0)/m/n/10.53937 中，| $\OML/cmm/m/it/10.53937
- M\OT1/cmr/m/n/10.53937 [\OML/cmm/m/it/10.53937 i\OT1/cmr/m/n/10.53937 ][\OML/c
-mm/m/it/10.53937 j\OT1/cmr/m/n/10.53937 ]$ \EU1/FandolSong-Regular(0)/m/n/10.53
-937 是 我 们 需 要 解 决 查 询 问 题 的 子 问 题 的 有 序 相 似 度，|  即 $\OML/cmm/m/it/10.53937 Sim[
-]\OT1/cmr/m/n/10.53937 (\OMS/cmsy/m/n/10.53937 f\OML/cmm/m/it/10.53937 q[]; q[]
-; q[]; []  ; q[]\OMS/cmsy/m/n/10.53937 g\OML/cmm/m/it/10.53937 ; \OMS/cmsy/m/n/
-10.53937 f\OML/cmm/m/it/10.53937 p[]; p[]; p[]; []  ; p[]\OMS/cmsy/m/n/10.53937
- g\OT1/cmr/m/n/10.53937 )$\EU1/FandolSong-Regular(0)/m/n/10.53937 。|
- []
-
-
-Overfull \hbox (24.52635pt too wide) in paragraph at lines 384--385
-\OML/cmm/m/it/10.53937 e[] \OT1/cmr/m/n/10.53937 + \OML/cmm/m/it/10.53937 M\OT1
-/cmr/m/n/10.53937 [\OML/cmm/m/it/10.53937 i \OMS/cmsy/m/n/10.53937 ^^@ \OT1/cmr
-/m/n/10.53937 1][\OML/cmm/m/it/10.53937 j\OT1/cmr/m/n/10.53937 ]$ \EU1/FandolSo
-ng-Regular(0)/m/n/10.53937 和 $\OML/cmm/m/it/10.53937 M\OT1/cmr/m/n/10.53937 [\O
-ML/cmm/m/it/10.53937 i\OT1/cmr/m/n/10.53937 ][\OML/cmm/m/it/10.53937 j \OMS/cms
-y/m/n/10.53937 ^^@ \OT1/cmr/m/n/10.53937 1]$ \EU1/FandolSong-Regular(0)/m/n/10.
-53937 的 值 来 决 定 $\OML/cmm/m/it/10.53937 M\OT1/cmr/m/n/10.53937 [\OML/cmm/m/it/1
-0.53937 i\OT1/cmr/m/n/10.53937 ][\OML/cmm/m/it/10.53937 j\OT1/cmr/m/n/10.53937 
-]$ \EU1/FandolSong-Regular(0)/m/n/10.53937 的 最 大 值。|  如 果 值 $\OML/cmm/m/it/10.5
-3937 e[] \OT1/cmr/m/n/10.53937 +
- []
-
-
-Overfull \hbox (9.79076pt too wide) in paragraph at lines 384--385
-\OML/cmm/m/it/10.53937 M\OT1/cmr/m/n/10.53937 [\OML/cmm/m/it/10.53937 i \OMS/cm
-sy/m/n/10.53937 ^^@ \OT1/cmr/m/n/10.53937 1][\OML/cmm/m/it/10.53937 j\OT1/cmr/m
-/n/10.53937 ]$ \EU1/FandolSong-Regular(0)/m/n/10.53937 较 大，|  我 们 可 以 得 出 目 前 的
- 一 对 匹 配 点 对 为 $\OML/cmm/m/it/10.53937 < p[]; p[] >$\EU1/FandolSong-Regular(0)/
-m/n/10.53937 ，|  并 令 $\OML/cmm/m/it/10.53937 M\OT1/cmr/m/n/10.53937 [\OML/cmm/m
-/it/10.53937 i\OT1/cmr/m/n/10.53937 ][\OML/cmm/m/it/10.53937 j\OT1/cmr/m/n/10.5
-3937 ] = \OML/cmm/m/it/10.53937 e[] \OT1/cmr/m/n/10.53937 +
- []
-
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [19])
-File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [20]
-\openout2 = `tex/distributed.aux'.
-
-
-(./tex/distributed.tex
-第四章
-
-Overfull \hbox (2.40337pt too wide) in paragraph at lines 25--27
+<use  "figure/sjtubanner.png" > [7]
+Overfull \hbox (2.40337pt too wide) in paragraph at lines 70--72
 []\EU1/TeXGyreTermes(0)/m/it/10.53937 Spark \EU1/FandolSong-Regular(0)/m/n/10.5
 3937 集 群 计 算 处 理 引 擎 与 之 前 集 群 处 理 的 主 要 不 同 点 即 在 于 其 引 入 的 弹 性 分 布 式 数 据 集  |
 （\EU1/TeXGyreTermes(0)/m/it/10.53937 RDD\EU1/FandolSong-Regular(0)/m/n/10.53937
@@ -3069,11 +3075,7 @@ Overfull \hbox (2.40337pt too wide) in paragraph at lines 25--27
  []
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [21
-
-
-
-]
+<use  "figure/sjtubanner.png" > [8]
 File: figure/chapter04/clustermanager.png Graphic file (type QTm)
 
 <use  "figure/chapter04/clustermanager.png" >
@@ -3082,54 +3084,156 @@ File: figure/chapter04/standalone.png Graphic file (type QTm)
 <use  "figure/chapter04/standalone.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" >
-[22]
+[9]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [23]
-File: figure/chapter04/tsalgo.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [10]
+Underfull \hbox (badness 10000) in paragraph at lines 155--157
 
-<use  "figure/chapter04/tsalgo.png" >
+ []
+
+File: figure/chapter02/rtree.png Graphic file (type QTm)
+<use  "figure/chapter02/rtree.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [24]
+ <use  "figure/sjtubanner.png" > [11])
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [12]
+\openout2 = `tex/implementation2.aux'.
+
+ (./tex/implementation2.tex
+\c@definition=\count465
+
+第三章
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [13
+
+
+
+]
+File: figure/chapter03/similarity.png Graphic file (type QTm)
+ <use  "figure/chapter03/similarity.png" >
+Overfull \hbox (3.9292pt too wide) in paragraph at lines 56--57
+[]\EU1/FandolSong-Regular(0)/m/n/10.53937 有 序 查 询 的 相 似 性 计 算 和 无 序 查 询 也 有 区 别
+。|  给 定 一 组 有 序 的 查 询 点 $\OML/cmm/m/it/10.53937 Q[] \OT1/cmr/m/n/10.53937 = \OM
+S/cmsy/m/n/10.53937 f\OML/cmm/m/it/10.53937 q[]; q[]; q[]; []  ; q[]\OMS/cmsy/m
+/n/10.53937 g$
+ []
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [14]
+Overfull \hbox (0.7725pt too wide) in paragraph at lines 94--94
+[]|$\OML/cmm/m/it/10.53937 D[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 q[]
+; p[]\OT1/cmr/m/n/10.53937 )$| 
+ []
+
+
+Overfull \hbox (0.7725pt too wide) in paragraph at lines 96--96
+[]|$\OML/cmm/m/it/10.53937 D[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 q[]
+; p[]\OT1/cmr/m/n/10.53937 )$| 
+ []
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [15]
+File: figure/chapter03/similar-search.png Graphic file (type QTm)
+
+<use  "figure/chapter03/similar-search.png" > (./figure/chapter03/iknn.tex)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 192.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 192.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 192.
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [16]
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [17]
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [18]
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [19]
 File: figure/chapter04/distributed.png Graphic file (type QTm)
 
 <use  "figure/chapter04/distributed.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" >
-[25])
+[20]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 273.
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [26]
-\openout2 = `tex/experiment.aux'.
+ <use  "figure/sjtubanner.png" > [21])
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" >
+[22]
+\openout2 = `tex/specification.aux'.
 
- (./tex/experiment.tex
+ (./tex/specification.tex
+第四章
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [23
+
+
+
+]
+File: figure/specification/system-architecture.png Graphic file (type QTm)
+
+<use  "figure/specification/system-architecture.png" >
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [24])
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [25]
+\openout2 = `tex/conclusion.aux'.
+
+
+(./tex/conclusion.tex
 第五章
 )
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [27
+ <use  "figure/sjtubanner.png" > [26
 
 
 
 ]
-\openout2 = `tex/conclusion.aux'.
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'FandolFang-Regular' does not contain script 'CJK'.
+*************************************************
 
- (./tex/conclusion.tex
-第六章
-)
+Overfull \hbox (7.62144pt too wide) in paragraph at lines 102--102
+[]\EU1/TeXGyreTermes(0)/m/n/10.53937 VLACHOS M, GUNOPULOS D, DAS G. Rotation in
+variant distance measures for trajectories[C]\EU1/lmtt/m/n/10.53937 // \EU1/TeX
+GyreTermes(0)/m/n/10.53937 Pro-
+ []
+
+
+Overfull \hbox (9.14247pt too wide) in paragraph at lines 102--102
+[]\EU1/TeXGyreTermes(0)/m/n/10.53937 FRENTZOS E, GRATSIAS K, THEODORIDIS Y. Ind
+ex-based most similar trajectory search[C]\EU1/lmtt/m/n/10.53937 // \EU1/TeXGyr
+eTermes(0)/m/n/10.53937 Data
+ []
+
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [28
+<use  "figure/sjtubanner.png" > [27
 
 
 
 ]
-
-LaTeX Warning: Empty bibliography on input line 102.
-
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [28]
 \openout2 = `tex/ack.aux'.
+
 
 (./tex/ack.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" > [29
-
-
 
 
 ]
@@ -3153,9 +3257,8 @@ AED: lastpage setting LastPage
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
 (./thesis.aux (./tex/id.aux) (./tex/abstract.aux) (./tex/introduction.aux)
-(./tex/relatedwork.aux) (./tex/implementation.aux) (./tex/distributed.aux)
-(./tex/experiment.aux) (./tex/conclusion.aux) (./tex/ack.aux)
-(./tex/end_english_abstract.aux))
+(./tex/relatedwork.aux) (./tex/implementation2.aux) (./tex/specification.aux)
+(./tex/conclusion.aux) (./tex/ack.aux) (./tex/end_english_abstract.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 137.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 137.
 
@@ -3171,12 +3274,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51993 strings out of 493591
- 1037339 string characters out of 6143547
- 1404075 words of memory out of 5000000
- 54466 multiletter control sequences out of 15000+600000
- 27529 words of font info for 174 fonts, out of 8000000 for 9000
+ 52316 strings out of 493591
+ 1045796 string characters out of 6143547
+ 1404991 words of memory out of 5000000
+ 54776 multiletter control sequences out of 15000+600000
+ 27521 words of font info for 173 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 71i,22n,85p,10440b,3284s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,16n,85p,10440b,4656s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (39 pages).
+Output written on thesis.pdf (41 pages).

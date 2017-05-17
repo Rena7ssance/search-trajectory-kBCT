@@ -32,7 +32,7 @@
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=0.6\textwidth]{chapter04/clustermanager.png}
-  \bicaption[fig:4-1]{这里将出现在插图索引中}{集群管理大致模式}{Fig}{Cluster Managing Mode}
+  \bicaption[fig:4-1]{集群管理大致模式}{集群管理大致模式}{Fig}{Cluster Managing Mode}
 \end{figure}
 
 在相似轨迹获取这一应用中，根据我们的应用场景和硬件设置，我们采用\emph{Spark}自带的\emph{Standalone}集群模式，其大致设计框架如图\ref{fig:4-2}所示。
@@ -40,7 +40,7 @@
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=0.5\textwidth]{chapter04/standalone.png}
-  \bicaption[fig:4-2]{这里将出现在插图索引中}{Spark Standalone集群结构}{Fig}{Spark Standalone Architecture}
+  \bicaption[fig:4-2]{Spark Standalone集群结构}{Spark Standalone集群结构}{Fig}{Spark Standalone Architecture}
 \end{figure}
 
 在\emph{Standalone}集群模式中，我们通过一个在\emph{Spark}分布式环境下的简要集群管理者来简单建立集群处理环境。在这一集群环境中，主节点（\emph{Master Node}）为驱动程序运行的设备节点。驱动程序不仅是与用户交互信息的接口（\emph{interface}）程序，也负责分布式运行在\emph{Spark}环境中进程的运行情况。子节点们（\emph{Slave Nodes}）为启动在工作节点中的进程提供运行环境，这些进程运行任务代码并在内存或磁盘中储存数据。在相似轨迹搜索中，我们将轨迹数据和预处理好的轨迹索引R树结构存储在\emph{HDFS}上，集群环境中的工作节点可以通过设定好的参数无需秘钥的共享\emph{HDFS}上已存储好的数据，这样，我们可以将相似轨迹搜索任务进一步以分布式的方法进行处理。
@@ -117,7 +117,7 @@
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=0.5\textwidth]{chapter04/tsalgo.png}
-  \bicaption[fig:4-3]{这里将出现在插图索引中}{\emph{TS}算法结果样例}{Fig}{An illustration of Trajectory Simplification Algorithm}
+  \bicaption[fig:4-3]{\emph{TS}算法结果样例}{\emph{TS}算法结果样例}{Fig}{An illustration of Trajectory Simplification Algorithm}
 \end{figure}
 
 \subsection{Spark分布式相似轨迹查询}
@@ -127,7 +127,7 @@
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=0.85\textwidth]{chapter04/distributed.png}
-  \bicaption[fig:4-4]{这里将出现在插图索引中}{Spark分布式相似轨迹查询}{Fig}{Spark distributed search similar trajectories}
+  \bicaption[fig:4-4]{Spark分布式相似轨迹查询}{Spark分布式相似轨迹查询}{Fig}{Spark distributed search similar trajectories}
 \end{figure}
 
 图\ref{fig:4-4}为\emph{MapReduce}的大致处理框架，我们根据这一框架设计出分布式查询相似轨迹的大致算法。在算法中，假设我们已经完成对原始轨迹的简化得到已处理好的简化轨迹$Traj'$。首先我们通过\emph{Spark}内的\emph{partition}函数将输入数据分割，并分发给每一个工作节点（\emph{Worker Node}）。对于每一个工作节点而言，他们都有了输入数据的一部分轨迹点。对于每一个工作节点而言，他们都可以将自己所拥有的部分轨迹点作为相似轨迹查询的查询点集，由于工作节点通过设置可以直接访问\emph{HDFS}上已存储的轨迹数据，我们通过主节点（\emph{Master Node}）将增长型k最近邻查询代码分发给每一个工作节点并予以上运行。每个工作节点将针对各自输入查询点集所得出的k条最相似轨迹及其对应的相似度大小作为输出。通过对轨迹作为关键字合并中间查询结果，对相似度求和按相似度大小降序排列轨迹，再从中选取k条轨迹作为最终的结果。
