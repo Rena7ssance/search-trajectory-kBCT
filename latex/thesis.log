@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  17 MAY 2017 17:01
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  18 MAY 2017 17:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2970,19 +2970,21 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 
 
 
-])
+]
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [4])
 \tf@toc=\write7
 \openout7 = `thesis.toc'.
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-
-<use  "figure/sjtubanner.png" > [4] (./thesis.lof)
+ <use  "figure/sjtubanner.png" > [5]
+(./thesis.lof)
 \tf@lof=\write8
 \openout8 = `thesis.lof'.
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-
-<use  "figure/sjtubanner.png" > [5
+ <use  "figure/sjtubanner.png" > [6
 
 ] (./thesis.lot)
 \tf@lot=\write9
@@ -2990,7 +2992,7 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [6
+<use  "figure/sjtubanner.png" > [7
 
 ]
 \openout2 = `tex/introduction.aux'.
@@ -3181,14 +3183,22 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 
 
 ]
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [24]
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [25]
 File: figure/specification/system-architecture.png Graphic file (type QTm)
 
 <use  "figure/specification/system-architecture.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [24])
+<use  "figure/sjtubanner.png" > [26] (./figure/specification/systemflow.tex))
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [25]
+
+<use  "figure/sjtubanner.png" > [27]
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [28]
 \openout2 = `tex/conclusion.aux'.
 
 
@@ -3196,7 +3206,7 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 第五章
 )
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [26
+ <use  "figure/sjtubanner.png" > [29
 
 
 
@@ -3221,38 +3231,40 @@ eTermes(0)/m/n/10.53937 Data
  []
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [27
+<use  "figure/sjtubanner.png" > [30
 
 
 
 ]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [28]
+ <use  "figure/sjtubanner.png" > [31]
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [32]
 \openout2 = `tex/ack.aux'.
 
-
-(./tex/ack.tex)
+ (./tex/ack.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [29
+
+<use  "figure/sjtubanner.png" > [33
 
 
 ]
 \openout2 = `tex/end_english_abstract.aux'.
 
-
-(./tex/end_english_abstract.tex
+ (./tex/end_english_abstract.tex
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [1
+
+<use  "figure/sjtubanner.png" > [1
 
 
 
 ]
 File: figure/sjtubanner.png Graphic file (type QTm)
-
-<use  "figure/sjtubanner.png" > [2])
+ <use  "figure/sjtubanner.png" > [2])
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [3]
 
+<use  "figure/sjtubanner.png" > [3] 
 AED: lastpage setting LastPage
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
@@ -3274,12 +3286,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52316 strings out of 493591
- 1045796 string characters out of 6143547
- 1404991 words of memory out of 5000000
- 54776 multiletter control sequences out of 15000+600000
+ 52434 strings out of 493591
+ 1049295 string characters out of 6143547
+ 1405458 words of memory out of 5000000
+ 54891 multiletter control sequences out of 15000+600000
  27521 words of font info for 173 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  71i,16n,85p,10440b,4656s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (41 pages).
+Output written on thesis.pdf (46 pages).

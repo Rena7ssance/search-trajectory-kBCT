@@ -1,7 +1,7 @@
 \let \CTEX@spaceChar \relax 
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\contentsline {chapter}{插图索引}{v}{chapter*.4}
-\contentsline {chapter}{表格索引}{vi}{chapter*.5}
+\contentsline {chapter}{插图索引}{vi}{chapter*.4}
+\contentsline {chapter}{表格索引}{vii}{chapter*.5}
 \contentsline {chapter}{\numberline {第一章\hspace {0.3em}}绪论}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}轨迹数据处理背景阐述}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}轨迹查询概念简介}{2}{subsection.1.1.1}
@@ -43,21 +43,29 @@
 \contentsline {subsection}{\numberline {3.5.1}Spark分布式相似轨迹查询}{20}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}多请求分布式相似轨迹查询}{21}{subsection.3.5.2}
 \contentsline {section}{\numberline {3.6}本章小结}{21}{section.3.6}
-\contentsline {chapter}{\numberline {第四章\hspace {0.3em}}相似轨迹查询系统设计}{23}{chapter.4}
+\contentsline {chapter}{\numberline {第四章\hspace {0.3em}}相似轨迹查询系统设计与实现}{23}{chapter.4}
 \contentsline {section}{\numberline {4.1}本章序言}{23}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}系统应用范围}{23}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}系统名词定义}{23}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}大体描述}{24}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}系统设计框架}{24}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}系统功能描述}{25}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}系统限制描述}{25}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}用户类与特点}{25}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}系统具体需求分析}{25}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}系统需求说明目的}{25}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}用户界面需求}{25}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}用户功能需求}{25}{subsection.4.3.3}
-\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}结论}{26}{chapter.5}
-\contentsline {section}{\numberline {5.1}设计思路总结}{26}{section.5.1}
-\contentsline {section}{\numberline {5.2}未来工作展望}{26}{section.5.2}
-\contentsline {chapter}{参考文献}{27}{appendix*.6}
-\contentsline {chapter}{致\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}谢}{29}{appendix*.7}
+\contentsline {subsection}{\numberline {4.1.1}系统应用现状调查}{23}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}系统应用范围}{23}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}读者对象}{23}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}编写原则}{23}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}系统名词定义}{24}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}系统设计需求分析}{24}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}系统需求概述}{24}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}系统需求说明目的}{24}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}用户功能需求}{25}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}用户界面需求}{25}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}系统设计}{25}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}系统设计框架}{25}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}系统功能描述}{26}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}系统运行环境}{26}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}用户类与特点}{27}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}系统处理流程}{27}{subsection.4.3.5}
+\contentsline {section}{\numberline {4.4}系统分析}{27}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}系统组成分析}{27}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}系统性能分析}{27}{subsection.4.4.2}
+\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}结论}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}设计思路总结}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}未来工作展望}{29}{section.5.2}
+\contentsline {chapter}{参考文献}{30}{appendix*.6}
+\contentsline {chapter}{致\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}谢}{33}{appendix*.7}

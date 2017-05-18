@@ -996,6 +996,18 @@
       \keyw{shang2014personalized}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'shang2014personalized'}
     \endentry
+    \entry{AutoNavi}{report}{}
+      \list{institution}{1}{%
+        {AutoNavi Map Javascript Application Program Interface}%
+      }
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{usera}{R}
+      \verb{url}
+      \verb http://lbs.amap.com/api/javascript-api/summary/
+      \endverb
+      \keyw{AutoNavi}
+    \endentry
   \endsortlist
 \endrefsection
 \endinput

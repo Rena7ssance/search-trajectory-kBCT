@@ -1,0 +1,56 @@
+
+\begin{tikzpicture}[node distance=2cm]
+
+	%\node (input) [startstop] {输入轨迹数据类型判断};
+	%\node (input_judge) [decision, below of=input,yshift=-0.5cm,aspect=2.5] {是否为用户指定一组轨迹点集?};
+	%\node (ts) [process, right of=input_judge,xshift=5cm] {轨迹简化};
+	%\node (iknn) [process, below of=input_judge,yshift=-0.5cm]{增长型k相似轨迹查询};
+	%\node (bound_judge) [decision, below of=iknn,yshift=-0.5cm,aspect=2.5]{是否满足相似度上下界条件?};
+	%\node (refinement)[process, below of=bound_judge,yshift=-0.5cm]{备选轨迹集筛选};
+	%\node (output)[startstop, below of=refinement]{k条最相似轨迹输入};
+	
+
+%	\draw [arrow] (input) -- (input_judge);
+%	\draw [arrow] (input_judge) -- node[anchor=south]{否}(ts);
+%	\draw [arrow] (input_judge) -- node[anchor=west]{是}(iknn);
+%	\draw [arrow] (ts) |- (iknn);
+%	\draw [arrow] (iknn) -- (bound_judge);
+%	\draw [arrow] (bound_judge.west) |- node[anchor=south]{否}(iknn.west);
+%	\draw [arrow] (bound_judge.south) -- node[anchor=west]{是}(refinement.north);
+%	\draw [arrow] (refinement) -- (output);
+
+	\node (begin) [startstop] {进入系统界面};
+	\node (login_judge) [decision, below of=begin, yshift=-0.5cm, aspect=2.5]{是否需要登录};
+	\node (general) [process, right of=login_judge, xshift=3cm]{一般用户};
+	\node (login_type_judge) [decision, below of=login_judge, yshift=-0.5cm, aspect=2.5]{是否为管理员};
+	\node (history) [process, right of=login_type_judge, xshift=3cm]{登录用户};
+	\node (admin) [process, below of=login_type_judge]{管理员操作};
+	\node (search) [process, right of=history, xshift=3cm]{相似轨迹查询};
+	\node (is_search_good) [decision, below of=search, aspect=2.5]{是否满意查询结果};
+	\node (does_admin_finish) [decision, below of=admin, aspect=2.5]{管理员操作是否完成};
+	\node (finish) [process, below of=history]{系统处理完成};
+	\node (stop) [startstop, below of=finish]{退出系统界面};
+	
+	
+	
+	\draw [arrow](begin.south) -- (login_judge.north);
+	\draw [arrow](begin.east) -| node[anchor=south]{直接查询模式}(general.north);
+	\draw [arrow](login_judge.east) -- node[anchor=north]{否}(general.west);
+	\draw [arrow](login_judge.south) -- node[anchor=west]{是}(login_type_judge.north);
+	\draw [arrow](login_type_judge.east) -- node[anchor=north]{否}(history.west);
+	\draw [arrow](login_type_judge.south) -- node[anchor=west]{是}(admin.north);
+	\draw [arrow](general.east) -| (search.north);
+	\draw [arrow](history.east) -- (search.west);
+	
+	\draw [arrow](search.south) -- (is_search_good.north);
+	\draw [arrow](is_search_good.east) |- node[anchor=west]{否}(search.east);
+	\draw [arrow](is_search_good.west) -- node[anchor=north]{是}(finish.east);
+	
+	\draw [arrow](admin.south) -- (does_admin_finish.north);
+	\draw [arrow](does_admin_finish.west) |- node[anchor=east]{否}(admin.west);
+	\draw [arrow](does_admin_finish.east) |- node[anchor=east]{是}(finish.west);
+	
+	\draw [arrow](finish.south) -- (stop.north);
+
+\end{tikzpicture}
+
