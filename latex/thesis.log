@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  19 MAY 2017 17:38
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  20 MAY 2017 00:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2652,6 +2652,12 @@ Package biblatex Warning: Biber reported the following issues
 
 
 Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'chen2010searching':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'chen2010searching'.
+
+
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'agrawal1993efficient':
 (biblatex)                - Overwriting field 'year' with year value from field
  'date' for entry 'agrawal1993efficient'.
@@ -2742,6 +2748,12 @@ Package biblatex Warning: Biber reported the following issues
 
 
 Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'hongzhi2017parallel':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'hongzhi2017parallel'.
+
+
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'visvalingam1990douglas':
 (biblatex)                - Overwriting field 'year' with year value from field
  'date' for entry 'visvalingam1990douglas'.
@@ -2769,12 +2781,6 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'roussopoulos1995nearest':
 (biblatex)                - Overwriting field 'year' with year value from field
  'date' for entry 'roussopoulos1995nearest'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'chen2010searching':
-(biblatex)                - Overwriting field 'year' with year value from field
- 'date' for entry 'chen2010searching'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -3096,7 +3102,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--74
 
 File: figure/sjtubanner.png Graphic file (type QTm)
 <use  "figure/sjtubanner.png" > [4]
-Underfull \hbox (badness 10000) in paragraph at lines 85--88
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
@@ -3398,7 +3404,12 @@ variant distance measures for trajectories[C]\EU1/lmtt/m/n/10.53937 // \EU1/TeX
 GyreTermes(0)/m/n/10.53937 Pro-
  []
 
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [36
 
+
+
+]
 Overfull \hbox (9.14247pt too wide) in paragraph at lines 102--102
 []\EU1/TeXGyreTermes(0)/m/n/10.53937 FRENTZOS E, GRATSIAS K, THEODORIDIS Y. Ind
 ex-based most similar trajectory search[C]\EU1/lmtt/m/n/10.53937 // \EU1/TeXGyr
@@ -3406,40 +3417,34 @@ eTermes(0)/m/n/10.53937 Data
  []
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [36
-
-
-
-]
+<use  "figure/sjtubanner.png" > [37]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [37]
-File: figure/sjtubanner.png Graphic file (type QTm)
-
-<use  "figure/sjtubanner.png" > [38]
+ <use  "figure/sjtubanner.png" > [38]
 \openout2 = `tex/ack.aux'.
 
- (./tex/ack.tex)
-File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [39
+(./tex/ack.tex)
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [39
 
 
 ]
 \openout2 = `tex/end_english_abstract.aux'.
 
- (./tex/end_english_abstract.tex
-File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [1
+(./tex/end_english_abstract.tex
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [1
 
 
 
 ]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [2])
-File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [3] 
+<use  "figure/sjtubanner.png" > [2])
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [3]
+
 AED: lastpage setting LastPage
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
@@ -3462,12 +3467,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54261 strings out of 493591
- 1103465 string characters out of 6143547
- 1410904 words of memory out of 5000000
- 56620 multiletter control sequences out of 15000+600000
+ 54266 strings out of 493591
+ 1103676 string characters out of 6143547
+ 1411106 words of memory out of 5000000
+ 56625 multiletter control sequences out of 15000+600000
  33814 words of font info for 202 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 71i,16n,84p,10440b,4656s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,16n,84p,10440b,4660s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on thesis.pdf (52 pages).

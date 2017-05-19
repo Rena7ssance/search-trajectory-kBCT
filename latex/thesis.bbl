@@ -79,6 +79,54 @@
       \keyw{zheng2011computing}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'zheng2011computing'}
     \endentry
+    \entry{chen2010searching}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=d6db146c28d551b285f539d13487a5aa}{%
+           family={Chen},
+           family_i={C\bibinitperiod},
+           given={Zaiben},
+           given_i={Z\bibinitperiod}}}%
+        {{hash=e4d51f11650e851e72ac4d5731f46dd6}{%
+           family={Shen},
+           family_i={S\bibinitperiod},
+           given={Heng\bibnamedelima Tao},
+           given_i={H\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=1be3b9bc3df92cb45255893cafffcc48}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={Xiaofang},
+           given_i={X\bibinitperiod}}}%
+        {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=0801da56d6877e3eff32e6a6030425d3}{%
+           family={Xie},
+           family_i={X\bibinitperiod},
+           given={Xing},
+           given_i={X\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{1a7d63638ded04e7735ddce722425a43}
+      \strng{fullhash}{2f70567b9030442dc37c84cf14954bd8}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2010 ACM SIGMOD International Conference on Management of data}
+      \field{title}{Searching trajectories by locations: an efficiency study}
+      \field{usera}{C}
+      \field{usere}{Chen, Zaiben and Shen, Heng Tao and Zhou, Xiaofang and Zheng, Yu and Xie, Xing}
+      \field{userf}{Chen, Zaiben and Shen, Heng Tao and Zhou, Xiaofang and Zheng, Yu and Xie, Xing}
+      \field{year}{2010}
+      \field{pages}{255\bibrangedash 266}
+      \range{pages}{12}
+      \keyw{chen2010searching}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'chen2010searching'}
+    \endentry
     \entry{agrawal1993efficient}{article}{}
       \name{author}{3}{}{%
         {{hash=4b876a40aac16cd3d6b0278b1154b9da}{%
@@ -642,6 +690,49 @@
       \keyw{zaharia2010spark}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'zaharia2010spark'}
     \endentry
+    \entry{sparkclustermanager}{report}{}
+      \list{institution}{1}{%
+        {Cluster Mode Overview}%
+      }
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{usera}{R}
+      \verb{url}
+      \verb http://spark.apache.org/docs/latest/cluster-overview.html#cluster-manager-types
+      \endverb
+      \keyw{sparkclustermanager}
+    \endentry
+    \entry{hongzhi2017parallel}{article}{}
+      \name{author}{2}{}{%
+        {{hash=708585a890a6dd8e77b9bfd0ec784c3b}{%
+           family={Hongzhi},
+           family_i={H\bibinitperiod},
+           given={Wang},
+           given_i={W\bibinitperiod}}}%
+        {{hash=83fbbb6434ae392036d3ffc11e4a3692}{%
+           family={Belhassena},
+           family_i={B\bibinitperiod},
+           given={Amina},
+           given_i={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{9fe47daa022210e256629c20453e2ce0}
+      \strng{fullhash}{9fe47daa022210e256629c20453e2ce0}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{Parallel Trajectory Search Based on Distributed Index}
+      \field{usera}{J}
+      \field{usere}{Hongzhi, Wang and Belhassena, Amina}
+      \field{userf}{Hongzhi, Wang and Belhassena, Amina}
+      \field{year}{2017}
+      \keyw{hongzhi2017parallel}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'hongzhi2017parallel'}
+    \endentry
     \entry{visvalingam1990douglas}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=05a1fd66648f55e09acdf35954b07114}{%
@@ -839,54 +930,6 @@
       \range{pages}{9}
       \keyw{roussopoulos1995nearest}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'roussopoulos1995nearest'}
-    \endentry
-    \entry{chen2010searching}{inproceedings}{}
-      \name{author}{5}{}{%
-        {{hash=d6db146c28d551b285f539d13487a5aa}{%
-           family={Chen},
-           family_i={C\bibinitperiod},
-           given={Zaiben},
-           given_i={Z\bibinitperiod}}}%
-        {{hash=e4d51f11650e851e72ac4d5731f46dd6}{%
-           family={Shen},
-           family_i={S\bibinitperiod},
-           given={Heng\bibnamedelima Tao},
-           given_i={H\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
-        {{hash=1be3b9bc3df92cb45255893cafffcc48}{%
-           family={Zhou},
-           family_i={Z\bibinitperiod},
-           given={Xiaofang},
-           given_i={X\bibinitperiod}}}%
-        {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
-           family={Zheng},
-           family_i={Z\bibinitperiod},
-           given={Yu},
-           given_i={Y\bibinitperiod}}}%
-        {{hash=0801da56d6877e3eff32e6a6030425d3}{%
-           family={Xie},
-           family_i={X\bibinitperiod},
-           given={Xing},
-           given_i={X\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {ACM}%
-      }
-      \strng{namehash}{1a7d63638ded04e7735ddce722425a43}
-      \strng{fullhash}{2f70567b9030442dc37c84cf14954bd8}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 2010 ACM SIGMOD International Conference on Management of data}
-      \field{title}{Searching trajectories by locations: an efficiency study}
-      \field{usera}{C}
-      \field{usere}{Chen, Zaiben and Shen, Heng Tao and Zhou, Xiaofang and Zheng, Yu and Xie, Xing}
-      \field{userf}{Chen, Zaiben and Shen, Heng Tao and Zhou, Xiaofang and Zheng, Yu and Xie, Xing}
-      \field{year}{2010}
-      \field{pages}{255\bibrangedash 266}
-      \range{pages}{12}
-      \keyw{chen2010searching}
-      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'chen2010searching'}
     \endentry
     \entry{tang2011retrieving}{inproceedings}{}
       \name{author}{6}{}{%

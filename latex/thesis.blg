@@ -1,42 +1,43 @@
 [0] Config.pm:343> INFO - This is Biber 2.5
 [0] Config.pm:346> INFO - Logfile is 'thesis.blg'
-[55] biber-darwin:290> INFO - === Fri May 19, 2017, 15:57:09
-[81] Biber.pm:351> INFO - Reading 'thesis.bcf'
-[187] Biber.pm:776> INFO - Found 28 citekeys in bib section 0
-[202] Biber.pm:3493> INFO - Processing section 0
-[219] Biber.pm:3657> INFO - Looking for bibtex format file 'bib/thesis.bib' for section 0
-[222] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[225] bibtex.pm:1048> INFO - Found BibTeX data source 'bib/thesis.bib'
-[230] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'zheng2015trajectory'
-[231] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'zheng2011computing'
-[233] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'agrawal1993efficient'
-[236] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'chan1999efficient'
-[237] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'bernad1996finding'
-[239] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'yanagisawa2003shape'
-[241] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'cai2004indexing'
-[243] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'vlachos2004rotation'
-[245] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'sakurai2005ftw'
-[247] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'vlachos2002discovering'
-[251] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'chen2005robust'
-[254] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'chen2004marriage'
-[256] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'frentzos2007index'
-[258] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'sankararaman2013model'
-[260] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'morse2007efficient'
-[262] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'dean2008mapreduce'
-[265] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'zaharia2010spark'
-[266] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'visvalingam1990douglas'
-[268] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'sellis1987r+'
-[271] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'chen2009trajectory'
-[273] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'qi2015efficient'
-[275] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'roussopoulos1995nearest'
-[277] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'chen2010searching'
-[279] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'tang2011retrieving'
-[282] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'shang2014personalized'
-[291] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'tuw2002software'
-[316] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[316] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[317] Biber.pm:3306> INFO - Sorting list 'none/global/' of type 'entry' with scheme 'none' and locale 'en-US'
-[317] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
-[334] bbl.pm:526> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[338] bbl.pm:619> INFO - Output to thesis.bbl
-[338] Biber.pm:108> INFO - WARNINGS: 26
+[42] biber-darwin:290> INFO - === Fri May 19, 2017, 23:49:44
+[60] Biber.pm:351> INFO - Reading 'thesis.bcf'
+[154] Biber.pm:776> INFO - Found 30 citekeys in bib section 0
+[165] Biber.pm:3493> INFO - Processing section 0
+[180] Biber.pm:3657> INFO - Looking for bibtex format file 'bib/thesis.bib' for section 0
+[183] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[186] bibtex.pm:1048> INFO - Found BibTeX data source 'bib/thesis.bib'
+[190] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'zheng2015trajectory'
+[192] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'zheng2011computing'
+[195] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'chen2010searching'
+[197] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'agrawal1993efficient'
+[199] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'chan1999efficient'
+[201] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'bernad1996finding'
+[203] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'yanagisawa2003shape'
+[205] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'cai2004indexing'
+[207] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'vlachos2004rotation'
+[209] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'sakurai2005ftw'
+[210] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'vlachos2002discovering'
+[213] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'chen2005robust'
+[215] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'chen2004marriage'
+[217] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'frentzos2007index'
+[219] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'sankararaman2013model'
+[220] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'morse2007efficient'
+[223] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'dean2008mapreduce'
+[225] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'zaharia2010spark'
+[231] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'hongzhi2017parallel'
+[233] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'visvalingam1990douglas'
+[234] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'sellis1987r+'
+[237] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'chen2009trajectory'
+[238] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'qi2015efficient'
+[240] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'roussopoulos1995nearest'
+[242] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'tang2011retrieving'
+[244] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'shang2014personalized'
+[247] Utils.pm:149> WARN - Overwriting field 'year' with year value from field 'date' for entry 'tuw2002software'
+[272] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[272] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[272] Biber.pm:3306> INFO - Sorting list 'none/global/' of type 'entry' with scheme 'none' and locale 'en-US'
+[272] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
+[289] bbl.pm:526> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[294] bbl.pm:619> INFO - Output to thesis.bbl
+[294] Biber.pm:108> INFO - WARNINGS: 27

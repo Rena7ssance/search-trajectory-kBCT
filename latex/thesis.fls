@@ -405,6 +405,8 @@ INPUT tex/requirement.aux
 INPUT tex/requirement.aux
 INPUT tex/design.aux
 INPUT tex/design.aux
+INPUT tex/evaluation.aux
+INPUT tex/evaluation.aux
 INPUT tex/conclusion.aux
 INPUT tex/conclusion.aux
 INPUT tex/ack.aux
@@ -617,9 +619,9 @@ INPUT figure/chapter03/iknn.tex
 INPUT figure/chapter03/iknn.tex
 INPUT figure/sjtubanner.png
 INPUT figure/sjtubanner.png
-INPUT figure/sjtubanner.png
-INPUT figure/sjtubanner.png
 INPUT figure/chapter04/distributed.png
+INPUT figure/sjtubanner.png
+INPUT figure/sjtubanner.png
 INPUT figure/sjtubanner.png
 INPUT figure/sjtubanner.png
 INPUT figure/sjtubanner.png
@@ -686,6 +688,10 @@ INPUT figure/design/module.tex
 INPUT figure/design/module.tex
 INPUT figure/sjtubanner.png
 INPUT figure/sjtubanner.png
+OUTPUT tex/evaluation.aux
+INPUT tex/evaluation.tex
+INPUT tex/evaluation.tex
+INPUT figure/sjtubanner.png
 OUTPUT tex/conclusion.aux
 INPUT tex/conclusion.tex
 INPUT tex/conclusion.tex
@@ -718,6 +724,8 @@ INPUT tex/requirement.aux
 INPUT tex/requirement.aux
 INPUT tex/design.aux
 INPUT tex/design.aux
+INPUT tex/evaluation.aux
+INPUT tex/evaluation.aux
 INPUT tex/conclusion.aux
 INPUT tex/conclusion.aux
 INPUT tex/ack.aux

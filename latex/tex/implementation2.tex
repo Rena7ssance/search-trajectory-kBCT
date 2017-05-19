@@ -45,7 +45,7 @@
 
 图\ref{similarity}通过距离说明查询点和轨迹之间的匹配关系。如图\ref{similarity}(a)所示，查询点$q_{1}$、$q_{2}$和$q_{3}$分别与轨迹R上的轨迹点$p_{6}$、$p_{4}$和$p_{7}$最近匹配，根据式\ref{eq3-2}可以得出，$Sim(Q,R) = \emph{e}^{-D_{q}(q_{1}, p_{6})} + \emph{e}^{-D_{q}(q_{2}, p_{4})} + \emph{e}^{-D_{q}(q_{3}, p_{7})} = \emph{e}^{-1.5}+ \emph{e}^{-0.1} + \emph{e}^{-0.1}$。
 
-另一方面，选择查询点和轨迹之前进行有序查询时，顺序性是需要在查询过程中予以考虑。对于查询点$q_{i}$而言，最近匹配点或许并不在是距离上最近的轨迹点$p_{j}$。因此，相似度方程在此步骤中应该适当调整。我们再借用图\ref{similarity}予以说明。假设以下用户场景：用户希望查询出一条以$q_{1} \rightarrow q_{2} \rightarrow q_{3}$为顺序的相似轨迹，显然图\ref{similarity}(a)中的顺序并不再符合用户需求。实际的有序查询结果顺序如图\ref{similarity}(b)是$p_{3} \rightarrow q_{4} \rightarrow q_{7}$。在考虑有序性的相似查询规程中，我们的目标是在保持查询有序性的同时追求每一对匹配点对相似度的最大贡献值，即从图\ref{similarity}(b)可以看出$<q_{1},p_{3}>, <q_{2},p_{4}>, <q_{3},p_{7}>$这样的三对匹配点是所有有序匹配对中使得相似度最大的情况。
+另一方面，选择查询点和轨迹之前进行有序查询时，顺序性是需要在查询过程中予以考虑。对于查询点$q_{i}$而言，最近匹配点或许并不在是距离上最近的轨迹点$p_{j}$。因此，相似度方程在此步骤中应该适当调整。我们再借用图\ref{similarity}\cite{chen2010searching}予以说明。假设以下用户场景：用户希望查询出一条以$q_{1} \rightarrow q_{2} \rightarrow q_{3}$为顺序的相似轨迹，显然图\ref{similarity}(a)中的顺序并不再符合用户需求。实际的有序查询结果顺序如图\ref{similarity}(b)是$p_{3} \rightarrow q_{4} \rightarrow q_{7}$。在考虑有序性的相似查询规程中，我们的目标是在保持查询有序性的同时追求每一对匹配点对相似度的最大贡献值，即从图\ref{similarity}(b)可以看出$<q_{1},p_{3}>, <q_{2},p_{4}>, <q_{3},p_{7}>$这样的三对匹配点是所有有序匹配对中使得相似度最大的情况。
 
 \begin{figure}[!htp]
   \centering
@@ -131,7 +131,7 @@ Sim_{o}(Q,R)= max \left\{
   \bicaption[fig:similar-search]{基于位置点的相似轨迹查询}{基于位置点的相似轨迹查询}{Fig}{Search similar trajectory by location points}
 \end{figure}
 
-如图\ref{fig:similar-search}所示，本文所实现的相似轨迹查询算法主要为针对地理位置点集的轨迹搜索算法\cite{qi2015efficient}。将轨迹数据按特定需求分类索引在R树数据结构上后，该相似轨迹查询算法在轨迹点k最近邻查询算法\cite{roussopoulos1995nearest}基础上，实现了增长型k最近邻查询算法\cite{chen2010searching}，结合备选和筛选（candidate-refinement）的剪枝思路\cite{tang2011retrieving}，通过轨迹相似度上界与下界对搜索空间进行优化处理，以满足空间搜索算法的高效性和准确性。
+如图\ref{fig:similar-search}\cite{shang2014personalized}所示，本文所实现的相似轨迹查询算法主要为针对地理位置点集的轨迹搜索算法\cite{qi2015efficient}。将轨迹数据按特定需求分类索引在R树数据结构上后，该相似轨迹查询算法在轨迹点k最近邻查询算法\cite{roussopoulos1995nearest}基础上，实现了增长型k最近邻查询算法\cite{chen2010searching}，结合备选和筛选（candidate-refinement）的剪枝思路\cite{tang2011retrieving}，通过轨迹相似度上界与下界对搜索空间进行优化处理，以满足空间搜索算法的高效性和准确性。
 
 在这里，轨迹相似度上界与下界所满足的搜索剪枝关系用定理\ref{thm:similarity-bound}描述
 
@@ -205,7 +205,7 @@ Sim_{o}(Q,R)= max \left\{
   \bicaption[fig:distributed]{Spark分布式相似轨迹查询}{Spark分布式相似轨迹查询}{Fig}{Spark distributed search similar trajectories}
 \end{figure}
 
-图\ref{fig:distributed}为\emph{MapReduce}的大致处理框架，我们根据这一框架设计出分布式查询相似轨迹的大致算法。在算法中，假设我们已经完成对原始轨迹的简化得到已处理好的简化轨迹$Traj'$\cite{chen2009trajectory}。首先我们通过\emph{Spark}内的\emph{partition}函数将输入数据分割，并分发给每一个工作节点（\emph{Worker Node}）。对于每一个工作节点而言，他们都有了输入数据的一部分轨迹点。对于每一个工作节点而言，他们都可以将自己所拥有的部分轨迹点作为相似轨迹查询的查询点集，由于工作节点通过设置可以直接访问\emph{HDFS}上已存储的轨迹数据，我们通过主节点（\emph{Master Node}）将增长型k最近邻查询代码分发给每一个工作节点并予以上运行。每个工作节点将针对各自输入查询点集所得出的k条最相似轨迹及其对应的相似度大小作为输出。通过对轨迹作为关键字合并中间查询结果，对相似度求和按相似度大小降序排列轨迹，再从中选取k条轨迹作为最终的结果。
+图\ref{fig:distributed}\cite{dean2008mapreduce}为\emph{MapReduce}的大致处理框架，我们根据这一框架设计出分布式查询相似轨迹的大致算法。在算法中，假设我们已经完成对原始轨迹的简化得到已处理好的简化轨迹$Traj'$\cite{chen2009trajectory}。首先我们通过\emph{Spark}内的\emph{partition}函数将输入数据分割，并分发给每一个工作节点（\emph{Worker Node}）。对于每一个工作节点而言，他们都有了输入数据的一部分轨迹点。对于每一个工作节点而言，他们都可以将自己所拥有的部分轨迹点作为相似轨迹查询的查询点集，由于工作节点通过设置可以直接访问\emph{HDFS}上已存储的轨迹数据，我们通过主节点（\emph{Master Node}）将增长型k最近邻查询代码分发给每一个工作节点并予以上运行。每个工作节点将针对各自输入查询点集所得出的k条最相似轨迹及其对应的相似度大小作为输出。通过对轨迹作为关键字合并中间查询结果，对相似度求和按相似度大小降序排列轨迹，再从中选取k条轨迹作为最终的结果。
 
 实现细节如算法\ref{algo:distributed sim}所示。其中在运行过程中初始化\emph{Spark}运行所需的上下文变量并设置主节点信息。在\emph{map}阶段对查询点集进行查询搜索，在\emph{reduce}阶段进行关键字合并。
 
