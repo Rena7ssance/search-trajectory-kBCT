@@ -297,6 +297,22 @@
 \algnewcommand\Assert[1]{\State \algorithmicassert(#1)}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% sjtuspace
+\newcommand\sjtuspace{\protect\CTEX@spaceChar\protect\CTEX@spaceChar}
+\def\sjtu@getfileinfo#1 #2 #3\relax#4\relax{%
+  \def\sjtufiledate{#1}%
+  \def\sjtufileversion{#2}%
+  \def\sjtufileinfo{#3}}%
+\expandafter\ifx\csname ver@sjtuthesis.cls\endcsname\relax
+  \edef\reserved@a{\csname ver@ctextemp_sjtuthesis.cls\endcsname}
+\else
+  \edef\reserved@a{\csname ver@sjtuthesis.cls\endcsname}
+\fi
+\expandafter\sjtu@getfileinfo\reserved@a\relax? ? \relax\relax
+\def\sjtu@underline[#1]#2{%
+  \CTEXunderline{\hbox to #1{\hfill#2\hfill}}}
+\def\sjtuunderline{\@ifnextchar[\sjtu@underline\CTEXunderline}
+
 %==========
 % Segment 4. Draw the sjtuthesis
 %==========
@@ -323,34 +339,71 @@
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-  {\songti\zihao{-3}\sjtu@label@statement}
+  \begin{figure}[!htp] %上海交通大学图片
+   \centering
+   \includegraphics[angle=0,origin=br,width=13cm]{sjtubadge.png}
+  \end{figure}
+  {\heiti\zihao{-2}\sjtu@label@sjtu} %SHANGHAI JIAO TONG UNIVERSITY
   \vskip\stretch{1}
-  {\heiti\zihao{3}\sjtu@value@title}
+  %\vskip 15pt
+  {\kaishu\zihao{1}\sjtu@label@statement} %学士学位论文
+  \vskip 5pt
+  \heiti\zihao{-2}\sjtu@label@bacheloreng %Bachelor's Thesis
+  \begin{figure}[!htp] %校徽图片
+   \centering
+   \includegraphics[angle=0,origin=br,width=4cm]{sjtu.png}
+  \end{figure}
   \vskip\stretch{1}
+  %\vskip 20pt
+  \begin{tabular}{ll} %论文题目
+    \huge{\kaishu\sjtu@label@title}&\kaishu
+  \sjtuunderline[300pt]{\sjtu@value@title}
+  \end{tabular}
+  \vskip\stretch{1}
+  %\vskip 5pt
   {\fangsong\zihao{4}}
   \def\tabcolsep{1pt}
-  \def\arraystretch{1.5}
-  \begin{tabular}{rl}
-    \ifsjtu@review
-      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@author\end{CJKfilltwosides} & \underline{\makebox[150pt]{}}\\
-      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@studentnumber\end{CJKfilltwosides} & \underline{\makebox[150pt]{}} \\
-      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@advisor\end{CJKfilltwosides}  & \underline{\makebox[150pt]{}} \\ 
-      \ifx\sjtu@value@coadvisor\undefined\else
-        \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@coadvisor\end{CJKfilltwosides} & \underline{\makebox[150pt]{}} \\ 
-      \fi
-    \else
-      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@author\end{CJKfilltwosides}	& \underline{\makebox[150pt]{\sjtu@value@author}} \\
-      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@studentnumber\end{CJKfilltwosides} & \underline{\makebox[150pt]{\sjtu@value@studentnumber}} \\
-      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@advisor\end{CJKfilltwosides} 	 & \underline{\makebox[150pt]{\sjtu@value@advisor}} \\ 
-      \ifx\sjtu@value@coadvisor\undefined\else
-        \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@coadvisor\end{CJKfilltwosides} 	 & \underline{\makebox[150pt]{\sjtu@value@coadvisor}} \\ 
-      \fi
-    \fi
-      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@major\end{CJKfilltwosides} 	 & \underline{\makebox[150pt]{\sjtu@value@major}} \\
-      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@defenddate\end{CJKfilltwosides} 	 & \underline{\makebox[150pt]{\sjtu@value@defenddate}}
-  \end{tabular}
+  \def\arraystretch{1}
+
+    \begin{tabular}{lc}
+      \kaishu\sjtu@label@author &\kaishu
+      \sjtuunderline[180pt]{\sjtu@value@author}
+    \\
+      \kaishu\sjtu@label@studentnumber &\kaishu
+      \sjtuunderline[180pt]{\sjtu@value@studentnumber}
+    \\
+      \kaishu\sjtu@label@advisor &\kaishu
+      \sjtuunderline[180pt]{\sjtu@value@advisor}
+    \\  
+      \kaishu\sjtu@label@major &\kaishu
+      \sjtuunderline[180pt]{\sjtu@value@major}
+    \\  
+      \kaishu\sjtu@label@institute &\kaishu
+      \sjtuunderline[180pt]{\sjtu@value@institute}
+    \end{tabular}
+
+%  \begin{tabular}{rl}
+%    \ifsjtu@review
+%      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@author\end{CJKfilltwosides} & \underline{\makebox[150pt]{}}\\
+%      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@studentnumber\end{CJKfilltwosides} & \underline{\makebox[150pt]{}} \\
+%      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@advisor\end{CJKfilltwosides}  & \underline{\makebox[150pt]{}} \\ 
+%      \ifx\sjtu@value@coadvisor\undefined\else
+%        \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@coadvisor\end{CJKfilltwosides} & \underline{\makebox[150pt]{}} \\ 
+%      \fi
+%    \else
+%      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@author\end{CJKfilltwosides}	& \underline{\makebox[150pt]{\sjtu@value@author}} \\
+%      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@studentnumber\end{CJKfilltwosides} & \underline{\makebox[150pt]{\sjtu@value@studentnumber}} \\
+%      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@advisor\end{CJKfilltwosides} 	 & \underline{\makebox[150pt]{\sjtu@value@advisor}} \\ 
+%      \ifx\sjtu@value@coadvisor\undefined\else
+%        \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@coadvisor\end{CJKfilltwosides} 	 & \underline{\makebox[150pt]{\sjtu@value@coadvisor}} \\ 
+%      \fi
+%    \fi
+%      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@major\end{CJKfilltwosides} 	 & \underline{\makebox[150pt]{\sjtu@value@major}} \\
+%      \begin{CJKfilltwosides}{4em}\heiti\sjtu@label@defenddate\end{CJKfilltwosides} 	 & \underline{\makebox[150pt]{\sjtu@value@defenddate}}
+%  \end{tabular}
+
   \end{center}
-  \vskip \stretch{0.5}
+  %\vskip \stretch{0.5}
   \cleardoublepage
 }
 

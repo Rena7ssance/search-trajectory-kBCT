@@ -1,0 +1,27 @@
+\begin{tikzpicture}[
+      every node/.style = {draw, rounded corners=3pt, semithick},
+            ROOT/.style = {inner sep=3mm, fill=red!1, font=\bfseries},
+              L1/.style = {fill=blue!1},
+              L2/.style = {fill=orange!1},
+              L3/.style = {fill=green!1, grow=down, xshift=1em, anchor=west, 
+      edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}},
+edge from parent/.style = {draw, thick},
+              LD/.style = {level distance=#1ex},
+             LD1/.style = {level distance=6ex},
+             LD2/.style = {level distance=12ex},
+             LD3/.style = {level distance=18ex},
+         level 1/.style = {sibling distance=50mm}
+                        ]
+    % Parents
+\node[ROOT] {相似轨迹查询系统}
+    [edge from parent fork down]
+    child{node[L2] {用户模块}
+      child[L3,LD1]   {node[L3]   {用户登录模块}}
+      child[L3,LD2]   {node[L3]   {轨迹查询模块}}
+      child[L3,LD3]   {node[L3]   {地理查询模块}}
+      }
+    child{node[L2] {管理员模块}
+      child[L3,LD1]  {node[L3]   {用户管理模块}}
+      child[L3,LD2]  {node[L3]   {轨迹管理模块}}
+      };
+\end{tikzpicture}

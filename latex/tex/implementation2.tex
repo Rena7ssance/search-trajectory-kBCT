@@ -8,14 +8,14 @@
 \theoremstyle{definition}
 \newtheorem{definition}{定义}[section]
 
-\chapter{相似轨迹查询方法实现}
+\chapter{分布式相似轨迹查询方法实现}
 \label{chap:implementation}
 
 \section{相似轨迹查询问题描述}
 \label{sec:question describe}
 相似轨迹查询传统意义上是根据一条已有历史轨迹，在轨迹数据库中查询出与这一条轨迹在地理位置上形状相似的一条或多条轨迹。在本文中，我们将输入轨迹进一步简化为一组轨迹查询点集$Q$。$Q$在地理位置上保留轨迹原有的形状，通过对点集$Q$进行\emph{k最佳连接}查询，从轨迹数据库$D$中得出k条最相似的轨迹集合$T'$作为输出。由于系统设计与用户的交互，性能指标方面查询结果应满足高效、实时且具有良好的准确性。
 
-\section{k最佳连接}
+\section{k最佳连接定义}
 \label{sec:k-bct}
 一个轨迹数据库中存储了大量的原始车载GPS轨迹或是已经预处理过的车载GPS轨迹。这里的轨迹由一系列的地理位置点组成$\{p_{1},p_{2},p_{3},\cdots, p_{m}\}$，其中$p_{i}$ $1\leq i \leq m$代表一个由经度和维度构成的地理位置点而$m$代表轨迹中点的数目。本文所定义的k最佳连接查询（k Best-Connected Rrajectory Query）的输入由一组查询点$Q$组成。$q_{j}$ $1 \leq j \leq n$和$p_{i}$定义相同，其中n是查询点的数目。这里用户可以选择选择是否在查询中指定轨迹连接依照查询点的先后顺序，即是否选择查询有序性。若选择查询有序性，则查询点集$Q$为认为是从$q_{1}$到$q_{m}$有序点集。
 \begin{displaymath}
@@ -186,6 +186,56 @@ Sim_{o}(Q,R)= max \left\{
     \bicaption[fig:iknn-flowchart]{相似轨迹查询算法流程图}{相似轨迹查询算法流程图}{Fig}{Searching algorithm flow chart}
 \end{figure}
 
+
+%%%%%%%%%%
+
+
+\section{分布式相似轨迹查询算法实现}
+\label{sec:distributed algo}
+在之前的工作描述中，我们对于相似轨迹查询的实现总会提及查询点集的数目相对较少这一前提。对于单机处理而言，如果将一整条轨迹的轨迹数据点作为输入或者查询点集过多，由于增长型k最近邻查询会对每一个查询点都进行$\lambda$-NN的搜索处理，因此整个相似轨迹的查询过程会显得相对缓慢。但有些时候，将一条轨迹作为相似轨迹查询的输入的确更简单且更人性化\cite{shang2014personalized}。在硬件设置对算法性能的约束下，借助基于地理位置点的轨迹简化方法，我们可以对前一章所涉及的相似轨迹查询方法通过加入\emph{Spark}分布式集群处理的手段，做到以一条轨迹（或数量更多的查询点）为输入的相似轨迹查询操作。具体实现思路在于，通过基于地理位置点的轨迹简化方法将一条轨迹简化为一组数量相对于单机查询要多的查询点集；然后将查询点通过分布式集群操作分配给各个子节点来进行相对于各集群节点的相似轨迹查询操作，各个子节点通过访问HDFS获取轨迹数据和轨迹R树索引；最后将结果以轨迹为关键字，以相似度为权值进行求和，选择相似度和最高的k条轨迹作为查询结果。
+
+
+\subsection{Spark分布式相似轨迹查询}
+\label{subsec:distributed similar}
+\emph{Spark}集群环境使得我们可以将代码分发给各个工作节点使他们处理对数据集相同的操作，这为分布式搜索相似轨迹提供了实现的基础。单机实现相似轨迹搜索为保证运行性能，给定的输入集查询点需要保证数量在某一程度上相对较小。但对于分布式处理而言，这一约束可以通过集群集计算处理予以取消。给定一条原始轨迹$Traj$，我们可以先通过基于地理位置点的轨迹简化在保留轨迹形状和轨迹中的重要位置点的同时，一定程度上减少轨迹数目。事实上，如果集群设备性能较好，我们可以略去集群计算相似轨迹前对轨迹简化这一步骤。由于本文实验设备限制，通过在集群处理前的轨迹简化能在保证结果正确性的过程中，稳定处理性能。因此，我们将轨迹简化作为集群计算前的预处理过程。
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{chapter04/distributed.png}
+  \bicaption[fig:distributed]{Spark分布式相似轨迹查询}{Spark分布式相似轨迹查询}{Fig}{Spark distributed search similar trajectories}
+\end{figure}
+
+图\ref{fig:distributed}为\emph{MapReduce}的大致处理框架，我们根据这一框架设计出分布式查询相似轨迹的大致算法。在算法中，假设我们已经完成对原始轨迹的简化得到已处理好的简化轨迹$Traj'$\cite{chen2009trajectory}。首先我们通过\emph{Spark}内的\emph{partition}函数将输入数据分割，并分发给每一个工作节点（\emph{Worker Node}）。对于每一个工作节点而言，他们都有了输入数据的一部分轨迹点。对于每一个工作节点而言，他们都可以将自己所拥有的部分轨迹点作为相似轨迹查询的查询点集，由于工作节点通过设置可以直接访问\emph{HDFS}上已存储的轨迹数据，我们通过主节点（\emph{Master Node}）将增长型k最近邻查询代码分发给每一个工作节点并予以上运行。每个工作节点将针对各自输入查询点集所得出的k条最相似轨迹及其对应的相似度大小作为输出。通过对轨迹作为关键字合并中间查询结果，对相似度求和按相似度大小降序排列轨迹，再从中选取k条轨迹作为最终的结果。
+
+实现细节如算法\ref{algo:distributed sim}所示。其中在运行过程中初始化\emph{Spark}运行所需的上下文变量并设置主节点信息。在\emph{map}阶段对查询点集进行查询搜索，在\emph{reduce}阶段进行关键字合并。
+
+\begin{algorithm}
+% \begin{algorithm}[H] % 强制定位
+\caption{分布式相似轨迹查询算法}
+\label{algo:distributed sim}
+\begin{algorithmic}[1] %每行显示行号
+\Require 相似轨迹查询数目$k$,一条原始轨迹数据$Traj$% 输入
+\Ensure $k$条最相似轨迹$k$-$Trajs$ % 输出
+\State $Traj' \gets TS(Traj)$; $\qquad$//简化轨迹
+\State Initialise \emph{Spark} Context $sc$ and set Master information;
+\State $RDD \gets sc.parallelize(Traj', partitionNumber)$;
+\State $k$-$Trajs$ $\gets RDD.map(iknn) $ $\qquad$//工作节点分布式进行查询处理
+\State $\qquad\quad.flatMap(lambda\quad x$:$x)$ $\qquad$//查询结果平铺成为一维列表或数组
+\State $\qquad\quad.reduceByKey(lambda\quad x,y$:$x+y)$$\qquad$//以轨迹为关键字做相似度求和
+\State $\quad\qquad.sortBy(lambda\quad x$:$x[1], descending)$$\qquad$//降序排列
+\State $\quad\qquad.collect()$;
+\State \textbf{return} $k$-$Trajs$; 
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{多请求分布式相似轨迹查询}
+\label{subsec:distributed multiple}
+从工业应用角度，多用户同时进行相似轨迹处理时，可以针对对多请求的分布式相似轨迹查询处理。将请求数据集根据\emph{Spark}环境默认的分割方法或自定义的分割方法，将多请求分割成多个子集，然后分配个集群中的子节点，让他们各自处理处理一部分请求。在实际生活中，作为一个交付使用的应用，在某个时段可能有多个用户请求发送给服务器端，在配置有集群环境的情况下，可以实现对请求的分布式处理，具体思路类似于上文分布式相似轨迹查询，不予以赘述。
+
+
+%%%%%%%%%%
+
+
 \section{算法优化}
 \label{sec:optimization}
 
@@ -249,47 +299,7 @@ Ratio(q_i) = \frac{Number(q_i)}{\Delta\lambda}
 
 假设$M[i][j]$是我们需要解决查询问题的子问题的有序相似度，即$Sim_{order}(\{q_1,q_2,q_3,\cdots,q_i\}$, $\{p_1,p_2,p_3,\cdots,p_j\})$。对于动态规划思路而言，当我们获取到$M[i-1][j]$和$M[i][j-1]$的值时，我们可以通过比较$e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$和$M[i][j-1]$的值来决定$M[i][j]$的最大值。如果值$e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$较大，我们可以得出目前的一对匹配点对为$<p_i, p_j>$，并令$M[i][j] = e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$，反之，我们略过对$p_j$的目前和之后匹配，并令$M[i][j]=M[i][j-1]$。这一动态规划的思路自底向上的解决了$M[i][j]$的求值问题，其中$m$为查询点集的基数大小而$n$为轨迹点数目。在算法最后通过范围二维数组中的值来表示查询点集$Q$和轨迹$R$之前有序相似度。算法的复杂性为$O(mn)$，在具体应用中由于$m$的值相对于$n$来说普遍较小，所以我们可以将算法复杂性近似看成是线性的。
 
-\section{分布式相似轨迹查询算法实现}
-\label{sec:distributed algo}
-在之前的工作描述中，我们对于相似轨迹查询的实现总会提及查询点集的数目相对较少这一前提。对于单机处理而言，如果将一整条轨迹的轨迹数据点作为输入或者查询点集过多，由于增长型k最近邻查询会对每一个查询点都进行$\lambda$-NN的搜索处理，因此整个相似轨迹的查询过程会显得相对缓慢。但有些时候，将一条轨迹作为相似轨迹查询的输入的确更简单且更人性化\cite{shang2014personalized}。在硬件设置对算法性能的约束下，借助基于地理位置点的轨迹简化方法，我们可以对前一章所涉及的相似轨迹查询方法通过加入\emph{Spark}分布式集群处理的手段，做到以一条轨迹（或数量更多的查询点）为输入的相似轨迹查询操作。具体实现思路在于，通过基于地理位置点的轨迹简化方法将一条轨迹简化为一组数量相对于单机查询要多的查询点集；然后将查询点通过分布式集群操作分配给各个子节点来进行相对于各集群节点的相似轨迹查询操作，各个子节点通过访问HDFS获取轨迹数据和轨迹R树索引；最后将结果以轨迹为关键字，以相似度为权值进行求和，选择相似度和最高的k条轨迹作为查询结果。
-
-
-\subsection{Spark分布式相似轨迹查询}
-\label{subsec:distributed similar}
-\emph{Spark}集群环境使得我们可以将代码分发给各个工作节点使他们处理对数据集相同的操作，这为分布式搜索相似轨迹提供了实现的基础。单机实现相似轨迹搜索为保证运行性能，给定的输入集查询点需要保证数量在某一程度上相对较小。但对于分布式处理而言，这一约束可以通过集群集计算处理予以取消。给定一条原始轨迹$Traj$，我们可以先通过基于地理位置点的轨迹简化在保留轨迹形状和轨迹中的重要位置点的同时，一定程度上减少轨迹数目。事实上，如果集群设备性能较好，我们可以略去集群计算相似轨迹前对轨迹简化这一步骤。由于本文实验设备限制，通过在集群处理前的轨迹简化能在保证结果正确性的过程中，稳定处理性能。因此，我们将轨迹简化作为集群计算前的预处理过程。
-
-\begin{figure}[!htp]
-  \centering
-  \includegraphics[width=0.8\textwidth]{chapter04/distributed.png}
-  \bicaption[fig:distributed]{Spark分布式相似轨迹查询}{Spark分布式相似轨迹查询}{Fig}{Spark distributed search similar trajectories}
-\end{figure}
-
-图\ref{fig:distributed}为\emph{MapReduce}的大致处理框架，我们根据这一框架设计出分布式查询相似轨迹的大致算法。在算法中，假设我们已经完成对原始轨迹的简化得到已处理好的简化轨迹$Traj'$\cite{chen2009trajectory}。首先我们通过\emph{Spark}内的\emph{partition}函数将输入数据分割，并分发给每一个工作节点（\emph{Worker Node}）。对于每一个工作节点而言，他们都有了输入数据的一部分轨迹点。对于每一个工作节点而言，他们都可以将自己所拥有的部分轨迹点作为相似轨迹查询的查询点集，由于工作节点通过设置可以直接访问\emph{HDFS}上已存储的轨迹数据，我们通过主节点（\emph{Master Node}）将增长型k最近邻查询代码分发给每一个工作节点并予以上运行。每个工作节点将针对各自输入查询点集所得出的k条最相似轨迹及其对应的相似度大小作为输出。通过对轨迹作为关键字合并中间查询结果，对相似度求和按相似度大小降序排列轨迹，再从中选取k条轨迹作为最终的结果。
-
-实现细节如算法\ref{algo:distributed sim}所示。其中在运行过程中初始化\emph{Spark}运行所需的上下文变量并设置主节点信息。在\emph{map}阶段对查询点集进行查询搜索，在\emph{reduce}阶段进行关键字合并。
-
-\begin{algorithm}
-% \begin{algorithm}[H] % 强制定位
-\caption{分布式相似轨迹查询算法}
-\label{algo:distributed sim}
-\begin{algorithmic}[1] %每行显示行号
-\Require 相似轨迹查询数目$k$,一条原始轨迹数据$Traj$% 输入
-\Ensure $k$条最相似轨迹$k$-$Trajs$ % 输出
-\State $Traj' \gets TS(Traj)$; $\qquad$//简化轨迹
-\State Initialise \emph{Spark} Context $sc$ and set Master information;
-\State $RDD \gets sc.parallelize(Traj', partitionNumber)$;
-\State $k$-$Trajs$ $\gets RDD.map(iknn) $ $\qquad$//工作节点分布式进行查询处理
-\State $\qquad\quad.flatMap(lambda\quad x$:$x)$ $\qquad$//查询结果平铺成为一维列表或数组
-\State $\qquad\quad.reduceByKey(lambda\quad x,y$:$x+y)$$\qquad$//以轨迹为关键字做相似度求和
-\State $\quad\qquad.sortBy(lambda\quad x$:$x[1], descending)$$\qquad$//降序排列
-\State $\quad\qquad.collect()$;
-\State \textbf{return} $k$-$Trajs$; 
-\end{algorithmic}
-\end{algorithm}
-
-\subsection{多请求分布式相似轨迹查询}
-\label{subsec:distributed multiple}
-从工业应用角度，多用户同时进行相似轨迹处理时，可以针对对多请求的分布式相似轨迹查询处理。将请求数据集根据\emph{Spark}环境默认的分割方法或自定义的分割方法，将多请求分割成多个子集，然后分配个集群中的子节点，让他们各自处理处理一部分请求。在实际生活中，作为一个交付使用的应用，在某个时段可能有多个用户请求发送给服务器端，在配置有集群环境的情况下，可以实现对请求的分布式处理，具体思路类似于上文分布式相似轨迹查询，不予以赘述。
+%%%%%%%%%%
 
 \section{本章小结}
 \label{sec:implementation conclusion}

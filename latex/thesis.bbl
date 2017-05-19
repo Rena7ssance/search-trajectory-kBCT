@@ -1008,6 +1008,33 @@
       \endverb
       \keyw{AutoNavi}
     \endentry
+    \entry{tuw2002software}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b00ae976e210a55aea69d4713ab2ee9e}{%
+           family={TUW},
+           family_i={T\bibinitperiod},
+           given={Rainer\bibnamedelima Pamminger},
+           given_i={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=3600fca2578d23e83be35ce103541107}{%
+           family={Fraunhofer},
+           family_i={F\bibinitperiod},
+           given={IZM},
+           given_i={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{d30702d884f0803fc038c4ce1c66b9b1}
+      \strng{fullhash}{d30702d884f0803fc038c4ce1c66b9b1}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Software requirement specification}
+      \field{usera}{J}
+      \field{usere}{TUW, Rainer Pamminger and Fraunhofer, IZM}
+      \field{userf}{TUW, Rainer Pamminger and Fraunhofer, IZM}
+      \field{year}{2002}
+      \keyw{tuw2002software}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'tuw2002software'}
+    \endentry
   \endsortlist
 \endrefsection
 \endinput

@@ -1,0 +1,13 @@
+
+\begin{tikzpicture}[node distance=1.5cm]
+
+	\node (top) [process] {系统表示层};
+	\node (mid) [process, below of=top] {系统逻辑层};
+	\node (bottom) [process, below of=mid] {系统数据层};
+	
+	\draw [arrow] (top.south) -- (mid.north);
+	\draw [arrow] (mid.north) -- (top.south);
+	\draw [arrow] (mid.south) -- (bottom.north);
+	\draw [arrow] (bottom.north) -- (mid.south);
+\end{tikzpicture}
+

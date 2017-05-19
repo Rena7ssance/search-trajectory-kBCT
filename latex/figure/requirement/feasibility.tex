@@ -1,0 +1,11 @@
+
+\begin{tikzpicture}[%
+  grow via three points={one child at (0.5,-0.7) and
+  two children at (0.5,-0.7) and (0.5,-1.4)},
+  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  \node {系统可行性依赖}
+    child { node {网络应用基础设施完善}}		
+    child { node {地图数据处理数据优秀}}
+    child { node {轨迹数据规模庞大}}
+    child { node {网络应用技术普及}};
+\end{tikzpicture}

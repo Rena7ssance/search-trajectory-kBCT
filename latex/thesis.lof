@@ -11,9 +11,17 @@
 \contentsline {figure}{\numberline {3--1}{\ignorespaces 查询点与轨迹点之间的匹配}}{14}{figure.3.1}
 \contentsline {figure}{\numberline {3--2}{\ignorespaces 基于位置点的相似轨迹查询}}{16}{figure.3.2}
 \contentsline {figure}{\numberline {3--3}{\ignorespaces 相似轨迹查询算法流程图}}{17}{figure.3.3}
-\contentsline {figure}{\numberline {3--4}{\ignorespaces Spark分布式相似轨迹查询}}{20}{figure.3.4}
+\contentsline {figure}{\numberline {3--4}{\ignorespaces Spark分布式相似轨迹查询}}{18}{figure.3.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4--1}{\ignorespaces 相似轨迹查询系统设计框架}}{26}{figure.4.1}
-\contentsline {figure}{\numberline {4--2}{\ignorespaces 相似轨迹查询系统处理流程图}}{28}{figure.4.2}
+\contentsline {figure}{\numberline {4--1}{\ignorespaces 相似轨迹查询系统可行性}}{24}{figure.4.1}
+\contentsline {figure}{\numberline {4--2}{\ignorespaces 相似轨迹查询系统用户功能需求}}{25}{figure.4.2}
+\contentsline {figure}{\numberline {4--3}{\ignorespaces 相似轨迹查询用户界面需求}}{26}{figure.4.3}
+\contentsline {figure}{\numberline {4--4}{\ignorespaces 系统查询结果准确性}}{27}{figure.4.4}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5--1}{\ignorespaces 相似轨迹查询系统设计框架}}{30}{figure.5.1}
+\contentsline {figure}{\numberline {5--2}{\ignorespaces 相似轨迹查询系统处理流程图}}{31}{figure.5.2}
+\contentsline {figure}{\numberline {5--3}{\ignorespaces 相似轨迹查询系统数据层次}}{32}{figure.5.3}
+\contentsline {figure}{\numberline {5--4}{\ignorespaces 相似轨迹查询系统模块组成}}{33}{figure.5.4}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

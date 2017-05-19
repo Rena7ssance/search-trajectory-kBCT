@@ -1,0 +1,25 @@
+
+%\begin{tikzpicture}[node distance=2cm]
+%	\node (user) [startstop] {用户};
+%	\node (n1) [process, left of=user, xshift=-2cm]{历史轨迹查询};
+%	\node (n2) [process, above of=user]{注册和登录};
+%	\node (n3) [process, right of=user, xshift=2cm]{相似轨迹查询};
+%	\node (n4) [process, below of=user]{地理位置查找};
+%	
+%	\draw [arrow] (user.west) -- (n1.east);
+%	\draw [arrow] (user.east) -- (n3.west);
+%	\draw [arrow] (user.north) -- (n2.south);
+%	\draw [arrow] (user.south) -- (n4.north);
+%\end{tikzpicture}
+
+\begin{tikzpicture}[%
+  grow via three points={one child at (0.5,-0.7) and
+  two children at (0.5,-0.7) and (0.5,-1.4)},
+  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  \node {用户功能需求}
+    child { node {注册和登录}}		
+    child { node {相似轨迹查询}}
+    child { node {历史轨迹查询}}
+    child { node {地理位置查找}};
+\end{tikzpicture}
+

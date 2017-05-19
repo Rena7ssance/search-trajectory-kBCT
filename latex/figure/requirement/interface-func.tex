@@ -1,0 +1,12 @@
+\begin{tikzpicture}[%
+  grow via three points={one child at (0.5,-0.7) and
+  two children at (0.5,-0.7) and (0.5,-1.4)},
+  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  \node {用户界面需求}
+    child { node {用户登录界面}}		
+    child { node {功能选择界面}}
+    child { node {地图显示界面}}
+    child { node {查询条件设定界面}}
+    child { node {历史轨迹显示界面}}
+    child { node {地理位置点输入界面}};
+\end{tikzpicture}

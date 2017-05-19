@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  18 MAY 2017 17:00
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  19 MAY 2017 17:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2483,11 +2483,16 @@ LaTeX Warning: Label `sec:requirements' multiply defined.
 
 LaTeX Warning: Label `sec:requirements' multiply defined.
 
-) (./tex/relatedwork.aux) (./tex/implementation2.aux) (./tex/specification.aux
+) (./tex/relatedwork.aux) (./tex/implementation2.aux) (./tex/requirement.aux)
+(./tex/design.aux
+
+LaTeX Warning: Label `chap:system requirement specification' multiply defined.
+
 
 LaTeX Warning: Label `sec:overall description' multiply defined.
 
-) (./tex/conclusion.aux) (./tex/ack.aux) (./tex/end_english_abstract.aux))
+) (./tex/evaluation.aux) (./tex/conclusion.aux) (./tex/ack.aux)
+(./tex/end_english_abstract.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -2783,6 +2788,12 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - Overwriting field 'year' with year value from field
  'date' for entry 'shang2014personalized'.
 
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'tuw2002software':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'tuw2002software'.
+
 )
 Package biblatex Info: Reference section=0 on input line 33.
 Package biblatex Info: Reference segment=0 on input line 33.
@@ -2859,23 +2870,9 @@ File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \openout2 = `tex/id.aux'.
 
  (./tex/id.tex)
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'FandolSong-Regular' does not contain script 'CJK'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'FandolSong-Regular(1)' created for font 'FandolSong-Regular'
-. with options [Script={CJK},Extension={.otf},BoldFont={FandolSong-Bold}].
-. 
-. This font family consists of the following NFSS series/shapes:
-. - 'normal' (m/n) with NFSS spec.: <->"[FandolSong-Regular.otf]/OT:"
-. - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
-. <->"[FandolSong-Bold.otf]/OT:"
-. - 'bold small caps'  (bx/sc) with NFSS spec.: 
-.................................................
+File: figure/sjtubadge.png Graphic file (type QTm)
+
+<use  "figure/sjtubadge.png" >
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -2897,9 +2894,51 @@ File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
+* Font 'FandolKai-Regular' does not contain script 'CJK'.
+*************************************************
+\g__fontspec_family_FandolKai-Regular_int=\count463
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FandolKai-Regular(0)' created for font 'FandolKai-Regular' with
+. options [Script={CJK},Extension={.otf},AutoFakeBold={4}].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.: <->"[FandolKai-Regular.otf]/OT:"
+. - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
+. <->"[FandolKai-Regular.otf]/OT:embolden=4;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+.................................................
+File: figure/sjtu.png Graphic file (type QTm)
+<use  "figure/sjtu.png" >
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <18.06749> not available
+(Font)              size <17.28> substituted on input line 38.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <15.05624> not available
+(Font)              size <14.4> substituted on input line 38.
+
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <18.06749> not available
+(Font)              size <17.28> substituted on input line 38.
+
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <15.05624> not available
+(Font)              size <14.4> substituted on input line 38.
+
+*************************************************
+* ctex warning: "deprecated-command"
+* 
+* Command \CTEXunderline is deprecated.
+* You can use the command with prefix \CJK instead.
+*************************************************
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
-\g__fontspec_family_FandolFang-Regular_int=\count463
+\g__fontspec_family_FandolFang-Regular_int=\count464
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -2912,6 +2951,41 @@ File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . <->"[FandolFang-Regular.otf]/OT:embolden=4;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
+*************************************************
+* ctex warning: "deprecated-command"
+* 
+* Command \CTEXunderline is deprecated.
+* You can use the command with prefix \CJK instead.
+*************************************************
+*************************************************
+* ctex warning: "deprecated-command"
+* 
+* Command \CTEXunderline is deprecated.
+* You can use the command with prefix \CJK instead.
+*************************************************
+*************************************************
+* ctex warning: "deprecated-command"
+* 
+* Command \CTEXunderline is deprecated.
+* You can use the command with prefix \CJK instead.
+*************************************************
+*************************************************
+* ctex warning: "deprecated-command"
+* 
+* Command \CTEXunderline is deprecated.
+* You can use the command with prefix \CJK instead.
+*************************************************
+
+Overfull \hbox (0.6749pt too wide) detected at line 38
+ \EU1/FandolKai-Regular(0)/m/n/18.06749 计 算 机 科 学 与 技 术 专 业 
+ []
+
+*************************************************
+* ctex warning: "deprecated-command"
+* 
+* Command \CTEXunderline is deprecated.
+* You can use the command with prefix \CJK instead.
+*************************************************
 [1
 
 
@@ -2933,24 +3007,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--14
 
  []
 
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'FandolKai-Regular' does not contain script 'CJK'.
-*************************************************
-\g__fontspec_family_FandolKai-Regular_int=\count464
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'FandolKai-Regular(0)' created for font 'FandolKai-Regular' with
-. options [Script={CJK},Extension={.otf},AutoFakeBold={4}].
-. 
-. This font family consists of the following NFSS series/shapes:
-. - 'normal' (m/n) with NFSS spec.: <->"[FandolKai-Regular.otf]/OT:"
-. - 'small caps'  (m/sc) with NFSS spec.: - 'bold' (bx/n) with NFSS spec.:
-. <->"[FandolKai-Regular.otf]/OT:embolden=4;"
-. - 'bold small caps'  (bx/sc) with NFSS spec.: 
-.................................................
 File: figure/sjtubanner.png Graphic file (type QTm)
 <use  "figure/sjtubanner.png" > [1
 
@@ -3139,74 +3195,193 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 File: figure/chapter03/similar-search.png Graphic file (type QTm)
 
 <use  "figure/chapter03/similar-search.png" > (./figure/chapter03/iknn.tex)
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 192.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 192.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 192.
-
 File: figure/sjtubanner.png Graphic file (type QTm)
+
 <use  "figure/sjtubanner.png" > [16]
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" > [17]
-File: figure/sjtubanner.png Graphic file (type QTm)
-
-<use  "figure/sjtubanner.png" > [18]
-File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [19]
 File: figure/chapter04/distributed.png Graphic file (type QTm)
 
 <use  "figure/chapter04/distributed.png" >
-File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" >
-[20]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 273.
-File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [21])
+put line 214.
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" >
-[22]
-\openout2 = `tex/specification.aux'.
+[18]
 
- (./tex/specification.tex
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 242.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 242.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 242.
+
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [19]
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [20]
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [21])
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [22]
+\openout2 = `tex/requirement.aux'.
+
+
+(./tex/requirement.tex
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.5)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1a (rcs-revision 1.6)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.callouts.code.tex
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.callouts.code.tex))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
+
+\pgfnodepartlowerbox=\box114
+\pgfnodeparttwobox=\box115
+\pgfnodepartthreebox=\box116
+\pgfnodepartfourbox=\box117
+\pgfnodeparttwentybox=\box118
+\pgfnodepartnineteenbox=\box119
+\pgfnodeparteighteenbox=\box120
+\pgfnodepartseventeenbox=\box121
+\pgfnodepartsixteenbox=\box122
+\pgfnodepartfifteenbox=\box123
+\pgfnodepartfourteenbox=\box124
+\pgfnodepartthirteenbox=\box125
+\pgfnodeparttwelvebox=\box126
+\pgfnodepartelevenbox=\box127
+\pgfnodeparttenbox=\box128
+\pgfnodepartninebox=\box129
+\pgfnodeparteightbox=\box130
+\pgfnodepartsevenbox=\box131
+\pgfnodepartsixbox=\box132
+\pgfnodepartfivebox=\box133
+)))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2008/01/13 v3.0.1a (rcs-revision 1.3)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2009/11/15 v3.0.1a (rcs-revision 1.2)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings
+.code.tex
+File: pgflibraryfadings.code.tex 2008/02/07 v3.0.1a (rcs-revision 1.3)
+)))
+(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytrees.code.tex
+File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
+)
 第四章
 File: figure/sjtubanner.png Graphic file (type QTm)
 <use  "figure/sjtubanner.png" > [23
 
 
 
+] (./figure/requirement/feasibility.tex)
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [24] (./figure/requirement/user-func.tex)
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [25] (./figure/requirement/interface-func.tex)
+File: figure/requirement/query-accuracy.png Graphic file (type QTm)
+
+<use  "figure/requirement/query-accuracy.png" >)
+File: figure/sjtubanner.png Graphic file (type QTm)
+
+<use  "figure/sjtubanner.png" > [26]
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [27]
+\openout2 = `tex/design.aux'.
+
+
+(./tex/design.tex
+第五章
+File: figure/sjtubanner.png Graphic file (type QTm)
+<use  "figure/sjtubanner.png" > [28
+
+
+
 ]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [24]
+ <use  "figure/sjtubanner.png" > [29]
+File: figure/design/system-architecture.png Graphic file (type QTm)
+
+<use  "figure/design/system-architecture.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [25]
-File: figure/specification/system-architecture.png Graphic file (type QTm)
-
-<use  "figure/specification/system-architecture.png" >
+<use  "figure/sjtubanner.png" > [30] (./figure/design/systemflow.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [26] (./figure/specification/systemflow.tex))
+<use  "figure/sjtubanner.png" > [31] (./figure/design/systemlevel.tex)
+(./figure/design/module.tex)
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [32])
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [27]
-File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [28]
-\openout2 = `tex/conclusion.aux'.
+<use  "figure/sjtubanner.png" > [33]
+\openout2 = `tex/evaluation.aux'.
 
-
-(./tex/conclusion.tex
-第五章
+ (./tex/evaluation.tex
+第六章
 )
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [29
+ <use  "figure/sjtubanner.png" > [34
+
+
+
+]
+\openout2 = `tex/conclusion.aux'.
+
+ (./tex/conclusion.tex
+第七章
+)
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [35
 
 
 
@@ -3231,22 +3406,22 @@ eTermes(0)/m/n/10.53937 Data
  []
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [30
+<use  "figure/sjtubanner.png" > [36
 
 
 
 ]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [31]
+ <use  "figure/sjtubanner.png" > [37]
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [32]
+<use  "figure/sjtubanner.png" > [38]
 \openout2 = `tex/ack.aux'.
 
  (./tex/ack.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [33
+<use  "figure/sjtubanner.png" > [39
 
 
 ]
@@ -3269,14 +3444,15 @@ AED: lastpage setting LastPage
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
 (./thesis.aux (./tex/id.aux) (./tex/abstract.aux) (./tex/introduction.aux)
-(./tex/relatedwork.aux) (./tex/implementation2.aux) (./tex/specification.aux)
-(./tex/conclusion.aux) (./tex/ack.aux) (./tex/end_english_abstract.aux))
+(./tex/relatedwork.aux) (./tex/implementation2.aux) (./tex/requirement.aux)
+(./tex/design.aux) (./tex/evaluation.aux) (./tex/conclusion.aux) (./tex/ack.aux
+) (./tex/end_english_abstract.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 137.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 137.
 
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.47188pt have occurred.
+(Font)              up to 0.78749pt have occurred.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -3286,12 +3462,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52434 strings out of 493591
- 1049295 string characters out of 6143547
- 1405458 words of memory out of 5000000
- 54891 multiletter control sequences out of 15000+600000
- 27521 words of font info for 173 fonts, out of 8000000 for 9000
+ 54261 strings out of 493591
+ 1103465 string characters out of 6143547
+ 1410904 words of memory out of 5000000
+ 56620 multiletter control sequences out of 15000+600000
+ 33814 words of font info for 202 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 71i,16n,85p,10440b,4656s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,16n,84p,10440b,4656s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (46 pages).
+Output written on thesis.pdf (52 pages).

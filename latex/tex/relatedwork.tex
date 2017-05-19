@@ -55,23 +55,23 @@ Bootstrap是Twitter公司推出的一个用户Web前端的开源工具。作为�
 %%%%%%%%%%
 
 
-\section{大规模数据集群处理}
-\label{sec:bigdata-intro}
+\subsection{大规模数据集群处理}
+\label{subsec:bigdata-intro}
 集群计算随着如今海量数据的发展在许多领域都有着广泛应用，以高效准确完成大量数据并行级的处理任务。集群计算需要提供本地化任务规划、高容错机制和数据负载平衡基本功能。除此之外，集群计算中我们也会关注某一个数据集运用在并行操作去完成指定目标任务。\emph{MapReduce}\cite{dean2008mapreduce}是目前分布式处理或并行计算常用的大规模数据处理和生成的编程模型。其工作的大致思路在于用户自定义合适的$map$函数去处理初步输入的键值对数据并产生中间键值对结果，之后定义$reduce$函数将中间结果以相同的关键字进行合并生成最终的结果。
 
 对于数据密集型的应用而言，可扩展的分布式系统对于系统运行和数据处理都有着很重要的帮助。合理的分布式系统可以为系统提供在通用硬件上运行时的容错保护，并且能保证多用户请求的高度并行处理。\emph{Hadoop}分布式文件系统（\emph{HDFS}）借鉴了\emph{Google}文件系统（\emph{GFS}）的大部分设计架构并实现了高度的容错保护机制并且能良好地运行于廉价的硬件设备之上。与此同时，HDFS也保证了在应用中数据的高度吞吐速率，使得HDFS能高效运行具有很大数据集的任务或应用。
 
-\subsection{Spark处理引擎简介}
-\label{subsec:spark}
+\subsubsection{Spark处理引擎简介}
+\label{subsubsec:spark}
 \emph{MapReduce}变成模型和\emph{HDFS}可在大规模数据密集型应用良好，但对于一些需要重复使用中间数据或需要暂时保留中间数据的应用处理中，之前常用的集群计算模型\emph{Hadoop}由于需要将中间数据读写与\emph{HDFS}中从而产生了中间读写时间浪费，从而影响了应用性能。基于这一点，\emph{Spark}\cite{zaharia2010spark}作为在主流针对大规模数据处理的集群计算模型之一，在保证之前集群计算模型功能的同时，使用一种名为弹性分布式数据集（\emph{Resilient Distributed Datasets}）的抽象，使得其可以将集群任务中的中间结果保存于设备的内存之中，以便之后的读写操作。因此，在大数据挖掘领域中，\emph{Spark}能够比\emph{Hadoop MapReduce}能为高效的处理需要迭代数据的集群计算。
 
-\subsection{弹性分布数据集RDD}
-\label{subsec:rdd}
+\subsubsection{弹性分布数据集RDD}
+\label{subsubsec:rdd}
 \emph{Spark}集群计算处理引擎与之前集群处理的主要不同点即在于其引入的弹性分布式数据集（\emph{RDD}）这一抽象概念。这一分布式内存抽象使得用户或程序员可以在容错机制的保护下在大规模集群设备中运行基于内存的数据操作。\emph{RDD}高效处理大数据在应用中的重用问题，作为一个并行的数据结构可以方便用户在内存中处理集群计算的中间过程数据，因地制宜分割数据集以更合理将任务分配个对应的工作节点，再结合丰富的内定操作函数以快速处理数据。
 而\emph{RDD}提供的生成模式也能为我们设计算法提供更多思路。\emph{RDD}可以通过$parallelize$函数将程序中已有的数据用于生成为\emph{RDD}，或通过对例如\emph{HDFS}、\emph{Hbase}等等的外部文件系统或外部数据源来生成\emph{RDD}。
 
-\subsection{Spark Standalone集群模式}
-\label{subsec:standalone}
+\subsubsection{Spark Standalone集群模式}
+\label{subsubsec:standalone}
 \emph{Spark}应用在集群模式运营中运行独立的进程组，通过驱动程序中的\emph{Spark}上下文变量\emph{SparkContext}来设定运行参数和初始化。运行过程主要根据\emph{SparkContext}来连接如图\ref{fig:clustermanager}中具体不同种类的集群管理类型，并通过内定的\emph{Cluster Manager}来分配应用的资源获取。初始化成功后，\emph{Spark}通过获取集群节点上的执行进程并准备开始执行操作和处理数据。之后，\emph{Spark}会将应用代码分发给各个节点并使之运行。
 
 \begin{figure}[!htp]
@@ -108,17 +108,17 @@ Bootstrap是Twitter公司推出的一个用户Web前端的开源工具。作为�
 
 %%%%%%%%%%
 
-\section{轨迹数据预处理}
-\label{sec:preprocess}
+\subsection{轨迹数据预处理}
+\label{subsec:preprocess}
 
-\subsection{WGS84坐标系统转换至GCJ-02坐标系统}
-\label{subsec:coord-transform}
+\subsubsection{WGS84坐标系统转换至GCJ-02坐标系统}
+\label{subsubsec:coord-transform}
 WGS84（World Geodetic System1984）坐标系统是GPS数据所基于的坐标系统，这一坐标系是通过世界卫星观测站所检测到的地理坐标。这一坐标系并不能直接应用在中国国家的地图坐标显示中，因为中国国家会测局在地理信息系统中使用的是基于GCJ-02的坐标系统，这一坐标系统也称为火星坐标系统。如果直接将WGS84坐标数据应用于使用GCJ-02的地图显示接口，则会造成100米到700米范围内的显示误差。同理，用户使用GCJ-02地图点击获得的地理位置查询点也会在相似轨迹查询中因为与WGS84坐标系统的偏差因素造成查询结果的不准确性。在轨迹预处理最开始先将WGS84坐标数据根据已有的算法\footnotemark[1]参考转换成GCJ-02系统下的坐标
 \footnotetext[1]{https://github.com/googollee/eviltransform}
 
 
-\subsection{轨迹数据简化}
-\label{subsec:trajectory simplification}
+\subsubsection{轨迹数据简化}
+\label{subsubsec:trajectory simplification}
 轨迹数据预处理中，轨迹数据的简化（或压缩）是比较重要一步。轨迹数据简化主要是指在保证轨迹的可利用性与大致准确的同时减少轨迹的点数目，以达到轨迹数据的传输、处理和存储上减少开销的目的。在本文的应用场景中，我们首先采用\emph{Douglas}–\emph{Peucker}算法\cite{visvalingam1990douglas}来完成我们的轨迹简化任务。该算法的主要思路在于将通过分而治之，将曲线轨迹表示成一系列点的方法，从而减少点的数目。如今GPS的数据采样通常较为频繁，因此在我们对轨迹处理的范围上来所，我们可以近似地将我们所运用的数据集中的轨迹看成是一条连续的曲线，通过\emph{Douglas}–\emph{Peucker}算法以及我们人为设定简化阈值，我们可以高效且合理地进行轨迹简化。
 
 %\begin{algorithm}
@@ -148,8 +148,8 @@ WGS84（World Geodetic System1984）坐标系统是GPS数据所基于的坐标�
 
 \emph{Douglas}–\emph{Peucker}算法首先连接轨迹首尾两点$Traj[0],Traj[Traj.length]$，遍历轨迹一遍得到离线段距离最大的点$Traj[index]$，计算该距离并与预先设定的阈值$\epsilon$比较。如果大于阈值$\epsilon$，则将轨迹以$Traj[index]$为中点分为两端，迭代重复上述工作；如果小于阈值$\epsilon$，则直接将线段段作为曲线的近似以做简化。当曲线完成上述任务，依次连接处理好的子线段，完成轨迹简化任务。
 
-\section{轨迹数据索引与获取}
-\label{sec:index}
+\subsection{轨迹数据索引与获取}
+\label{subsec:index}
 空间数据结构对从一个大规模轨迹数据集中获取特定轨迹数据是十分重要的。效率问题是查询大规模数据库或数据集来获取信息的首要考虑因素。而查询效率十分依赖于合理的轨迹索引。轨迹数据根据数据特点的不同姓对索引技术也有着特殊的要求。目前主流的索引技术主要有三类：1）基于空间维度的索引，利用R树（R-tree）索引进行查询。通过3DR树（3D R-tree）或者STR树（STR-tree）进行带有时间维度的查询；2）利用多版本的数据结构，根据特定情况使用 MR树（MR-tree）、HR树（HR-tree）、MV3R树（MV3R-tree）等等；3）将空间划分网格结构然后对应每个网格建立对应的空间索引，这类数据结构包括MTSB树（MTSB-tree）和SETI。本文中我们使用R树这一最基本的数据结构，其满足我们对算法的实现需求。
 
 R树\cite{sellis1987r+}数据结构在空间数据库中应用广泛，许多轨迹索引结构大体上是基于R树进行拓展。R树结构是一个平衡树结构，R树中的每一个节点代表包含其所有子节点一个区域，这个区域通常被称为最小区域箱（Minimum Bounding Box）。节点中的每一个数据体指向对应的子节点的最小区域箱信息。R树搜索的关键字是最小区域箱中的每一个节点。如图\ref{fig:2-2}所示的是R树数据结构的2种表现形式。在\ref{fig:2-2}(b)中我们看到树结构而图\ref{fig:2-2}(a)描述了数据和最小边界箱是如何分布在空间中的。
