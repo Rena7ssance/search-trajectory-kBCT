@@ -87,6 +87,9 @@
 \label{sec:overall description}
 本文设计的相似轨迹查询系统运行运行于基于Python语言的Flask Web框架，运行过程中需要连接互联网以使用地图接口，系统内部数据为上海私家车数据。系统针对的用户为一般用户和登录用户。一般用户可以目的轨迹点集进行相似轨迹查询，实现路径规划等具体应用，用户在运用过程中需要在地图上点击位置以实现轨迹点击输入；登录用户在一般用户具有功能基础上，用户的历史轨迹在轨迹数据库中有存储，可以实现以一条轨迹为输入的相似轨迹查询，实现拼车或轨迹推荐等具体应用。本系统目前已有依赖于Flask框架和地图接口提供。
 
+\subsection{系统设计分析}
+\label{subsec:system build requirement}
+将相似轨迹查询系统以Web框架搭建，其最大的好处是给予用户在查询上最大程度的便利。这种便捷主要体现在用户只要连接上互联网，就可以直接通过浏览器访问系统，在线进行相似轨迹的查询。这种网络操作不需要用户在下载系统到终端或者移动端便可以进行实时的相似轨迹查询功能。所以在设计相似轨迹查询这一系统时，主要功能实现均为用户查询而服务，即最重要的一点是完成用户功能部分。
 
 \subsection{系统功能描述}
 \label{subsec:product functions}
@@ -96,9 +99,7 @@
 
 \subsection{系统设计框架}
 \label{subsec:product perspective}
-相似轨迹查询系统主要由前后端两部分组成。后端部分主要以轨迹预处理、相似轨迹查询和查询请求分析处理为主；前端以部分地图轨迹可视化、查询结果输出、地理位置搜索等部分组成。
-
-针对相似轨迹查询系统的后端处理流程思路主要为，在后台运行服务器代码，接收来自浏览器前端的请求。将请求分析与提前预先设定的资源定位符函数结合，对于数据类型选择是否进行轨迹数据预处理。针对同一的输入轨迹数据点集，进行相似轨迹数据查询功能服务。然后将结果作为请求返回返回给用户。实现一次相似轨迹查询请求过程。与此同时，系统前端主要以实现数据可视化为主，以一个窗口形式将地图数据显示。对于用户感兴趣的地理位置坐标点和历史轨迹数据，可以通过点击地图或历史轨迹数据项目将数据在地图窗口上得以可视化展示。
+如图\ref{fig:system-architecture}所示相似轨迹查询系统主要由前后端两部分组成。后端部分主要以轨迹预处理、相似轨迹查询和查询请求分析处理为主；前端以部分地图轨迹可视化、查询结果输出、地理位置搜索等部分组成。
 
 \begin{figure}[!htp]
   \centering
@@ -106,6 +107,7 @@
   \bicaption[fig:system-architecture]{相似轨迹查询系统设计框架}{相似轨迹查询系统设计框架}{Fig}{System design architecture}
 \end{figure}
 
+针对相似轨迹查询系统的后端处理流程思路主要为，在后台运行服务器代码，接收来自浏览器前端的请求。将请求分析与提前预先设定的资源定位符函数结合，对于数据类型选择是否进行轨迹数据预处理。针对同一的输入轨迹数据点集，进行相似轨迹数据查询功能服务。然后将结果作为请求返回返回给用户。实现一次相似轨迹查询请求过程。与此同时，系统前端主要以实现数据可视化为主，以一个窗口形式将地图数据显示。对于用户感兴趣的地理位置坐标点和历史轨迹数据，可以通过点击地图或历史轨迹数据项目将数据在地图窗口上得以可视化展示。
 
 \subsection{系统处理流程}
 图\ref{fig:system-flowchart}展示了相似轨迹查询系统的主要流程。进入相似界面之后，用户可以直接使用系统（即不需要登录）使用系统进行相似轨迹查询，在获取满意的查询结果之后退出系统。同时，如果需要运用登录功能，系统会在登录界面中提醒用户是选择轨迹历史用户登录还是管理员模式登录。对于轨迹历史用户，可以实现相对应的轨迹查询类型并和一般用户一样在得到满意的查询结果之后退出系统。对于管理员而言，他们主要负责对用户权限和轨迹数据处理这一部分工作，在完成管理员工作之后他们也可以按流程退出系统。
@@ -191,6 +193,84 @@
 		\item 轨迹管理模块：完成管理员对系统内部轨迹数据的增删改除功能。
 	\end{itemize}
 \end{enumerate}
+
+\subsection{系统功能模块详细设计}
+\label{subsec:system module details description}
+
+\begin{enumerate}
+	\item \textbf{用户登录模块}
+	\begin{itemize}
+		\item 模块编号：M1
+		\item 模块名称：用户登录模块
+		\item 模块输入：用户名信息与对应密码
+		\item 模块处理：决定用户信息与对应密码是否匹配
+		\item 模块输出：若匹配则跳转到功能页面，否则重新输入
+	\end{itemize}
+	
+	\item \textbf{轨迹查询模块}
+	\begin{itemize}
+		\item 模块编号：M2
+		\item 模块名称：轨迹查询模块
+		\item 模块输入：查询轨迹点集或历史轨迹
+		\item 模块处理：根据输入进行相似轨迹查询
+		\item 模块输出：在地图上输出k条最相似轨迹查询结果
+	\end{itemize}
+	
+	\item \textbf{地理查询模块}
+	\begin{itemize}
+		\item 模块编号：M3
+		\item 模块名称：地理查询模块
+		\item 模块输入：查询地理点名称信息
+		\item 模块处理：调用地图查询接口寻找对应定理信息的坐标
+		\item 模块输出：在地图上显示具体位置并在界面中显示地理点坐标
+	\end{itemize}
+	
+	\item \textbf{用户管理模块}
+	\begin{itemize}
+		\item 模块编号：M4
+		\item 模块名称：用户管理模块
+		\item 模块输入：用户信息和对应操作
+		\item 模块处理：管理员对相应用户进行权限限制操作
+		\item 模块输出：被限制用户暂时无法使用系统
+	\end{itemize}
+	
+	\item \textbf{轨迹管理模块}
+	\begin{itemize}
+		\item 模块编号：M5
+		\item 模块名称：轨迹管理模块
+		\item 模块输入：轨迹信息
+		\item 模块处理：管理员根据输入的轨迹信息对轨迹数据库进行更新操作
+		\item 模块输出：更新后的系统轨迹数据库
+	\end{itemize}
+\end{enumerate}
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=0.3\textwidth]{design/login.png}
+  \hspace{0.5cm}
+  \includegraphics[width=0.6\textwidth]{design/interface.png}
+  \bicaption[fig:login-interface]{用户登录界面与用户地图界面设计}{用户登录界面与用户地图界面设计}{Fig}{User login and function interface design}
+\end{figure}
+
+\section{系统用户界面设计}
+\label{sec:window interface}
+图\ref{fig:login-interface}为用户使用系统功能的主要界面设计实现截图。
+
+
+%\begin{figure}[!htp]
+%  \centering
+%  \includegraphics[width=0.4\textwidth]{design/map.png}
+%  \bicaption[fig:function-interface]{用户地图界面设计}{用户地图界面设计}{Fig}{User map function interface design}
+%\end{figure}
+
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=0.3\textwidth]{design/search.png}
+%  \hspace{1cm}
+%  \includegraphics[width=0.3\textwidth]{design/history-trajectory.png}
+%  \bicaption[fig:search-history-interface]{查询界面与历史轨迹显示界面设计}{查询界面与历史轨迹显示界面设计}{Fig}{Search and history trajectories interface design}
+%\end{figure}
+
 
 %\subsection{系统性能分析}
 %\label{subsec:performance analysis}

@@ -6,10 +6,12 @@
 \begin{abstract}
 随着GPS技术和移动物体追踪技术的快速发展，相似轨迹搜索和轨迹匹配在许多应用中都有着很重要意义。在本文中，我们研究并实现一种基于地理位置点集的相似轨迹搜索。在这种搜索中，问题的输入通常为一组用户定义的有序或无序的轨迹点集，问题本质在于从轨迹数据集中找到k条最好连接这些查询点的已有轨迹，而从一般意义上说，这k条轨迹也可试做相对于查询点集的相似轨迹。不同之前传统的相似轨迹查询设计，我们对相似轨迹查询的实现重点更在于用户特定的轨迹点或轨迹中在地理语义上较为重要的轨迹点。不同于以一条轨迹作为数据所产生相似轨迹结果，我们的结果能满足用户特定的查询需求。
 
-相似轨迹获取的前提在于对相似度方法的定义。在本文的应用场景中，我们首先将将一条轨迹相似度定义为相对于查询点集的连接程度。对于用户实际运用而言，查询点集数量一般较少。本文根据这一点实现多方面的基于\emph{增长型k最近邻}查询的相似轨迹查询方法。在空间相似度程度上，我们定义上界与下界以用于剪枝和优化查询到的相似轨迹。将k最近邻查询通过最好优先搜索或深度优先搜索的扩展，实现一个轨迹点在R树数据结构上的查询，以满足增长型k最近邻查询的需求，且保证了搜索的高效性和内存存储空间的保证。之后再对搜索参数进一步动态调整以加速相似轨迹搜索的过程。本文认为这种基于地理位置点的相似轨迹查询在为在路径规划、轨迹推荐、交通流量分析、拼车出行和基于地理位置的一些应用中这种基于查询点的相似轨迹查询都能够在通常意义上发挥作用。
+相似轨迹获取的前提在于对相似度方法的定义。在本文的应用场景中，我们首先将将一条轨迹相似度定义为相对于查询点集的连接程度。对于用户实际运用而言，查询点集数量一般较少。本文根据这一点实现多方面的基于\emph{增长型k最近邻}查询的相似轨迹查询方法。在空间相似度程度上，我们定义上界与下界以用于剪枝和优化系统查询到的相似轨迹。将k最近邻查询通过最好优先搜索或深度优先搜索的扩展，实现一个轨迹点在R树数据结构上的查询，以满足增长型k最近邻查询的需求，且保证了搜索的高效性和内存存储空间的保证。之后再对搜索参数进一步动态调整以加速相似轨迹搜索的过程。本文认为这种基于地理位置点的相似轨迹查询在为在路径规划、轨迹推荐、交通流量分析、拼车出行等等基于地理位置的应用中，这种基于查询点的相似轨迹查询都能发挥作用。
+
+再根据相似轨迹查询算法设计出符合实际用户需求的相似轨迹查询系统，从需求分析入手，进行系统功能设计并进行系统测试。
 \\
-\\
-\keywords{\large 相似轨迹查询 \quad k最近邻 \quad 算法设计 \quad 优化}
+
+\keywords{\large 相似轨迹查询 \quad k最近邻 \quad 算法实现 \quad 优化 \quad 系统设计}
 \end{abstract}
 
 \begin{englishabstract}
@@ -17,6 +19,8 @@ With the quick development of Global Position System technology and moving-objec
 
 In our work, the prerequisite of searching similar trajectory is to define the similarity function. We first define the function to measure how well a trajectory connects the query location points in our application context. In practice, the number of query points tends to be relatively small. Upon this observation, we implement the search of similar trajectory based on the \emph{Incremental k-NearestNeighbor} algorithm we proposed. The Incremental k-NearestNeighbor prunes and refines the search process by the pre-defined upper bound and lower bound of trajectory similarity. In this algorithm, we extends the k-NearestNeighbor by best-first search of depth-first search on a spatial index structure, R-tree, in order to guarantee the efficiency of searching and lower the lost of memory usage. Another contribution of our work lies in the further optimization of the search process by dynamically adjusting the searching parameters. We believe that this type of search may bring significant benefits to users in many applications, such as route planning, trajectory recommendation, traffic analysis, carpooling and location-based services in general.
 
-\englishkeywords{\large Similar trajectory search,k-NearestNeighbor, Algorithm design, Optimization}
+Based on the proposed algorithm related to searching similar trajectories, we develop a system for searching similar trajectories which meets the practical requirements among the trajectories users. Starting from the system requirement analysis, we design the module part of the whole system respectively and make a test for this system.
+
+\englishkeywords{\large Similar trajectory search,k-NearestNeighbor, Algorithm implementation, Optimization, System Design}
 \end{englishabstract}
 

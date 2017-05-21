@@ -76,6 +76,35 @@ Sim_{o}(Q,R)= max \left\{
 	\end{equation}
 \end{definition}
 
+在进行有序查询的过程中，之前的算法是基于递归进行实现的：通过去不断匹配轨迹和查询点来进行子递归，从而计算出轨迹和有序查询点集之间的相似度大小。但基于递归相似度计算会占用大量的时间。因此在本上，我们通过动态规划的思路来计算某一条轨迹$R$和查询点集$Q$的相似度，借此来优化算法在有序查询中的处理性能。
+
+\begin{algorithm}
+%\begin{algorithm}[htp] % 强制定位
+\caption{有序相似度算法dp\_Similarity(Q,R)}
+\label{algo:dp-sim}
+\begin{algorithmic}[1] %每行显示行号
+\Require 查询点集$Q={q_1,q_2,q_3,\cdots,q_m}$,轨迹$R={p_1,p_2,p_3,\cdots,p_n}$
+\Ensure 查询点集$Q$和轨迹$R$之间的有序相似度$Sim_{order}(Q,R)$
+\State Initialise 2-dimensional array $M[m+1][n+1]$;
+\State $M[i][0] \gets 0$ $for$ $1\leq i\leq m$;
+\State $M[0][j] \gets 0$ $for$ $1\leq j\leq m$;
+\For{$1\leq i\leq m$} 
+	\For{$1\leq j\leq n$}
+		\If{$e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j] > M[i][j-1]$}//$q_i$和$p_j$匹配
+		\State $M[i][j] \gets e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$; //重复$p_j$
+		\Else 
+		\State $M[i][j] \gets M[i][j-1]$; //略过$p_j$
+		\EndIf
+	\EndFor
+	\State \textbf{return} M[m][n]$\setminus n$;
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+假设$M[i][j]$是我们需要解决查询问题的子问题的有序相似度，即$Sim_{order}(\{q_1,q_2,q_3,\cdots,q_i\}$, $\{p_1,p_2,p_3,\cdots,p_j\})$。对于动态规划思路而言，当我们获取到$M[i-1][j]$和$M[i][j-1]$的值时，我们可以通过比较$e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$和$M[i][j-1]$的值来决定$M[i][j]$的最大值。如果值$e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$较大，我们可以得出目前的一对匹配点对为$<p_i, p_j>$，并令$M[i][j] = e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$，反之，我们略过对$p_j$的目前和之后匹配，并令$M[i][j]=M[i][j-1]$。由于历史轨迹点的数目各不相同，对于重复使用的点，我们需要将相似度计算结果正则化以符合实际。
+
+这一动态规划的思路自底向上的解决了$M[i][j]$的求值问题，其中$m$为查询点集的基数大小而$n$为轨迹点数目。在算法最后通过范围二维数组中的值来表示查询点集$Q$和轨迹$R$之前有序相似度。算法的复杂性为$O(mn)$，在具体应用中由于$m$的值相对于$n$来说普遍较小，所以我们可以将算法复杂性近似看成是线性的。
+
 \section{相似轨迹查询处理过程}
 \label{sec:query processing}
 
@@ -108,7 +137,7 @@ Sim_{o}(Q,R)= max \left\{
 \end{table}
 
 
-\subsection{问题概述}
+\subsection{相似轨迹查询问题概述}
 \label{sec:problem Forumation}
 轨迹数据为一组有序点集，轨迹$R$可以被表示为$R={p_{1}, p_{2}, \cdots, p_{n}}$，其中$p_{i}$是轨迹$R$的在时间顺序上的第$i$个轨迹点。对于本文应用而言，查询点集$Q$被定义为一组点集$Q={q_{1}, q_{2}, \cdots, q_{m}}$，且根据具体情况定义是否有序。在根据上文设计的相似性距离和k最佳连接定义后，我们将我们相似轨迹查询任务等价转化为k最佳连接查询，并产生下面的定义：
 
@@ -172,7 +201,7 @@ Sim_{o}(Q,R)= max \left\{
 %\end{algorithm}
 
 
-算法大致流程如图\ref{fig:iknn-flowchart}。通过函数主体首先定义初始化几个中间变量。$while$循环实现增长型k最邻近的每一轮查询。查询中，对查询点集$Q$中的每一个查询点进行k最近邻方法查询，对查询结果中的每一个轨迹点所在的轨迹都加入轨迹备选集$C$。判断轨迹备选集$C$的基数大小是否满足条件。如果满足条件，计算此时归集备选集中所有轨迹的相似度下界大小并用一个数组$LB[]$进行保存，同时计算未在轨迹备选集中的轨迹的相似度上界大小。运用堆排序或优先队列的思想将数组$LB[]$中选取$k$个最大相似度下界及相对应的轨迹。如果\ref{thm:similarity-bound}满足，即选出来$k$条轨迹中的最小轨迹相似度下界大于等于未在轨迹备选集中的轨迹相似度上界，则说明我们需要查询的$k$条最相似轨迹已经存在于轨迹备选集$C$中，并且其他未扫描到的轨迹可以忽略不予以计算与检查。
+算法\ref{algo:iknn}{\cite{chen2010searching}}大致流程如图\ref{fig:iknn-flowchart}。通过函数主体首先定义初始化几个中间变量。$while$循环实现增长型k最邻近的每一轮查询。查询中，对查询点集$Q$中的每一个查询点进行k最近邻方法查询，对查询结果中的每一个轨迹点所在的轨迹都加入轨迹备选集$C$。判断轨迹备选集$C$的基数大小是否满足条件。如果满足条件，计算此时归集备选集中所有轨迹的相似度下界大小并用一个数组$LB[]$进行保存，同时计算未在轨迹备选集中的轨迹的相似度上界大小。运用堆排序或优先队列的思想将数组$LB[]$中选取$k$个最大相似度下界及相对应的轨迹。如果\ref{thm:similarity-bound}满足，即选出来$k$条轨迹中的最小轨迹相似度下界大于等于未在轨迹备选集中的轨迹相似度上界，则说明我们需要查询的$k$条最相似轨迹已经存在于轨迹备选集$C$中，并且其他未扫描到的轨迹可以忽略不予以计算与检查。
 
 %\begin{figure}[!htp]
 %  \centering
@@ -236,68 +265,68 @@ Sim_{o}(Q,R)= max \left\{
 %%%%%%%%%%
 
 
-\section{算法优化}
-\label{sec:optimization}
+%\section{算法优化}
+%\label{sec:optimization}
 
-\subsection{$\lambda$动态增长优化}
-\label{subsec:lambda}
+%\subsection{$\lambda$动态增长优化}
+%\label{subsec:lambda}
 
-在增长型k最近邻查询算法中，对于每一次的k最近邻查询$\lambda$-NN($q_{i}$)而言，搜索范围$\lambda$都是动态增加$\Delta\lambda$，即每一轮循环中，对于查询点集中的每一个查询点$q_{i}$，搜索范围在数目上是相等的。但值得提出的时，在针对地理位置点进行相似轨迹查询这一上下文中，查询点对于结果的重要性并不是完全一致的。主观而言，有些位置点相对于其他位置点来说具有更重要或更优先的查询级别；从算法角度讨论，每个查询点$q$的结果$\lambda$-NN($q$)对于构建轨迹备选集$C$、决定轨迹相似度上下界均有着不同的影响程度。举例来说，对于两个查询点$q_{i}$和$q_{j}$，在$\lambda$相同的情况下，如果$D_{e}(q_{i}, p_{i}^{\lambda}) > D_{e}(q_{j}, p_{j}^{\lambda})$，则对于查询点$q_{i}$所查找的范围更大，即$e^{-D_{e}(q_{i}, p_{i}^{\lambda})} < e^{D_{e}(q_{j}, p_{j}^{\lambda})}$。根据，$UB_{ns} = \sum_{i=1}^{m}e^{-D_{e}(q_{i}, p_{i}^{\lambda})}$，我们可以根据结果推出在降低未在备选集中的轨迹相似度上界的过程中，查询点$q_{i}$比查询点$q_{j}$效果更好，更有帮助。在定理3.1.2.中，未在备选集中的轨迹相似度上界越低，则定理条件越容易满足，即增长型k最近邻查询算法可以更快得出结果。我们需要分析$\lambda$对每个查询点搜索的影响来决定如何动态增加搜索范围。首先我们定义每个查询点$q_i$对于$UB_{ns}$的影响为$\xi (q_i)$
+%在增长型k最近邻查询算法中，对于每一次的k最近邻查询$\lambda$-NN($q_{i}$)而言，搜索范围$\lambda$都是动态增加$\Delta\lambda$，即每一轮循环中，对于查询点集中的每一个查询点$q_{i}$，搜索范围在数目上是相等的。但值得提出的时，在针对地理位置点进行相似轨迹查询这一上下文中，查询点对于结果的重要性并不是完全一致的。主观而言，有些位置点相对于其他位置点来说具有更重要或更优先的查询级别；从算法角度讨论，每个查询点$q$的结果$\lambda$-NN($q$)对于构建轨迹备选集$C$、决定轨迹相似度上下界均有着不同的影响程度。举例来说，对于两个查询点$q_{i}$和$q_{j}$，在$\lambda$相同的情况下，如果$D_{e}(q_{i}, p_{i}^{\lambda}) > D_{e}(q_{j}, p_{j}^{\lambda})$，则对于查询点$q_{i}$所查找的范围更大，即$e^{-D_{e}(q_{i}, p_{i}^{\lambda})} < e^{D_{e}(q_{j}, p_{j}^{\lambda})}$。根据，$UB_{ns} = \sum_{i=1}^{m}e^{-D_{e}(q_{i}, p_{i}^{\lambda})}$，我们可以根据结果推出在降低未在备选集中的轨迹相似度上界的过程中，查询点$q_{i}$比查询点$q_{j}$效果更好，更有帮助。在定理3.1.2.中，未在备选集中的轨迹相似度上界越低，则定理条件越容易满足，即增长型k最近邻查询算法可以更快得出结果。我们需要分析$\lambda$对每个查询点搜索的影响来决定如何动态增加搜索范围。首先我们定义每个查询点$q_i$对于$UB_{ns}$的影响为$\xi (q_i)$
 
-\begin{displaymath}
-	\xi (q_i) = e^{-D_{e}(q_i,p_i^\lambda)}
-\end{displaymath}
-显然，当$\xi (q_i)$的值越小时，则相对应的$UB_{ns}$也将越小。接着我们定义$\rho$为某一范围内轨迹点的密度值，定义$r=D_{e}(q_i,p_i^\lambda)$为对查询点$q_i$进行k最近邻查询时的搜索半径。在k最近邻查询这一范围内，我们可以粗略计算出轨迹点的密度值$\rho$等于
+%\begin{displaymath}
+%	\xi (q_i) = e^{-D_{e}(q_i,p_i^\lambda)}
+%\end{displaymath}
+%显然，当$\xi (q_i)$的值越小时，则相对应的$UB_{ns}$也将越小。接着我们定义$\rho$为某一范围内轨迹点的密度值，定义$r=D_{e}(q_i,p_i^\lambda)$为对查询点$q_i$进行k最近邻查询时的搜索半径。在k最近邻查询这一范围内，我们可以粗略计算出轨迹点的密度值$\rho$等于
 
-\begin{displaymath}
-	\rho = \frac{\lambda}{\pi r^{2}}
-\end{displaymath}
-根据轨迹点密度和搜索半径的关系，我们重写$\xi (q_i)$为
+%\begin{displaymath}
+%	\rho = \frac{\lambda}{\pi r^{2}}
+%\end{displaymath}
+%根据轨迹点密度和搜索半径的关系，我们重写$\xi (q_i)$为
 
-\begin{displaymath}
-	\xi (q_i) = e^{-D_{e}(q_i,p_i^\lambda)} = e^{-r} = e^{-\sqrt{\frac{\lambda}{\pi\rho}}}
-\end{displaymath}
-在这一步，我们的首要目标是明确$\xi (q_i)$影响因子的下降速度与$\lambda$之间的关系，根据$\lambda$的变化所造成的影响赋予查询点$q_1$到$q_m$不同的$\Delta\lambda$变化值，即对于不同的查询点，除了初始第一轮查询之外，之后($\lambda+\Delta\lambda$)的值都是各自生成的。本文将$\xi (q_i)$为关于$\lambda$的微分值$\frac{d\xi}{d\lambda}$的绝对值定义为下降速率$Decay(q_i)$
+%\begin{displaymath}
+%	\xi (q_i) = e^{-D_{e}(q_i,p_i^\lambda)} = e^{-r} = e^{-\sqrt{\frac{\lambda}{\pi\rho}}}
+%\end{displaymath}
+%在这一步，我们的首要目标是明确$\xi (q_i)$影响因子的下降速度与$\lambda$之间的关系，根据$\lambda$的变化所造成的影响赋予查询点$q_1$到$q_m$不同的$\Delta\lambda$变化值，即对于不同的查询点，除了初始第一轮查询之外，之后($\lambda+\Delta\lambda$)的值都是各自生成的。本文将$\xi (q_i)$为关于$\lambda$的微分值$\frac{d\xi}{d\lambda}$的绝对值定义为下降速率$Decay(q_i)$
 
-\begin{equation}
-\label{eq3-11}
-\frac{d\xi}{d\lambda} = \frac{d}{d\lambda}e^{-\sqrt{\frac{\lambda}{\pi\rho}}} = -\frac{1}{2}(\pi\rho\lambda)^{-\frac{1}{2}}*e^{-\sqrt{\frac{\lambda}{\pi\rho}}}
-\end{equation}
-根据式\ref{eq3-11}，我们可以用$\lambda$和搜索半径$r$来计算轨迹点密度$\rho$，因此可以改写下降速率为
+%\begin{equation}
+%\label{eq3-11}
+%\frac{d\xi}{d\lambda} = \frac{d}{d\lambda}e^{-\sqrt{\frac{\lambda}{\pi\rho}}} = -\frac{1}{2}(\pi\rho\lambda)^{-\frac{1}{2}}*e^{-\sqrt{\frac{\lambda}{\pi\rho}}}
+%\end{equation}
+%根据式\ref{eq3-11}，我们可以用$\lambda$和搜索半径$r$来计算轨迹点密度$\rho$，因此可以改写下降速率为
 
-\begin{equation}
-\label{eq3-12}
-Decay(q_i) = |\frac{d\xi}{d\lambda}| = \frac{r}{2\lambda}e^{-r} 
-\end{equation}
+%\begin{equation}
+%\label{eq3-12}
+%Decay(q_i) = |\frac{d\xi}{d\lambda}| = \frac{r}{2\lambda}e^{-r} 
+%\end{equation}
 
-根据式\ref{eq3-12}，我们可以得知，对于一个固定的$\lambda$值来说，下降速率$Decay(q_i)$会随着搜索半径$r$的不断增长，先初步上升（$r\in(0,1]$）后逐渐下降$r\in(1,\infty)$）。我们可以得知在对于查询结果较为稀疏的查询点（即搜索半径$r$较大）在一开始赋予较大的查询权重值。但随着搜过过程的进行，当搜索半径$r$不断增长达到某一个值得时候，一些相对密集的查询点结果会使得其对应的下降速率变大。这一结论使得我们在搜索和查询过程中重点关注查询点结果较为密集的查询点，这样也能使得我们能更快更有效地在每一轮查询之后降低未在轨迹备选集中轨迹的相似度上界值$UB_{ns}$。但随之产生的问题在于，当搜索半径$r$和$\lambda$都足够大的时候，我们下降$UB_{ns}$会因为$\frac{d\xi}{d\lambda}$趋近于0而变得不再有效。
+%根据式\ref{eq3-12}，我们可以得知，对于一个固定的$\lambda$值来说，下降速率$Decay(q_i)$会随着搜索半径$r$的不断增长，先初步上升（$r\in(0,1]$）后逐渐下降$r\in(1,\infty)$）。我们可以得知在对于查询结果较为稀疏的查询点（即搜索半径$r$较大）在一开始赋予较大的查询权重值。但随着搜过过程的进行，当搜索半径$r$不断增长达到某一个值得时候，一些相对密集的查询点结果会使得其对应的下降速率变大。这一结论使得我们在搜索和查询过程中重点关注查询点结果较为密集的查询点，这样也能使得我们能更快更有效地在每一轮查询之后降低未在轨迹备选集中轨迹的相似度上界值$UB_{ns}$。但随之产生的问题在于，当搜索半径$r$和$\lambda$都足够大的时候，我们下降$UB_{ns}$会因为$\frac{d\xi}{d\lambda}$趋近于0而变得不再有效。
 
-满足定理\ref{thm:similarity-bound}需要上下界两个变量对条件的同时满足。因此，在关注未在轨迹备选集中轨迹的相似度上界值$UB_{ns}$对增长型k最近邻查询的影响时，我们可以在加速增长型k最近邻查询算法的时候考虑相似度下界这一因素。当备选集中轨迹的相似度下界$LB$增长越快的时候，定理\ref{thm:similarity-bound}也就越容易成立。提高相似度下界$LB$所要面对的问题在于，一条轨迹的相似度下界有可能是源于多个查询点所产生查询结果，并且想要预测在搜索过程中什么时候$\lambda$-NN($q_i$)的结果中的某一点和轨迹上的某一点恰好是同一个点也是不太容易的。换言之，我们问题主要在于定量描述每一个查询点对于相似度下界增长的影响。借此，我们基于每一轮重新查找到的新轨迹数目来定义一个启发式搜索的取回速率$Ratio(q_i)$
-\begin{equation}
-\label{eq3-13}
-Ratio(q_i) = \frac{Number(q_i)}{\Delta\lambda}
-\end{equation}
+%满足定理\ref{thm:similarity-bound}需要上下界两个变量对条件的同时满足。因此，在关注未在轨迹备选集中轨迹的相似度上界值$UB_{ns}$对增长型k最近邻查询的影响时，我们可以在加速增长型k最近邻查询算法的时候考虑相似度下界这一因素。当备选集中轨迹的相似度下界$LB$增长越快的时候，定理\ref{thm:similarity-bound}也就越容易成立。提高相似度下界$LB$所要面对的问题在于，一条轨迹的相似度下界有可能是源于多个查询点所产生查询结果，并且想要预测在搜索过程中什么时候$\lambda$-NN($q_i$)的结果中的某一点和轨迹上的某一点恰好是同一个点也是不太容易的。换言之，我们问题主要在于定量描述每一个查询点对于相似度下界增长的影响。借此，我们基于每一轮重新查找到的新轨迹数目来定义一个启发式搜索的取回速率$Ratio(q_i)$
+%\begin{equation}
+%\label{eq3-13}
+%Ratio(q_i) = \frac{Number(q_i)}{\Delta\lambda}
+%\end{equation}
 
-式\ref{eq3-13}中$\Delta\lambda$为当前循环轮次$\lambda$的值与上一轮循环中$\lambda'$值的差值（$\lambda > \lambda'$），而$Number(q_i)$表示在当前循环轮次搜索中获取的轨迹数目多少。基本思想在于，轨迹备选集$C$的基数值范会随着搜索过程中新轨迹数目的增长而增长。在这样的归集备选集$C$中，轨迹相似度下界会曾铮的更快，再根据定\ref{thm:similarity-bound}，我们也更有可能找到目标寻求的k条最相似轨迹。
+%式\ref{eq3-13}中$\Delta\lambda$为当前循环轮次$\lambda$的值与上一轮循环中$\lambda'$值的差值（$\lambda > \lambda'$），而$Number(q_i)$表示在当前循环轮次搜索中获取的轨迹数目多少。基本思想在于，轨迹备选集$C$的基数值范会随着搜索过程中新轨迹数目的增长而增长。在这样的归集备选集$C$中，轨迹相似度下界会曾铮的更快，再根据定\ref{thm:similarity-bound}，我们也更有可能找到目标寻求的k条最相似轨迹。
 
-结合考虑上文所提及的下降速率$Decay(q_i)$和取回速率$Ratio(q_i)$，我们可以对每一个查询点指定对应的$\lambda$查询增长值$\Delta\lambda(q_i)$
+%结合考虑上文所提及的下降速率$Decay(q_i)$和取回速率$Ratio(q_i)$，我们可以对每一个查询点指定对应的$\lambda$查询增长值$\Delta\lambda(q_i)$
 
-\begin{equation}
-\label{eq3-14}
-\Delta\lambda(q_i) = \gamma\big( \alpha\frac{Decay(q_i)}{\sum_{i=1}^{m}Decay(q_i)} + \beta\frac{Ratio(q_i)}{\sum_{i=1}^{m}Ratio(q_i)} \big)
-\end{equation}
-式\ref{eq3-14}中，$\alpha$和$\beta$是本文定义的权值，$\gamma$定义为$\gamma = mk2^{r}$ 其中$r$为算法增长型k最近邻查询的当前循环轮次数。这样，我们摈弃原先对每一个查询点都增长相同的$\lambda$值这一处理思路，选择通过式\ref{eq3-14}的方法应用于每一个查询点上以对每个查询的进行不同的$\lambda$增量处理。这样的预先处理会在挖掘出相对重要的轨迹查询点上花费一定时间，但也加速了整个增长型k最近邻查询算法的搜索过程。这样的预处理时间由于优化整个算法过程，因此是可接受的。注意到我们在每一轮$\lambda$增量的总值是
+%\begin{equation}
+%\label{eq3-14}
+%\Delta\lambda(q_i) = \gamma\big( \alpha\frac{Decay(q_i)}{\sum_{i=1}^{m}Decay(q_i)} + \beta\frac{Ratio(q_i)}{\sum_{i=1}^{m}Ratio(q_i)} \big)
+%\end{equation}
+%式\ref{eq3-14}中，$\alpha$和$\beta$是本文定义的权值，$\gamma$定义为$\gamma = mk2^{r}$ 其中$r$为算法增长型k最近邻查询的当前循环轮次数。这样，我们摈弃原先对每一个查询点都增长相同的$\lambda$值这一处理思路，选择通过式\ref{eq3-14}的方法应用于每一个查询点上以对每个查询的进行不同的$\lambda$增量处理。这样的预先处理会在挖掘出相对重要的轨迹查询点上花费一定时间，但也加速了整个增长型k最近邻查询算法的搜索过程。这样的预处理时间由于优化整个算法过程，因此是可接受的。注意到我们在每一轮$\lambda$增量的总值是
 
-\begin{displaymath}
-\sum_{i=1}^{m}\Delta\lambda(q_i)=\gamma\big( \alpha\frac{\sum_{i=1}^{m}Decay(q_i)}{\sum_{i=1}^{m}Decay(q_i)} + \beta\frac{\sum_{i=1}^{m}Ratio(q_i)}{\sum_{i=1}^{m}Ratio(q_i)} \big)=\gamma(\alpha+\beta)
-\end{displaymath}
-为了保证在每一轮增长型k最近邻查询过程中获取的结果轨迹点数据恒定，我们将$\alpha+\beta$设定为1，其中可以设定$\alpha=\beta=0.5$，这样每一轮我们获取的点的数据为$\gamma$
+%\begin{displaymath}
+%\sum_{i=1}^{m}\Delta\lambda(q_i)=\gamma\big( \alpha\frac{\sum_{i=1}^{m}Decay(q_i)}{\sum_{i=1}^{m}Decay(q_i)} + \beta\frac{\sum_{i=1}^{m}Ratio(q_i)}{\sum_{i=1}^{m}Ratio(q_i)} \big)=\gamma(\alpha+\beta)
+%\end{displaymath}
+%为了保证在每一轮增长型k最近邻查询过程中获取的结果轨迹点数据恒定，我们将$\alpha+\beta$设定为1，其中可以设定$\alpha=\beta=0.5$，这样每一轮我们获取的点的数据为$\gamma$
 
-\subsection{动态规划计算有序轨迹相似度}
-\label{subsec:dp-order-sim}
-在前文中我们提及查询的有序性和用户指定有关。在进行有序查询的过程中，之前的算法是基于递归进行实现的：通过去不断匹配轨迹和查询点来进行子递归，从而计算出轨迹和有序查询点集之间的相似度大小。但基于递归相似度计算会占用大量的时间。因此在本上，我们通过动态规划的思路来计算某一条轨迹$R$和查询点集$Q$的相似度，借此来优化算法在有序查询中的处理性能。
+%\subsection{动态规划计算有序轨迹相似度}
+%\label{subsec:dp-order-sim}
+%在前文中我们提及查询的有序性和用户指定有关。在进行有序查询的过程中，之前的算法是基于递归进行实现的：通过去不断匹配轨迹和查询点来进行子递归，从而计算出轨迹和有序查询点集之间的相似度大小。但基于递归相似度计算会占用大量的时间。因此在本质上，我们通过动态规划的思路来计算某一条轨迹$R$和查询点集$Q$的相似度，借此来优化算法在有序查询中的处理性能。
 
-假设$M[i][j]$是我们需要解决查询问题的子问题的有序相似度，即$Sim_{order}(\{q_1,q_2,q_3,\cdots,q_i\}$, $\{p_1,p_2,p_3,\cdots,p_j\})$。对于动态规划思路而言，当我们获取到$M[i-1][j]$和$M[i][j-1]$的值时，我们可以通过比较$e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$和$M[i][j-1]$的值来决定$M[i][j]$的最大值。如果值$e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$较大，我们可以得出目前的一对匹配点对为$<p_i, p_j>$，并令$M[i][j] = e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$，反之，我们略过对$p_j$的目前和之后匹配，并令$M[i][j]=M[i][j-1]$。这一动态规划的思路自底向上的解决了$M[i][j]$的求值问题，其中$m$为查询点集的基数大小而$n$为轨迹点数目。在算法最后通过范围二维数组中的值来表示查询点集$Q$和轨迹$R$之前有序相似度。算法的复杂性为$O(mn)$，在具体应用中由于$m$的值相对于$n$来说普遍较小，所以我们可以将算法复杂性近似看成是线性的。
+%假设$M[i][j]$是我们需要解决查询问题的子问题的有序相似度，即$Sim_{order}(\{q_1,q_2,q_3,\cdots,q_i\}$, $\{p_1,p_2,p_3,\cdots,p_j\})$。对于动态规划思路而言，当我们获取到$M[i-1][j]$和$M[i][j-1]$的值时，我们可以通过比较$e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$和$M[i][j-1]$的值来决定$M[i][j]$的最大值。如果值$e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$较大，我们可以得出目前的一对匹配点对为$<p_i, p_j>$，并令$M[i][j] = e^{-D_{e}(Head(Q),Head(R))} + M[i-1][j]$，反之，我们略过对$p_j$的目前和之后匹配，并令$M[i][j]=M[i][j-1]$。这一动态规划的思路自底向上的解决了$M[i][j]$的求值问题，其中$m$为查询点集的基数大小而$n$为轨迹点数目。在算法最后通过范围二维数组中的值来表示查询点集$Q$和轨迹$R$之前有序相似度。算法的复杂性为$O(mn)$，在具体应用中由于$m$的值相对于$n$来说普遍较小，所以我们可以将算法复杂性近似看成是线性的。
 
 %%%%%%%%%%
 

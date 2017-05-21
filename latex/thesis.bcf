@@ -2232,6 +2232,7 @@
     <bcf:citekey order="21">hongzhi2017parallel</bcf:citekey>
     <bcf:citekey order="22">visvalingam1990douglas</bcf:citekey>
     <bcf:citekey order="23">sellis1987r+</bcf:citekey>
+    <bcf:citekey order="23">rtreedocument</bcf:citekey>
     <bcf:citekey order="24">sellis1987r+</bcf:citekey>
     <bcf:citekey order="25">chen2010searching</bcf:citekey>
     <bcf:citekey order="26">visvalingam1990douglas</bcf:citekey>
@@ -2241,13 +2242,17 @@
     <bcf:citekey order="29">roussopoulos1995nearest</bcf:citekey>
     <bcf:citekey order="30">chen2010searching</bcf:citekey>
     <bcf:citekey order="31">tang2011retrieving</bcf:citekey>
-    <bcf:citekey order="32">shang2014personalized</bcf:citekey>
-    <bcf:citekey order="33">dean2008mapreduce</bcf:citekey>
-    <bcf:citekey order="34">chen2009trajectory</bcf:citekey>
-    <bcf:citekey order="35">AutoNavi</bcf:citekey>
-    <bcf:citekey order="36">hongzhi2017parallel</bcf:citekey>
-    <bcf:citekey order="37">tuw2002software</bcf:citekey>
-    <bcf:citekey order="38">flasklibrary</bcf:citekey>
+    <bcf:citekey order="32">chen2010searching</bcf:citekey>
+    <bcf:citekey order="33">shang2014personalized</bcf:citekey>
+    <bcf:citekey order="34">dean2008mapreduce</bcf:citekey>
+    <bcf:citekey order="35">chen2009trajectory</bcf:citekey>
+    <bcf:citekey order="36">AutoNavi</bcf:citekey>
+    <bcf:citekey order="37">hongzhi2017parallel</bcf:citekey>
+    <bcf:citekey order="38">tuw2002software</bcf:citekey>
+    <bcf:citekey order="39">flasklibrary</bcf:citekey>
+    <bcf:citekey order="40">NRL</bcf:citekey>
+    <bcf:citekey order="41">NRL</bcf:citekey>
+    <bcf:citekey order="42">NRL</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none/global/" type="entry" sortscheme="none" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

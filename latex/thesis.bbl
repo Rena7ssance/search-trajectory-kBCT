@@ -800,6 +800,18 @@
       \keyw{sellis1987r+}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'sellis1987r+'}
     \endentry
+    \entry{rtreedocument}{report}{}
+      \list{institution}{1}{%
+        {Rtree: Spatial indexing for Python}%
+      }
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{usera}{R}
+      \verb{url}
+      \verb http://toblerity.org/rtree/
+      \endverb
+      \keyw{rtreedocument}
+    \endentry
     \entry{chen2009trajectory}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=5001e8c086c7c7fe0c0cb2fd62fdda94}{%
@@ -847,6 +859,61 @@
       \range{pages}{8}
       \keyw{chen2009trajectory}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'chen2009trajectory'}
+    \endentry
+    \entry{shang2014personalized}{article}{}
+      \name{author}{6}{}{%
+        {{hash=35fae3198e9a2bc41a2735679bbd4d1c}{%
+           family={Shang},
+           family_i={S\bibinitperiod},
+           given={Shuo},
+           given_i={S\bibinitperiod}}}%
+        {{hash=dd8746c2eeb6589695818f861a5daedb}{%
+           family={Ding},
+           family_i={D\bibinitperiod},
+           given={Ruogu},
+           given_i={R\bibinitperiod}}}%
+        {{hash=344f5b0e0d962edf27e0a4af939d760a}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Kai},
+           given_i={K\bibinitperiod}}}%
+        {{hash=25e0f09fa11c2ba6a8648b9e88eff012}{%
+           family={Jensen},
+           family_i={J\bibinitperiod},
+           given={Christian\bibnamedelima S},
+           given_i={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=cfeddfb4f7ceacfc0fb41b0b7e7574b9}{%
+           family={Kalnis},
+           family_i={K\bibinitperiod},
+           given={Panos},
+           given_i={P\bibinitperiod}}}%
+        {{hash=1be3b9bc3df92cb45255893cafffcc48}{%
+           family={Zhou},
+           family_i={Z\bibinitperiod},
+           given={Xiaofang},
+           given_i={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{955be3d612c9fe526a3af148c9f3de23}
+      \strng{fullhash}{4f3256cfe338bac6b3aa37be4ab71246}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The VLDB Journal}
+      \field{number}{3}
+      \field{title}{Personalized trajectory matching in spatial networks}
+      \field{usera}{J}
+      \field{usere}{Shang, Shuo and Ding, Ruogu and Zheng, Kai and Jensen, Christian S and Kalnis, Panos and Zhou, Xiaofang}
+      \field{userf}{Shang, Shuo and Ding, Ruogu and Zheng, Kai and Jensen, Christian S and Kalnis, Panos and Zhou, Xiaofang}
+      \field{volume}{23}
+      \field{year}{2014}
+      \field{pages}{449\bibrangedash 468}
+      \range{pages}{20}
+      \keyw{shang2014personalized}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'shang2014personalized'}
     \endentry
     \entry{qi2015efficient}{inproceedings}{}
       \name{author}{4}{}{%
@@ -984,61 +1051,6 @@
       \keyw{tang2011retrieving}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'tang2011retrieving'}
     \endentry
-    \entry{shang2014personalized}{article}{}
-      \name{author}{6}{}{%
-        {{hash=35fae3198e9a2bc41a2735679bbd4d1c}{%
-           family={Shang},
-           family_i={S\bibinitperiod},
-           given={Shuo},
-           given_i={S\bibinitperiod}}}%
-        {{hash=dd8746c2eeb6589695818f861a5daedb}{%
-           family={Ding},
-           family_i={D\bibinitperiod},
-           given={Ruogu},
-           given_i={R\bibinitperiod}}}%
-        {{hash=344f5b0e0d962edf27e0a4af939d760a}{%
-           family={Zheng},
-           family_i={Z\bibinitperiod},
-           given={Kai},
-           given_i={K\bibinitperiod}}}%
-        {{hash=25e0f09fa11c2ba6a8648b9e88eff012}{%
-           family={Jensen},
-           family_i={J\bibinitperiod},
-           given={Christian\bibnamedelima S},
-           given_i={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-        {{hash=cfeddfb4f7ceacfc0fb41b0b7e7574b9}{%
-           family={Kalnis},
-           family_i={K\bibinitperiod},
-           given={Panos},
-           given_i={P\bibinitperiod}}}%
-        {{hash=1be3b9bc3df92cb45255893cafffcc48}{%
-           family={Zhou},
-           family_i={Z\bibinitperiod},
-           given={Xiaofang},
-           given_i={X\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{955be3d612c9fe526a3af148c9f3de23}
-      \strng{fullhash}{4f3256cfe338bac6b3aa37be4ab71246}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The VLDB Journal}
-      \field{number}{3}
-      \field{title}{Personalized trajectory matching in spatial networks}
-      \field{usera}{J}
-      \field{usere}{Shang, Shuo and Ding, Ruogu and Zheng, Kai and Jensen, Christian S and Kalnis, Panos and Zhou, Xiaofang}
-      \field{userf}{Shang, Shuo and Ding, Ruogu and Zheng, Kai and Jensen, Christian S and Kalnis, Panos and Zhou, Xiaofang}
-      \field{volume}{23}
-      \field{year}{2014}
-      \field{pages}{449\bibrangedash 468}
-      \range{pages}{20}
-      \keyw{shang2014personalized}
-      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'shang2014personalized'}
-    \endentry
     \entry{AutoNavi}{report}{}
       \list{institution}{1}{%
         {AutoNavi Map Javascript Application Program Interface}%
@@ -1077,6 +1089,19 @@
       \field{year}{2002}
       \keyw{tuw2002software}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'tuw2002software'}
+    \endentry
+    \entry{NRL}{report}{}
+      \list{institution}{2}{%
+        {Networking Research Lab at Department of Computer Science}%
+        {Engineering at Shanghai Jiao Tong University}%
+      }
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{usera}{R}
+      \verb{url}
+      \verb http://202.120.37.78:8080/nrl
+      \endverb
+      \keyw{NRL}
     \endentry
   \endsortlist
 \endrefsection
