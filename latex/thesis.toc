@@ -30,7 +30,7 @@
 \contentsline {subsubsection}{\numberline {2.2.4.2}轨迹数据简化}{10}{subsubsection.2.2.4.2}
 \contentsline {subsection}{\numberline {2.2.5}轨迹数据索引与获取}{11}{subsection.2.2.5}
 \contentsline {section}{\numberline {2.3}本章小结}{12}{section.2.3}
-\contentsline {chapter}{\numberline {第三章\hspace {0.3em}}分布式相似轨迹查询方法实现}{13}{chapter.3}
+\contentsline {chapter}{\numberline {第三章\hspace {0.3em}}相似轨迹查询方法实现}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}相似轨迹查询问题描述}{13}{section.3.1}
 \contentsline {section}{\numberline {3.2}k最佳连接定义}{13}{section.3.2}
 \contentsline {section}{\numberline {3.3}相似轨迹查询处理过程}{16}{section.3.3}
@@ -91,9 +91,7 @@
 \contentsline {subsection}{\numberline {6.3.1}功能测试描述}{36}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}性能测试描述}{36}{subsection.6.3.2}
 \contentsline {section}{\numberline {6.4}系统测评结果}{36}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}功能测试结果}{36}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}性能测试结果}{36}{subsection.6.4.2}
-\contentsline {section}{\numberline {6.5}系统测试评价}{37}{section.6.5}
+\contentsline {section}{\numberline {6.5}系统测试评价}{38}{section.6.5}
 \contentsline {section}{\numberline {6.6}本章小结}{39}{section.6.6}
 \contentsline {chapter}{\numberline {第七章\hspace {0.3em}}结论}{40}{chapter.7}
 \contentsline {section}{\numberline {7.1}相似轨迹查询系统设计总结}{40}{section.7.1}

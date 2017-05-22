@@ -114,13 +114,14 @@
 \section{系统测评结果}
 \label{sec:test result}
 
-\subsection{功能测试结果}
-\label{subsec:function test result}
+%\subsection{功能测试结果}
+%\label{subsec:function test result}
+%功能测试主要针对模块是否能够正常运行，根据性能测试情况可见系统模块能够正常运行。
 
-\subsection{性能测试结果}
-\label{subsec:performance test result}
+%\subsection{测试结果}
+%\label{subsec:performance test result}
 
-在性能测试方面，对于单机测试本文设定一下测试条件
+对于单机测试本文设定一下测试条件：
 \begin{itemize}
 	\item 测试变量：相似轨迹查询数目和查询位置点数目。
 	\item 测试指标：相似轨迹查询时间和查询准确度。
@@ -143,6 +144,8 @@
   \bicaption[fig:number of querypoint-time]{相似轨迹查询点数目和查询时间的关系}{相似轨迹查询点数目和查询时间的关系(左图无序查询，有图有序查询)}{Fig}{Query time for the number of query points}
 \end{figure}
 
+图\ref{fig:number k-time}和图\ref{fig:number of querypoint-time}展示了测试系统变量与查询时间之间的关系。由图中我们可以看出随着查询变量（查询轨迹数目或查询点数目）的上升，查询时间在一定程度上与查询变量成正相关的关系。总体而言，查询变量越大，那系统查询出正确的结果所需要的时间也就越多。在图中对于一条时间曲线会出现下降的情况，本文分析主要是由于轨迹数据集范围问题，即对于本次测试数据，对于某组测试数据能找到更多的相似轨迹，因此系统结束通过剪枝能够更快地退出查询循环，导致查询时间较少，曲线下降。
+
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=0.45\textwidth]{evaluation/figure5.png}
@@ -151,13 +154,41 @@
   \bicaption[fig:number k-accuracy]{相似轨迹查询数目k和查询准确度的关系}{相似轨迹查询数目k和查询准确度的关系(左图无序查询，有图有序查询)}{Fig}{Query accuracy for the number of k trajectories}
 \end{figure}
 
-\begin{figure}[!htp]
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.45\textwidth]{evaluation/figure7.png}
   \hspace{0.5cm}
   \includegraphics[width=0.45\textwidth]{evaluation/figure8.png}
-  \bicaption[fig:number k-accuracy]{相似轨迹查询点数目和查询准确度的关系}{相似轨迹查询点数目和查询准确度的关系(左图无序查询，有图有序查询)}{Fig}{Query accuracy for the number of query points}
+  \bicaption[fig:number of querypoint-accuracy]{相似轨迹查询点数目和查询准确度的关系}{相似轨迹查询点数目和查询准确度的关系(左图无序查询，有图有序查询)}{Fig}{Query accuracy for the number of query points}
 \end{figure}
+
+图\ref{fig:number k-accuracy}和图\ref{fig:number k-accuracy}展示了测试系统变量与查询准确度之间的关系。首先本文对准确度的计算度量为以计算出的轨迹相似度除以一个理想化的相似度（即完全匹配轨迹的相似度）。在测试相似轨迹查询数目对准确率的影响中，由图\ref{fig:number k-accuracy}，两者主要为负相关关系。对于无序查询而言，轨迹查询数目对查询准确率影响并不太大；对于有序查询而言，根据测试结果应在一定范围内尽量选择查询大于三条以上轨迹查询数目以保证准确率。在测试查询点数目对准确率的影响中，由图\ref{fig:number of querypoint-accuracy}，两者关系要具体分析。对于无序查询而言，查询点数目对查询准确率影响依旧并不太大，且有随着查询点数目增多准确率降低的趋势；但对于有序查询而言，我们可以发现随着查询点数目的针对准确率反而增加。因此，用户可以先决定无序和有序的查询类型再选择合理查询点的数目以查询到较为准确的结果。
+
+%table
+\begin{table}[h]
+  	\centering
+		\begin{tabular}{ |p{1cm}<{\centering}|p{3cm}<{\centering}|p{3cm}<{\centering}|p{3cm}<{\centering}|p{3cm}<{\centering}| }
+		\hline
+		 & \multicolumn{2}{|c|}{分布式环境} & \multicolumn{2}{|c|}{单机环境} \\
+		\hline
+		序号 & 读有关计算 & 内存直接计算 & 读有关计算 & 内存直接计算 \\
+		\hline 
+		1 & 5.017481 & 0.000755 & 0.39443 & 0.000274 \\
+		\hline
+		2 & 2.020407 & 0.001006 & 0.52876 & 0.00182 \\
+		\hline
+		3 & 4.515193 & 0.000701 & 0.063135 & 0.000179 \\
+		\hline
+		4 & 5.647829 & 0.000522 & 0.135711 & 0.000175 \\
+		\hline
+		5 & 32.505241 & 0.001405 & 1.92676 & 0.000467 \\
+		\hline
+		\end{tabular}
+		\bicaption[tab-comparison]{分布式测试与单机测试比较}{分布式测试与单机测试比较(数据单位:秒(sec))}{Table}{Comparison between cluster machines and single machines result}
+	\end{table}
+
+对于分布式集群运行相似轨迹查询系统，本文在分布式测试环境中对读取计算和单机测试环境中读取计算时间。根据表\ref{tab-comparison}可以看到，在分布式环境和单机环境中，内存直接计算的时间对比几乎相近，可以认为两者在直接计算中处理耗时一致。但在读有关计算中（分布式环境主要由集群节点访问\emph{HDFS}读取轨迹数据），分布式耗时较单机环境相比十分严重，本文根据查询资料认为这一问题主要由测试设备参数和网络连接共同限制，导致分布式运行速率达不到理想值。
+
 
 \section{系统测试评价}
 \label{sec:system evaluation}
