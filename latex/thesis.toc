@@ -4,97 +4,99 @@
 \contentsline {chapter}{表格索引}{vii}{chapter*.5}
 \contentsline {chapter}{算法索引}{viii}{chapter*.6}
 \contentsline {chapter}{\numberline {第一章\hspace {0.3em}}绪论}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}轨迹数据处理现有工作的概述及评价}{1}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}轨迹查询概念简介}{2}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}相似轨迹查询应用现状}{2}{subsection.1.1.2}
-\contentsline {section}{\numberline {1.2}相似轨迹查询问题描述}{3}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}问题大致描述}{3}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}相似轨迹查询方法设计概述}{3}{subsection.1.2.2}
-\contentsline {section}{\numberline {1.3}相似轨迹查询应用价值}{4}{section.1.3}
-\contentsline {section}{\numberline {1.4}困难和挑战}{5}{section.1.4}
-\contentsline {section}{\numberline {1.5}论文结构}{5}{section.1.5}
-\contentsline {section}{\numberline {1.6}本章小结}{5}{section.1.6}
-\contentsline {chapter}{\numberline {第二章\hspace {0.3em}}相关工作}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}国内外研究现状}{6}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}相似轨迹查询方法}{6}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}相似度方程比较}{6}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}相关实现技术介绍}{7}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Flask应用框架}{7}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Bootstrap}{8}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}大规模数据集群处理}{8}{subsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.3.1}Spark处理引擎简介}{8}{subsubsection.2.2.3.1}
-\contentsline {subsubsection}{\numberline {2.2.3.2}弹性分布数据集RDD}{9}{subsubsection.2.2.3.2}
-\contentsline {subsubsection}{\numberline {2.2.3.3}Spark Standalone集群模式}{9}{subsubsection.2.2.3.3}
-\contentsline {subsection}{\numberline {2.2.4}轨迹数据预处理}{10}{subsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.4.1}WGS84坐标系统转换至GCJ-02坐标系统}{10}{subsubsection.2.2.4.1}
-\contentsline {subsubsection}{\numberline {2.2.4.2}轨迹数据简化}{10}{subsubsection.2.2.4.2}
-\contentsline {subsection}{\numberline {2.2.5}轨迹数据索引与获取}{11}{subsection.2.2.5}
-\contentsline {section}{\numberline {2.3}本章小结}{12}{section.2.3}
-\contentsline {chapter}{\numberline {第三章\hspace {0.3em}}相似轨迹查询方法实现}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}相似轨迹查询问题描述}{13}{section.3.1}
-\contentsline {section}{\numberline {3.2}k最佳连接定义}{13}{section.3.2}
-\contentsline {section}{\numberline {3.3}相似轨迹查询处理过程}{16}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}算法变量符号定义及解释}{16}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}相似轨迹查询问题概述}{16}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}相似轨迹查询算法实现}{17}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}分布式相似轨迹查询算法实现}{17}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Spark分布式相似轨迹查询}{18}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}多请求分布式相似轨迹查询}{19}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}本章小结}{20}{section.3.5}
-\contentsline {chapter}{\numberline {第四章\hspace {0.3em}}相似轨迹查询系统需求分析}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}本章序言}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}需求分析概述}{21}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}系统需求背景}{21}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}系统需求说明目的}{21}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}系统应用定位分析}{21}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}系统应用范围}{22}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}系统可行性分析}{22}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}功能需求}{23}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}用户功能需求}{23}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}用户界面需求}{23}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}性能需求}{24}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}系统查询准确率}{24}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}系统查询时间特性}{24}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}系统适应性}{25}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}本章小结}{25}{section.4.5}
-\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}相似轨迹查询系统设计与实现}{26}{chapter.5}
-\contentsline {section}{\numberline {5.1}本章序言}{26}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}系统设计编写背景}{26}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}系统设计编写原则}{26}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}系统名词定义}{26}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}用户类与特点}{26}{subsection.5.1.4}
-\contentsline {subsection}{\numberline {5.1.5}系统运行环境}{27}{subsection.5.1.5}
-\contentsline {section}{\numberline {5.2}系统设计}{27}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}系统设计分析}{27}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}系统功能描述}{28}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}系统设计框架}{28}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}系统处理流程}{29}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}接口设计}{29}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}外部接口}{29}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}内部接口}{30}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}用户接口}{30}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}系统总体结构}{31}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}系统组成模块}{31}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}系统功能模块详细设计}{31}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}系统用户界面设计}{33}{section.5.5}
-\contentsline {section}{\numberline {5.6}本章小结}{33}{section.5.6}
-\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}系统测试与评价}{34}{chapter.6}
-\contentsline {section}{\numberline {6.1}引言}{34}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}编写目的}{34}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}针对用户}{34}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}缺陷定义}{34}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}测试环境数据}{35}{subsection.6.1.4}
-\contentsline {subsubsection}{\numberline {6.1.4.1}测试数据集}{35}{subsubsection.6.1.4.1}
-\contentsline {subsubsection}{\numberline {6.1.4.2}测试设备环境}{35}{subsubsection.6.1.4.2}
-\contentsline {section}{\numberline {6.2}系统测试概要}{36}{section.6.2}
-\contentsline {section}{\numberline {6.3}系统测试描述}{36}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}功能测试描述}{36}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}性能测试描述}{36}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}系统测评结果}{36}{section.6.4}
-\contentsline {section}{\numberline {6.5}系统测试评价}{38}{section.6.5}
-\contentsline {section}{\numberline {6.6}本章小结}{39}{section.6.6}
-\contentsline {chapter}{\numberline {第七章\hspace {0.3em}}结论}{40}{chapter.7}
-\contentsline {section}{\numberline {7.1}相似轨迹查询系统设计总结}{40}{section.7.1}
-\contentsline {section}{\numberline {7.2}未来工作展望}{40}{section.7.2}
-\contentsline {chapter}{参考文献}{41}{appendix*.7}
-\contentsline {chapter}{致\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}谢}{44}{appendix*.8}
+\contentsline {section}{\numberline {1.1}大数据发展概述}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}轨迹数据处理现有工作的概述及评价}{1}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}轨迹查询简介}{3}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}相似轨迹查询应用现状}{3}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}相似轨迹查询技术现状概述}{3}{subsection.1.2.3}
+\contentsline {section}{\numberline {1.3}相似轨迹查询问题描述}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}问题大致描述}{3}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}相似轨迹查询方法设计概述}{4}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}相似轨迹查询应用价值}{5}{section.1.4}
+\contentsline {section}{\numberline {1.5}困难和挑战}{5}{section.1.5}
+\contentsline {section}{\numberline {1.6}论文结构}{5}{section.1.6}
+\contentsline {section}{\numberline {1.7}本章小结}{6}{section.1.7}
+\contentsline {chapter}{\numberline {第二章\hspace {0.3em}}相关工作}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}国内外研究现状}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}相似轨迹查询方法}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}相似度方程比较}{8}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}相关实现技术介绍}{9}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Flask应用框架}{9}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Bootstrap}{10}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}大规模数据集群处理}{10}{subsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3.1}Spark处理引擎简介}{10}{subsubsection.2.2.3.1}
+\contentsline {subsubsection}{\numberline {2.2.3.2}弹性分布数据集RDD}{10}{subsubsection.2.2.3.2}
+\contentsline {subsubsection}{\numberline {2.2.3.3}Spark Standalone集群模式}{11}{subsubsection.2.2.3.3}
+\contentsline {subsection}{\numberline {2.2.4}轨迹数据预处理}{12}{subsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.4.1}WGS84坐标系统转换至GCJ-02坐标系统}{12}{subsubsection.2.2.4.1}
+\contentsline {subsubsection}{\numberline {2.2.4.2}轨迹数据简化}{12}{subsubsection.2.2.4.2}
+\contentsline {subsection}{\numberline {2.2.5}轨迹数据索引与获取}{13}{subsection.2.2.5}
+\contentsline {section}{\numberline {2.3}本章小结}{14}{section.2.3}
+\contentsline {chapter}{\numberline {第三章\hspace {0.3em}}相似轨迹查询方法实现}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}相似轨迹查询问题描述}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}k最佳连接定义}{15}{section.3.2}
+\contentsline {section}{\numberline {3.3}相似轨迹查询处理过程}{18}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}算法变量符号定义及解释}{18}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}相似轨迹查询问题概述}{18}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}相似轨迹查询算法实现}{19}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}分布式相似轨迹查询算法实现}{19}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Spark分布式相似轨迹查询}{20}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}多请求分布式相似轨迹查询}{21}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}本章小结}{22}{section.3.5}
+\contentsline {chapter}{\numberline {第四章\hspace {0.3em}}相似轨迹查询系统需求分析}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}本章序言}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}需求分析概述}{23}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}系统需求背景}{23}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}系统需求说明目的}{23}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}系统应用定位分析}{23}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}系统应用范围}{24}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}系统可行性分析}{24}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}功能需求}{25}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}用户功能需求}{25}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}用户界面需求}{25}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}性能需求}{26}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}系统查询准确率}{26}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}系统查询时间特性}{26}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}系统适应性}{27}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}本章小结}{27}{section.4.5}
+\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}相似轨迹查询系统设计与实现}{28}{chapter.5}
+\contentsline {section}{\numberline {5.1}本章序言}{28}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}系统设计编写背景}{28}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}系统设计编写原则}{28}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}系统名词定义}{28}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}用户类与特点}{28}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}系统运行环境}{29}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}系统设计}{29}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}系统设计分析}{29}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}系统功能描述}{30}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}系统设计框架}{30}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}系统处理流程}{31}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}接口设计}{31}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}外部接口}{31}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}内部接口}{32}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}用户接口}{32}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}系统总体结构}{33}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}系统组成模块}{33}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}系统功能模块详细设计}{33}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}系统用户界面设计}{34}{section.5.5}
+\contentsline {section}{\numberline {5.6}本章小结}{34}{section.5.6}
+\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}系统测试与评价}{36}{chapter.6}
+\contentsline {section}{\numberline {6.1}引言}{36}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}编写目的}{36}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}针对用户}{36}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}缺陷定义}{36}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}测试环境数据}{37}{subsection.6.1.4}
+\contentsline {subsubsection}{\numberline {6.1.4.1}测试数据集}{37}{subsubsection.6.1.4.1}
+\contentsline {subsubsection}{\numberline {6.1.4.2}测试设备环境}{37}{subsubsection.6.1.4.2}
+\contentsline {section}{\numberline {6.2}系统测试概要}{38}{section.6.2}
+\contentsline {section}{\numberline {6.3}系统测试描述}{38}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}功能测试描述}{38}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}性能测试描述}{38}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}系统测评结果}{38}{section.6.4}
+\contentsline {section}{\numberline {6.5}系统测试评价}{40}{section.6.5}
+\contentsline {section}{\numberline {6.6}本章小结}{41}{section.6.6}
+\contentsline {chapter}{\numberline {第七章\hspace {0.3em}}结论}{42}{chapter.7}
+\contentsline {section}{\numberline {7.1}相似轨迹查询系统设计总结}{42}{section.7.1}
+\contentsline {section}{\numberline {7.2}未来工作展望}{42}{section.7.2}
+\contentsline {chapter}{参考文献}{43}{appendix*.7}
+\contentsline {chapter}{致\nobreakspace {}\nobreakspace {}\nobreakspace {}\nobreakspace {}谢}{45}{appendix*.8}

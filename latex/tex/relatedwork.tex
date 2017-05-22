@@ -14,13 +14,28 @@
 
 \subsection{相似轨迹查询方法}
 \label{subsec:situation-methods}
-轨迹数据挖掘中，相似轨迹数据查询国内外有着较为丰富的研究成果。最初的相似轨迹查询通过离散傅里叶变化（Discrete Fourier Transform）将轨迹做近似匹配得到相似轨迹\cite{agrawal1993efficient}。在此基础上，通过离散小波变换（Discrete Wavalet Transformation）在降低查询维度上的相似轨迹匹配得以实现\cite{chan1999efficient}。为了能够比较不同单位长度轨迹之间相似性，Chan和Fu通过动态时间规划（Dynamic Time Warping）的技术来来最小化轨迹序列之间的距离以完成相似轨迹查找\cite{bernad1996finding}，虽然这一方法在处理噪音点上具有鲁棒性，但操作相对于目前算法而言过于繁琐。
+轨迹数据挖掘中，相似轨迹数据查询国内外有着较为丰富的研究成果。最初的相似轨迹查询通过首先对一段序列数据进行离散傅里叶变化（Discrete Fourier Transform），根据帕塞瓦尔定理在$O(nlogn)$实现时间复杂度内将轨迹做近似匹配得到相似轨迹\cite{agrawal1993efficient}。在此基础上，通过离散小波变换（Discrete Wavalet Transformation）在降低查询维度上的相似轨迹匹配得以实现\cite{chan1999efficient}。为了能够比较不同单位长度轨迹之间相似性，Chan和Fu通过动态时间规划（Dynamic Time Warping）的技术来来最小化轨迹序列之间的距离以完成相似轨迹查找\cite{bernad1996finding}，虽然这一方法在处理噪音点上具有鲁棒性，但操作相对于目前算法而言过于繁琐。
 
 较早通过欧式距离作为关键字索引轨迹的方法\cite{yanagisawa2003shape}只能引用于在时间和空间上具有相同间隔性的轨迹数据。之后Cai和Ng提出基于切比雪夫多项式（Chebyshev polynomials）的轨迹索引和近似方法来实现相似轨迹匹配\cite{cai2004indexing}。但上述方法都需要保证轨迹具有相同的长度，即相同数目的轨迹点。
 
 Vlachos等人用一种距离度量来转义和变换轨迹以找到相似轨迹\cite{vlachos2004rotation}，结合动态时间规划技术，将所有轨迹变化到一个不可转变的空间再计算两个轨迹之间的相似性。Sakurai等在动态时间规划的基础上，结合剪枝算法用下界变量来加快动态时间规划的相似轨迹查询算法\cite{sakurai2005ftw}。Lin和Su提出与时间无关、针对移动轨迹的相似搜索算法重点比较两个移动在空间上的相似性并实现查询，并在他们的实验中证明了该方法优于基于动态空间规划的相似轨迹查询。
 
-最长公共子序列算法（Longest Common Subsequence）算法在字符串中应用也在拓展于相似轨迹查询中。最长公共子序列问题的本质描述两字符串之间的相似度，在解决问题过程中允许对两个字符串进行扩展。算法本身允许其中的某些字符不匹配，这也匹配在相似轨迹查询中允许某些点不匹配。因此最长公共子序列可高效解决噪音点问题和允许轨迹间隔不同。Vlachos等人在最长公共子序列的基础上，提出两种针对时间变化与转移的相似度方程\cite{vlachos2002discovering}，对于相似的子轨迹在计算中基于较大权值，并利用了高效的空间索引结构。但这一算法局需要轨迹点的采样率高度一致性。随后，一种名为EDR（Edit Distance On Real Sequences）的方法被提出\cite{chen2005robust}。这个方法基于对距离的修改，通过三种剪枝策略以降低轨迹数据和查询数据之间的距离计算代价，在处理噪音点方面鲁棒性强于动态时间规划和最长公共子序列。但准确性上缺乏保证且对于不同采样率的轨迹处理性能较差。在此之后，ERP（Edit distance with Real Penalty）\cite{chen2004marriage}、DISSIM\cite{frentzos2007index}和MA（model-driven assignment）\cite{sankararaman2013model}等等针对相似轨迹查询的算法也逐步提出且各具优势，不过他们在时间偏移、采样速率和距离阈值限制上也都有着不足。
+一种名为Fr\'{e}chet\cite{alt1995computing}距离的相似度方程在相似轨迹查询中有着比较普遍的应用。假设一个人和一只狗用一根绳子连接，从起始点各自沿着一条路径行走到终点，并允许他们以不同的速度前进但不允许往回走。直观理解而言，Fr\'{e}chet距离就是狗绳距离：人和狗各自在走完各自路径所需要的最短的狗绳长度。两个各有$m$和$n$个离散点组成的轨迹之前的Fr\'{e}chet距离可以在$O(mnlog(m+n))$时间复杂度内计算，对于离散型的轨迹点，\cite{alt1995computing}称之为离散Fr\'{e}chet距离，可以通过动态规划算法在$O(mn)$时间复杂度内计算。之后Agarwal等人\cite{agarwal2014computing}也提出并验证了离散Fr\'{e}chet距离在次二次时间复杂度内的计算方法。
+
+但该算法对于两条交错轨迹的相似度计算应用上存在一些需要提高的地方。对于给定的一对轨迹$T1$和$T2$，可能会有大量的潜在轨迹点对能够产生理论上合理的Fr\'{e}chet距离。因此通过最小化Fr\'{e}chet距离来表示轨迹之间的相似度并不一定能够满足之后的需求。为了解决这个问题，研究人员通过用将Fr\'{e}chet距离平均化而不是最小化来表示轨迹之间的相似度。这个思路的具体时间基于目前比较流行的动态时间规整（Dynamic Time Warping）技术。动态时间规整技术最初是提出并应用是在对声音信号的匹配上\cite{rabiner1993fundamentals}，在相似轨迹查询这一领域，动态时间规整技术可以较有效地查询采样率不同的相似轨迹。因为这一技术通过对两条轨迹之前所有点都进行一一匹配，结果准确性会因为一些噪音点或者轨迹点偏差而受到影响。由于测量造成的误差在目前轨迹处理技术中还缺乏准确有效地预处理技术。针对这种潜在的轨迹数据误差，最长公共子序列算法\cite{vlachos2002discovering}等算法得以提出以在相似轨迹查询中对误差数据具有较好的鲁棒性。
+
+最长公共子序列算法（Longest Common Subsequence）算法在字符串中应用也在拓展于相似轨迹查询中。最长公共子序列问题的本质描述两字符串之间的相似度，在解决问题过程中允许对两个字符串进行扩展。算法本身允许其中的某些字符不匹配，这也匹配在相似轨迹查询中允许某些点不匹配。因此最长公共子序列可高效解决噪音点问题和允许轨迹间隔不同。Vlachos等人在最长公共子序列的基础上，提出两种针对时间变化与转移的相似度方程\cite{vlachos2002discovering}，对于相似的子轨迹在计算中基于较大权值，并利用了高效的空间索引结构。但这一算法局需要轨迹点的采样率高度一致性。
+
+随后，一种名为EDR\cite{chen2005robust}（Edit Distance On Real Sequences）的方法被提出。这个方法基于对距离的修改，通过三种剪枝策略以降低轨迹数据和查询数据之间的距离计算代价，在处理噪音点方面鲁棒性强于动态时间规划和最长公共子序列。但准确性上缺乏保证且对于不同采样率的轨迹处理性能较差。类似该工作，Sayan Ranu等人提出了EDwP\cite{ranu2015indexing}（Edit Distance with Projections）的相似轨迹查询方法。其主要思路在于对轨迹之间相互投影，使得经过投影部分的轨迹序列在地理形状上和时序上保持一致性或相似性。在投影过程中对已投影的轨迹用自定义的一种名为TrajTree的所以结构进行存储，其中越靠近根节点的轨迹数据表示具有越多一致或相似部分的轨迹。作者也通过实验验证该算法对噪音点处理上的强鲁棒性和TrajTree数据结构在进行k最近邻查询时的高效性，不过该方法过程对轨迹相似度的查询中对时间间隔较大的轨迹数据查询性能相对较差。
+
+
+
+在此之后，针对时序相似度获取的ERP（Edit distance with Real Penalty）\cite{chen2004marriage}算法被提出。这一算法被认为是L1范式和距离修改方程的较好结合算法：L1范式应用在相似度距离方程中而用距离修改方程解决时间偏移问题。由于ERP算法是基于距离修改方程，该算法可以在k最近邻查询剪枝过程中处理三角不等式带来的相似度问题。而在轨迹存储上，ERP算法选择了$B^{+}$树来存储轨迹数据以在该算法中减少存储需求和节约可能的I/O开销。这种结合这可以看成是GEMINI (GEnome MINIng) 对时序数据索引的拓展工作。
+
+
+DISSIM\cite{frentzos2007index}和MA（model-driven assignment）\cite{sankararaman2013model}等等针对相似轨迹查询的算法也逐步提出且各具优势，不过他们在时间偏移、采样速率和距离阈值限制上也都有着不足。
+
+另一方面，在生物计算方面的序列校准领域的研究技术，例如找到DNA或蛋白质的序列相似度，也通过在某些情况下使用于相似轨迹的查询领域。书\cite{durbin1998biological}中提及的通过建立模型来分析生物序列的方法，被拓展为对两条轨迹序列的校准。这一方法在处理相似轨迹时会有较好的应用性能。但是对于采样率不同的轨迹，基于方法\cite{durbin1998biological}的相似轨迹处理会使得轨迹间原本相似的部分由于算法建模中一一对应原则导致被视作不相似的。
 
 
 \subsection{相似度方程比较}
@@ -77,7 +92,7 @@ Bootstrap是Twitter公司推出的一个用户Web前端的开源工具。作为�
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=1\textwidth]{chapter04/clustermanager.png}
-  \bicaption[fig:clustermanager]{集群管理大致模式}{集群管理大致模式}{Fig}{Cluster Managing Mode}
+  \bicaption[fig:clustermanager]{集群管理大致模式}{集群管理大致模式\cite{sparkclustermanager}}{Fig}{Cluster Managing Mode}
 \end{figure}
 
 在相似轨迹获取这一应用中，根据我们的应用场景和硬件设置，我们采用\emph{Spark}自带的\emph{Standalone}集群模式，其大致设计框架如图\ref{fig:standalone}\cite{hongzhi2017parallel}所示。
@@ -85,7 +100,7 @@ Bootstrap是Twitter公司推出的一个用户Web前端的开源工具。作为�
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=0.5\textwidth]{chapter04/standalone.png}
-  \bicaption[fig:standalone]{Spark Standalone集群结构}{Spark Standalone集群结构}{Fig}{Spark Standalone Architecture}
+  \bicaption[fig:standalone]{Spark Standalone集群结构}{Spark Standalone集群结构\cite{hongzhi2017parallel}}{Fig}{Spark Standalone Architecture}
 \end{figure}
 
 在\emph{Standalone}集群模式中，我们通过一个在\emph{Spark}分布式环境下的简要集群管理者来简单建立集群处理环境。在这一集群环境中，主节点（\emph{Master Node}）为驱动程序运行的设备节点。驱动程序不仅是与用户交互信息的接口（\emph{interface}）程序，也负责分布式运行在\emph{Spark}环境中进程的运行情况。子节点们（\emph{Slave Nodes}）为启动在工作节点中的进程提供运行环境，这些进程运行任务代码并在内存或磁盘中储存数据。在相似轨迹搜索中，我们将轨迹数据和预处理好的轨迹索引R树结构存储在\emph{HDFS}上，集群环境中的工作节点可以通过设定好的参数无需秘钥的共享\emph{HDFS}上已存储好的数据，这样，我们可以将相似轨迹搜索任务进一步以分布式的方法进行处理。
@@ -158,7 +173,7 @@ R树\cite{sellis1987r+,rtreedocument}数据结构在空间数据库中应用广�
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=1.0\textwidth]{chapter02/rtree.png}
-  \bicaption[fig:2-2]{R树数据结构举例}{R树数据结构举例}{Fig}{Two views of an R-tree example}
+  \bicaption[fig:2-2]{R树数据结构举例}{R树数据结构举例\cite{sellis1987r+}}{Fig}{Two views of an R-tree example}
 \end{figure}
 
 在图\ref{fig:2-2}中，根节点有两个数据体$E1$，$E2$，分别对应子节点$N1$，$N2$。$N1$代表的最小边界箱包含了其子节点$N3$、$N4$、$N5$以及数据体$E1$所具有的最小边界箱信息。值得注意的是空间点的体现只有在R树的叶节点上。R树可以应用在范围查询和近邻查询中。本文主要使用R树近邻查询这一属性。给定一个查询点，R树可以通过最优优先搜索（best-first）和深度优先搜索（depth-first）两种树遍历策略找到在数据集中最接近查询点的数据。在两种搜索策略中，查询点和每一个最小边界箱的距离被定义为变量$mindist$。之后的搜索过程基本遵从两种搜索策略各自算法。

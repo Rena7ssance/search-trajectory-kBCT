@@ -157,7 +157,7 @@ Sim_{o}(Q,R)= max \left\{
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=0.8\textwidth]{chapter03/similar-search.png}
-  \bicaption[fig:similar-search]{基于位置点的相似轨迹查询}{基于位置点的相似轨迹查询}{Fig}{Search similar trajectory by location points}
+  \bicaption[fig:similar-search]{基于位置点的相似轨迹查询}{基于位置点的相似轨迹查询\cite{shang2014personalized}}{Fig}{Search similar trajectory by location points}
 \end{figure}
 
 如图\ref{fig:similar-search}\cite{shang2014personalized}所示，本文所实现的相似轨迹查询算法主要为针对地理位置点集的轨迹搜索算法\cite{qi2015efficient}。将轨迹数据按特定需求分类索引在R树数据结构上后，该相似轨迹查询算法在轨迹点k最近邻查询算法\cite{roussopoulos1995nearest}基础上，实现了增长型k最近邻查询算法\cite{chen2010searching}，结合备选和筛选（candidate-refinement）的剪枝思路\cite{tang2011retrieving}，通过轨迹相似度上界与下界对搜索空间进行优化处理，以满足空间搜索算法的高效性和准确性。
@@ -231,7 +231,7 @@ Sim_{o}(Q,R)= max \left\{
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=0.8\textwidth]{chapter04/distributed.png}
-  \bicaption[fig:distributed]{Spark分布式相似轨迹查询}{Spark分布式相似轨迹查询}{Fig}{Spark distributed search similar trajectories}
+  \bicaption[fig:distributed]{Spark分布式相似轨迹查询流程}{Spark分布式相似轨迹查询流程\cite{dean2008mapreduce}}{Fig}{The flow of Spark distributed search similar trajectories}
 \end{figure}
 
 图\ref{fig:distributed}\cite{dean2008mapreduce}为\emph{MapReduce}的大致处理框架，我们根据这一框架设计出分布式查询相似轨迹的大致算法。在算法中，假设我们已经完成对原始轨迹的简化得到已处理好的简化轨迹$Traj'$\cite{chen2009trajectory}。首先我们通过\emph{Spark}内的\emph{partition}函数将输入数据分割，并分发给每一个工作节点（\emph{Worker Node}）。对于每一个工作节点而言，他们都有了输入数据的一部分轨迹点。对于每一个工作节点而言，他们都可以将自己所拥有的部分轨迹点作为相似轨迹查询的查询点集，由于工作节点通过设置可以直接访问\emph{HDFS}上已存储的轨迹数据，我们通过主节点（\emph{Master Node}）将增长型k最近邻查询代码分发给每一个工作节点并予以上运行。每个工作节点将针对各自输入查询点集所得出的k条最相似轨迹及其对应的相似度大小作为输出。通过对轨迹作为关键字合并中间查询结果，对相似度求和按相似度大小降序排列轨迹，再从中选取k条轨迹作为最终的结果。

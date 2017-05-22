@@ -49,7 +49,7 @@
       \keyw{zheng2015trajectory}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'zheng2015trajectory'}
     \endentry
-    \entry{zheng2011computing}{book}{}
+    \entry{zheng2011computing}{article}{}
       \name{author}{2}{}{%
         {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
            family={Zheng},
@@ -72,14 +72,14 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Computing with spatial trajectories}
-      \field{usera}{M}
+      \field{usera}{J}
       \field{usere}{Zheng, Yu and Zhou, Xiaofang}
       \field{userf}{Zheng, Yu and Zhou, Xiaofang}
       \field{year}{2011}
       \keyw{zheng2011computing}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'zheng2011computing'}
     \endentry
-    \entry{chen2010searching}{inproceedings}{}
+    \entry{chen2010searching}{article}{}
       \name{author}{5}{}{%
         {{hash=d6db146c28d551b285f539d13487a5aa}{%
            family={Chen},
@@ -118,7 +118,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 2010 ACM SIGMOD International Conference on Management of data}
       \field{title}{Searching trajectories by locations: an efficiency study}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Chen, Zaiben and Shen, Heng Tao and Zhou, Xiaofang and Zheng, Yu and Xie, Xing}
       \field{userf}{Chen, Zaiben and Shen, Heng Tao and Zhou, Xiaofang and Zheng, Yu and Xie, Xing}
       \field{year}{2010}
@@ -165,7 +165,7 @@
       \keyw{agrawal1993efficient}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'agrawal1993efficient'}
     \endentry
-    \entry{chan1999efficient}{inproceedings}{}
+    \entry{chan1999efficient}{article}{}
       \name{author}{2}{}{%
         {{hash=ac5d57b363374b533861b6b48ea01535}{%
            family={Chan},
@@ -189,7 +189,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Data Engineering, 1999. Proceedings., 15th International Conference on}
       \field{title}{Efficient time series matching by wavelets}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Chan, Kin-Pong and Fu, Ada Wai-Chee}
       \field{userf}{Chan, Kin-Pong and Fu, Ada Wai-Chee}
       \field{year}{1999}
@@ -224,7 +224,7 @@
       \keyw{bernad1996finding}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'bernad1996finding'}
     \endentry
-    \entry{yanagisawa2003shape}{inproceedings}{}
+    \entry{yanagisawa2003shape}{article}{}
       \name{author}{3}{}{%
         {{hash=64d64f69dc6a78820c865ab98ba006c4}{%
            family={Yanagisawa},
@@ -253,7 +253,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{International Conference on Mobile Data Management}
       \field{title}{Shape-based similarity query for trajectory of mobile objects}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Yanagisawa, Yutaka and Akahani, Jun-ichi and Satoh, Tetsuji}
       \field{userf}{Yanagisawa, Yutaka and Akahani, Jun-ichi and Satoh, Tetsuji}
       \field{year}{2003}
@@ -262,7 +262,7 @@
       \keyw{yanagisawa2003shape}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'yanagisawa2003shape'}
     \endentry
-    \entry{cai2004indexing}{inproceedings}{}
+    \entry{cai2004indexing}{article}{}
       \name{author}{2}{}{%
         {{hash=8801decc98cb1c624cafede572ada09d}{%
            family={Cai},
@@ -286,7 +286,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 2004 ACM SIGMOD international conference on Management of data}
       \field{title}{Indexing spatio-temporal trajectories with Chebyshev polynomials}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Cai, Yuhan and Ng, Raymond}
       \field{userf}{Cai, Yuhan and Ng, Raymond}
       \field{year}{2004}
@@ -295,7 +295,7 @@
       \keyw{cai2004indexing}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'cai2004indexing'}
     \endentry
-    \entry{vlachos2004rotation}{inproceedings}{}
+    \entry{vlachos2004rotation}{article}{}
       \name{author}{3}{}{%
         {{hash=3a4c83e1953d7600ad341dae27e9b88a}{%
            family={Vlachos},
@@ -324,7 +324,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the tenth ACM SIGKDD international conference on Knowledge discovery and data mining}
       \field{title}{Rotation invariant distance measures for trajectories}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Vlachos, Michail and Gunopulos, Dimitrios and Das, Gautam}
       \field{userf}{Vlachos, Michail and Gunopulos, Dimitrios and Das, Gautam}
       \field{year}{2004}
@@ -333,7 +333,7 @@
       \keyw{vlachos2004rotation}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'vlachos2004rotation'}
     \endentry
-    \entry{sakurai2005ftw}{inproceedings}{}
+    \entry{sakurai2005ftw}{article}{}
       \name{author}{3}{}{%
         {{hash=8ad08195319f922fa1fd18ae85c5b68e}{%
            family={Sakurai},
@@ -362,7 +362,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the twenty-fourth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems}
       \field{title}{FTW: fast similarity search under the time warping distance}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Sakurai, Yasushi and Yoshikawa, Masatoshi and Faloutsos, Christos}
       \field{userf}{Sakurai, Yasushi and Yoshikawa, Masatoshi and Faloutsos, Christos}
       \field{year}{2005}
@@ -371,7 +371,117 @@
       \keyw{sakurai2005ftw}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'sakurai2005ftw'}
     \endentry
-    \entry{vlachos2002discovering}{inproceedings}{}
+    \entry{alt1995computing}{article}{}
+      \name{author}{2}{}{%
+        {{hash=dfa170a08197e06d8e21a960c8a18a0e}{%
+           family={Alt},
+           family_i={A\bibinitperiod},
+           given={Helmut},
+           given_i={H\bibinitperiod}}}%
+        {{hash=417d4b9b425303e23a73c04858120e86}{%
+           family={Godau},
+           family_i={G\bibinitperiod},
+           given={Michael},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific}%
+      }
+      \strng{namehash}{80e15dbae8b214ead4f3b6061f44d827}
+      \strng{fullhash}{80e15dbae8b214ead4f3b6061f44d827}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Computational Geometry \& Applications}
+      \field{number}{01n02}
+      \field{title}{Computing the Fréchet distance between two polygonal curves}
+      \field{usera}{J}
+      \field{usere}{Alt, Helmut and Godau, Michael}
+      \field{userf}{Alt, Helmut and Godau, Michael}
+      \field{volume}{5}
+      \field{year}{1995}
+      \field{pages}{75\bibrangedash 91}
+      \range{pages}{17}
+      \keyw{alt1995computing}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'alt1995computing'}
+    \endentry
+    \entry{agarwal2014computing}{article}{}
+      \name{author}{4}{}{%
+        {{hash=ea5f0c57a805cea934d528b718f1b996}{%
+           family={Agarwal},
+           family_i={A\bibinitperiod},
+           given={Pankaj\bibnamedelima K},
+           given_i={P\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=e1647a984ed1595b933404c8e8c8e8e9}{%
+           family={Avraham},
+           family_i={A\bibinitperiod},
+           given={Rinat\bibnamedelima Ben},
+           given_i={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=74fc28f5c63cf11e0fa303a99e5e55a5}{%
+           family={Kaplan},
+           family_i={K\bibinitperiod},
+           given={Haim},
+           given_i={H\bibinitperiod}}}%
+        {{hash=9586c4968b275c9bde911f0f96aba3d8}{%
+           family={Sharir},
+           family_i={S\bibinitperiod},
+           given={Micha},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{56992cf7220eef841ba4891cccbb505b}
+      \strng{fullhash}{450626a8ac7196a8cc3aa6ac44925074}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIAM Journal on Computing}
+      \field{number}{2}
+      \field{title}{Computing the discrete Fréchet distance in subquadratic time}
+      \field{usera}{J}
+      \field{usere}{Agarwal, Pankaj K and Avraham, Rinat Ben and Kaplan, Haim and Sharir, Micha}
+      \field{userf}{Agarwal, Pankaj K and Avraham, Rinat Ben and Kaplan, Haim and Sharir, Micha}
+      \field{volume}{43}
+      \field{year}{2014}
+      \field{pages}{429\bibrangedash 449}
+      \range{pages}{21}
+      \keyw{agarwal2014computing}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'agarwal2014computing'}
+    \endentry
+    \entry{rabiner1993fundamentals}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d82c5ec3469f5ddd32b45841cfdea884}{%
+           family={Rabiner},
+           family_i={R\bibinitperiod},
+           given={Lawrence\bibnamedelima R},
+           given_i={L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=d130e0fb0614fc89f8792edf59e1c68a}{%
+           family={Juang},
+           family_i={J\bibinitperiod},
+           given={Biing-Hwang},
+           given_i={B\bibinithyphendelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {PTR Prentice Hall}%
+      }
+      \strng{namehash}{fbcfaa755d9ec5c3e7bb9024b286f02f}
+      \strng{fullhash}{fbcfaa755d9ec5c3e7bb9024b286f02f}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fundamentals of speech recognition}
+      \field{usera}{J}
+      \field{usere}{Rabiner, Lawrence R and Juang, Biing-Hwang}
+      \field{userf}{Rabiner, Lawrence R and Juang, Biing-Hwang}
+      \field{year}{1993}
+      \keyw{rabiner1993fundamentals}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'rabiner1993fundamentals'}
+    \endentry
+    \entry{vlachos2002discovering}{article}{}
       \name{author}{3}{}{%
         {{hash=3a4c83e1953d7600ad341dae27e9b88a}{%
            family={Vlachos},
@@ -400,7 +510,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Data Engineering, 2002. Proceedings. 18th International Conference on}
       \field{title}{Discovering similar multidimensional trajectories}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Vlachos, Michail and Kollios, George and Gunopulos, Dimitrios}
       \field{userf}{Vlachos, Michail and Kollios, George and Gunopulos, Dimitrios}
       \field{year}{2002}
@@ -409,7 +519,7 @@
       \keyw{vlachos2002discovering}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'vlachos2002discovering'}
     \endentry
-    \entry{chen2005robust}{inproceedings}{}
+    \entry{chen2005robust}{article}{}
       \name{author}{3}{}{%
         {{hash=046842e5933d7131df18c28d8bce94ff}{%
            family={Chen},
@@ -438,7 +548,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 2005 ACM SIGMOD international conference on Management of data}
       \field{title}{Robust and fast similarity search for moving object trajectories}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Chen, Lei and Özsu, M Tamer and Oria, Vincent}
       \field{userf}{Chen, Lei and Özsu, M Tamer and Oria, Vincent}
       \field{year}{2005}
@@ -447,7 +557,55 @@
       \keyw{chen2005robust}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'chen2005robust'}
     \endentry
-    \entry{chen2004marriage}{inproceedings}{}
+    \entry{ranu2015indexing}{article}{}
+      \name{author}{5}{}{%
+        {{hash=70ff27dc062ea08135cad3954e923023}{%
+           family={Ranu},
+           family_i={R\bibinitperiod},
+           given={Sayan},
+           given_i={S\bibinitperiod}}}%
+        {{hash=4b4ee596cbfac673bb5b1b41ae08c510}{%
+           family={Deepak},
+           family_i={D\bibinitperiod},
+           given={P},
+           given_i={P\bibinitperiod}}}%
+        {{hash=f575491820b1d835bdc6bc31a352f772}{%
+           family={Telang},
+           family_i={T\bibinitperiod},
+           given={Aditya\bibnamedelima D},
+           given_i={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=dbff126a7a33b10bdce60ee65e76c89b}{%
+           family={Deshpande},
+           family_i={D\bibinitperiod},
+           given={Prasad},
+           given_i={P\bibinitperiod}}}%
+        {{hash=9fa9553384b748e1d6f326d6cd6ed2d8}{%
+           family={Raghavan},
+           family_i={R\bibinitperiod},
+           given={Sriram},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{c4590df19995a5305a3e9f36c3f924ed}
+      \strng{fullhash}{ed7a1d27546b749582101715b49a200a}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Data Engineering (ICDE), 2015 IEEE 31st International Conference on}
+      \field{title}{Indexing and matching trajectories under inconsistent sampling rates}
+      \field{usera}{J}
+      \field{usere}{Ranu, Sayan and Deepak, P and Telang, Aditya D and Deshpande, Prasad and Raghavan, Sriram}
+      \field{userf}{Ranu, Sayan and Deepak, P and Telang, Aditya D and Deshpande, Prasad and Raghavan, Sriram}
+      \field{year}{2015}
+      \field{pages}{999\bibrangedash 1010}
+      \range{pages}{12}
+      \keyw{ranu2015indexing}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'ranu2015indexing'}
+    \endentry
+    \entry{chen2004marriage}{article}{}
       \name{author}{2}{}{%
         {{hash=046842e5933d7131df18c28d8bce94ff}{%
            family={Chen},
@@ -471,7 +629,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the Thirtieth international conference on Very large data bases-Volume 30}
       \field{title}{On the marriage of lp-norms and edit distance}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Chen, Lei and Ng, Raymond}
       \field{userf}{Chen, Lei and Ng, Raymond}
       \field{year}{2004}
@@ -480,7 +638,7 @@
       \keyw{chen2004marriage}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'chen2004marriage'}
     \endentry
-    \entry{frentzos2007index}{inproceedings}{}
+    \entry{frentzos2007index}{article}{}
       \name{author}{3}{}{%
         {{hash=57a8ea7f2d5dd36b759fbc51bc0c60f5}{%
            family={Frentzos},
@@ -509,7 +667,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Data Engineering, 2007. ICDE 2007. IEEE 23rd International Conference on}
       \field{title}{Index-based most similar trajectory search}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Frentzos, Elias and Gratsias, Kostas and Theodoridis, Yannis}
       \field{userf}{Frentzos, Elias and Gratsias, Kostas and Theodoridis, Yannis}
       \field{year}{2007}
@@ -518,7 +676,7 @@
       \keyw{frentzos2007index}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'frentzos2007index'}
     \endentry
-    \entry{sankararaman2013model}{inproceedings}{}
+    \entry{sankararaman2013model}{article}{}
       \name{author}{5}{}{%
         {{hash=1ecd429441bf7d7e88cdc52acc637e25}{%
            family={Sankararaman},
@@ -557,7 +715,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 21st ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems}
       \field{title}{Model-driven matching and segmentation of trajectories}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Sankararaman, Swaminathan and Agarwal, Pankaj K and M{ø}lhave, Thomas and Pan, Jiangwei and Boedihardjo, Arnold P}
       \field{userf}{Sankararaman, Swaminathan and Agarwal, Pankaj K and M{ø}lhave, Thomas and Pan, Jiangwei and Boedihardjo, Arnold P}
       \field{year}{2013}
@@ -566,7 +724,47 @@
       \keyw{sankararaman2013model}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'sankararaman2013model'}
     \endentry
-    \entry{morse2007efficient}{inproceedings}{}
+    \entry{durbin1998biological}{article}{}
+      \name{author}{4}{}{%
+        {{hash=517afe729b2eb59735ba80628d943bb0}{%
+           family={Durbin},
+           family_i={D\bibinitperiod},
+           given={Richard},
+           given_i={R\bibinitperiod}}}%
+        {{hash=1d05f58696610ffc4a982ee1592d93a7}{%
+           family={Eddy},
+           family_i={E\bibinitperiod},
+           given={Sean\bibnamedelima R},
+           given_i={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=6403d5c11a92c83a009c3def1b494036}{%
+           family={Krogh},
+           family_i={K\bibinitperiod},
+           given={Anders},
+           given_i={A\bibinitperiod}}}%
+        {{hash=68624c959c638f6b14013aa431a3438e}{%
+           family={Mitchison},
+           family_i={M\bibinitperiod},
+           given={Graeme},
+           given_i={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge university press}%
+      }
+      \strng{namehash}{824721317d1e082b319f3de5d83f9b19}
+      \strng{fullhash}{5dfaed6a1ccb368055b24d69ff50a2d0}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Biological sequence analysis: probabilistic models of proteins and nucleic acids}
+      \field{usera}{J}
+      \field{usere}{Durbin, Richard and Eddy, Sean R and Krogh, Anders and Mitchison, Graeme}
+      \field{userf}{Durbin, Richard and Eddy, Sean R and Krogh, Anders and Mitchison, Graeme}
+      \field{year}{1998}
+      \keyw{durbin1998biological}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'durbin1998biological'}
+    \endentry
+    \entry{morse2007efficient}{article}{}
       \name{author}{2}{}{%
         {{hash=81e0c96eafc902b0a79304b6a773c080}{%
            family={Morse},
@@ -590,7 +788,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 2007 ACM SIGMOD international conference on Management of data}
       \field{title}{An efficient and accurate method for evaluating time series similarity}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Morse, Michael D and Patel, Jignesh M}
       \field{userf}{Morse, Michael D and Patel, Jignesh M}
       \field{year}{2007}
@@ -733,7 +931,7 @@
       \keyw{hongzhi2017parallel}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'hongzhi2017parallel'}
     \endentry
-    \entry{visvalingam1990douglas}{inproceedings}{}
+    \entry{visvalingam1990douglas}{article}{}
       \name{author}{2}{}{%
         {{hash=05a1fd66648f55e09acdf35954b07114}{%
            family={Visvalingam},
@@ -758,7 +956,7 @@
       \field{booktitle}{Computer Graphics Forum}
       \field{number}{3}
       \field{title}{The Douglas-Peucker Algorithm for Line Simplification: Re-evaluation through Visualization}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Visvalingam, Mahes and Whyatt, J Duncan}
       \field{userf}{Visvalingam, Mahes and Whyatt, J Duncan}
       \field{volume}{9}
@@ -812,7 +1010,7 @@
       \endverb
       \keyw{rtreedocument}
     \endentry
-    \entry{chen2009trajectory}{inproceedings}{}
+    \entry{chen2009trajectory}{article}{}
       \name{author}{5}{}{%
         {{hash=5001e8c086c7c7fe0c0cb2fd62fdda94}{%
            family={Chen},
@@ -851,7 +1049,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 2009 International Workshop on Location Based Social Networks}
       \field{title}{Trajectory simplification method for location-based social networking services}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Chen, Yukun and Jiang, Kai and Zheng, Yu and Li, Chunping and Yu, Nenghai}
       \field{userf}{Chen, Yukun and Jiang, Kai and Zheng, Yu and Li, Chunping and Yu, Nenghai}
       \field{year}{2009}
@@ -915,7 +1113,7 @@
       \keyw{shang2014personalized}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'shang2014personalized'}
     \endentry
-    \entry{qi2015efficient}{inproceedings}{}
+    \entry{qi2015efficient}{article}{}
       \name{author}{4}{}{%
         {{hash=f99fee99b0f29544f05a7ced98a97b42}{%
            family={Qi},
@@ -949,7 +1147,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{International Symposium on Spatial and Temporal Databases}
       \field{title}{Efficient point-based trajectory search}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Qi, Shuyao and Bouros, Panagiotis and Sacharidis, Dimitris and Mamoulis, Nikos}
       \field{userf}{Qi, Shuyao and Bouros, Panagiotis and Sacharidis, Dimitris and Mamoulis, Nikos}
       \field{year}{2015}
@@ -958,7 +1156,7 @@
       \keyw{qi2015efficient}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'qi2015efficient'}
     \endentry
-    \entry{roussopoulos1995nearest}{inproceedings}{}
+    \entry{roussopoulos1995nearest}{article}{}
       \name{author}{3}{}{%
         {{hash=2f3ea04fff0faa629ce0d81ee5ef7b59}{%
            family={Roussopoulos},
@@ -988,7 +1186,7 @@
       \field{booktitle}{ACM sigmod record}
       \field{number}{2}
       \field{title}{Nearest neighbor queries}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Roussopoulos, Nick and Kelley, Stephen and Vincent, Frédéric}
       \field{userf}{Roussopoulos, Nick and Kelley, Stephen and Vincent, Frédéric}
       \field{volume}{24}
@@ -998,7 +1196,7 @@
       \keyw{roussopoulos1995nearest}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'roussopoulos1995nearest'}
     \endentry
-    \entry{tang2011retrieving}{inproceedings}{}
+    \entry{tang2011retrieving}{article}{}
       \name{author}{6}{}{%
         {{hash=4618bdc69309f3fd0cba8ccd098964c8}{%
            family={Tang},
@@ -1042,7 +1240,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{International Symposium on Spatial and Temporal Databases}
       \field{title}{Retrieving k-nearest neighboring trajectories by a set of point locations}
-      \field{usera}{C}
+      \field{usera}{J}
       \field{usere}{Tang, Lu-An and Zheng, Yu and Xie, Xing and Yuan, Jing and Yu, Xiao and Han, Jiawei}
       \field{userf}{Tang, Lu-An and Zheng, Yu and Xie, Xing and Yuan, Jing and Yu, Xiao and Han, Jiawei}
       \field{year}{2011}
