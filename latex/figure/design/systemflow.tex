@@ -19,7 +19,7 @@
 %	\draw [arrow] (bound_judge.south) -- node[anchor=west]{是}(refinement.north);
 %	\draw [arrow] (refinement) -- (output);
 
-	\node (begin) [startstop] {进入系统界面};
+	\node (begin) [startstop,font=\bf,fill=green!20] {进入系统界面};
 	\node (login_judge) [decision, below of=begin, yshift=-0.5cm, aspect=2.5]{是否需要登录};
 	\node (general) [process, right of=login_judge, xshift=3cm]{一般用户};
 	\node (login_type_judge) [decision, below of=login_judge, yshift=-0.5cm, aspect=2.5]{是否为管理员};
@@ -29,7 +29,7 @@
 	\node (is_search_good) [decision, below of=search, aspect=2.5]{是否满意查询结果};
 	\node (does_admin_finish) [decision, below of=admin, aspect=2.5]{管理员操作是否完成};
 	\node (finish) [process, below of=history]{系统处理完成};
-	\node (stop) [startstop, below of=finish]{退出系统界面};
+	\node (stop) [startstop, below of=finish,font=\bf,fill=green!20]{退出系统界面};
 	
 	
 	

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  26 MAY 2017 10:10
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  26 MAY 2017 23:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2754,6 +2754,12 @@ Package biblatex Warning: Biber reported the following issues
 
 
 Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'tang2011retrieving':
+(biblatex)                - Overwriting field 'year' with year value from field
+ 'date' for entry 'tang2011retrieving'.
+
+
+Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'morse2007efficient':
 (biblatex)                - Overwriting field 'year' with year value from field
  'date' for entry 'morse2007efficient'.
@@ -2811,12 +2817,6 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'roussopoulos1995nearest':
 (biblatex)                - Overwriting field 'year' with year value from field
  'date' for entry 'roussopoulos1995nearest'.
-
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'tang2011retrieving':
-(biblatex)                - Overwriting field 'year' with year value from field
- 'date' for entry 'tang2011retrieving'.
 
 
 Package biblatex Warning: Biber reported the following issues
@@ -3136,25 +3136,24 @@ File: figure/chapter02/definition.png Graphic file (type QTm)
 <use  "figure/chapter02/definition.png" >
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 54.
+(Font)              size <8> substituted on input line 57.
 
 
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <7.52812> not available
-(Font)              size <8> substituted on input line 54.
+(Font)              size <8> substituted on input line 57.
 
 File: figure/sjtubanner.png Graphic file (type QTm)
 <use  "figure/sjtubanner.png" > [8]
-Overfull \hbox (2.40337pt too wide) in paragraph at lines 85--87
+File: figure/sjtubanner.png Graphic file (type QTm)
+ <use  "figure/sjtubanner.png" > [9]
+Overfull \hbox (2.40337pt too wide) in paragraph at lines 88--90
 []\EU1/TeXGyreTermes(0)/m/it/10.53937 Spark \EU1/FandolSong-Regular(0)/m/n/10.5
 3937 集 群 计 算 处 理 引 擎 与 之 前 集 群 处 理 的 主 要 不 同 点 即 在 于 其 引 入 的 弹 性 分 布 式 数 据 集  |
 （\EU1/TeXGyreTermes(0)/m/it/10.53937 RDD\EU1/FandolSong-Regular(0)/m/n/10.53937
  ）|
  []
 
-File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [9]
 File: figure/chapter04/clustermanager.png Graphic file (type QTm)
-
 <use  "figure/chapter04/clustermanager.png" >
 File: figure/chapter04/standalone.png Graphic file (type QTm)
 
@@ -3164,14 +3163,14 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 [10]
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" > [11]
-Underfull \hbox (badness 10000) in paragraph at lines 170--172
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
 
  []
 
 File: figure/chapter02/rtree.png Graphic file (type QTm)
-<use  "figure/chapter02/rtree.png" >
+<use  "figure/chapter02/rtree.png" >)
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [12])
+ <use  "figure/sjtubanner.png" > [12]
 File: figure/sjtubanner.png Graphic file (type QTm)
 
 <use  "figure/sjtubanner.png" > [13]
@@ -3217,11 +3216,7 @@ File: figure/chapter03/similar-search.png Graphic file (type QTm)
 <use  "figure/chapter03/similar-search.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" >
-[17]
-
-LaTeX Warning: Reference `algo:iknn' on page 18 undefined on input line 204.
-
-(./figure/chapter03/iknn.tex)
+[17] (./figure/chapter03/iknn.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" > [18]
 File: figure/sjtubanner.png Graphic file (type QTm)
@@ -3502,9 +3497,6 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.78749pt have occurred.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package logreq Info: Writing requests to 'thesis.run.xml'.
@@ -3512,10 +3504,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54295 strings out of 493591
- 1101804 string characters out of 6143547
- 1412697 words of memory out of 5000000
- 56637 multiletter control sequences out of 15000+600000
+ 54294 strings out of 493591
+ 1101793 string characters out of 6143547
+ 1414735 words of memory out of 5000000
+ 56636 multiletter control sequences out of 15000+600000
  31026 words of font info for 187 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  71i,16n,84p,10440b,4651s stack positions out of 5000i,500n,10000p,200000b,80000s

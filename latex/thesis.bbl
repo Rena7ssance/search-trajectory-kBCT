@@ -764,6 +764,59 @@
       \keyw{durbin1998biological}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'durbin1998biological'}
     \endentry
+    \entry{tang2011retrieving}{article}{}
+      \name{author}{6}{}{%
+        {{hash=4618bdc69309f3fd0cba8ccd098964c8}{%
+           family={Tang},
+           family_i={T\bibinitperiod},
+           given={Lu-An},
+           given_i={L\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
+           family={Zheng},
+           family_i={Z\bibinitperiod},
+           given={Yu},
+           given_i={Y\bibinitperiod}}}%
+        {{hash=0801da56d6877e3eff32e6a6030425d3}{%
+           family={Xie},
+           family_i={X\bibinitperiod},
+           given={Xing},
+           given_i={X\bibinitperiod}}}%
+        {{hash=0b662dbfd96e443e0657559c33de2e45}{%
+           family={Yuan},
+           family_i={Y\bibinitperiod},
+           given={Jing},
+           given_i={J\bibinitperiod}}}%
+        {{hash=f180cd4b8fde24b498399bd396ea92a0}{%
+           family={Yu},
+           family_i={Y\bibinitperiod},
+           given={Xiao},
+           given_i={X\bibinitperiod}}}%
+        {{hash=7cacfe272c4d395c979d6aecd2f5ec9c}{%
+           family={Han},
+           family_i={H\bibinitperiod},
+           given={Jiawei},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{dcfcf03bf30d6255c6210be18550f25e}
+      \strng{fullhash}{196901802c0bdb3b2a4a1e7696343bce}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Symposium on Spatial and Temporal Databases}
+      \field{title}{Retrieving k-nearest neighboring trajectories by a set of point locations}
+      \field{usera}{J}
+      \field{usere}{Tang, Lu-An and Zheng, Yu and Xie, Xing and Yuan, Jing and Yu, Xiao and Han, Jiawei}
+      \field{userf}{Tang, Lu-An and Zheng, Yu and Xie, Xing and Yuan, Jing and Yu, Xiao and Han, Jiawei}
+      \field{year}{2011}
+      \field{pages}{223\bibrangedash 241}
+      \range{pages}{19}
+      \keyw{tang2011retrieving}
+      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'tang2011retrieving'}
+    \endentry
     \entry{morse2007efficient}{article}{}
       \name{author}{2}{}{%
         {{hash=81e0c96eafc902b0a79304b6a773c080}{%
@@ -1195,59 +1248,6 @@
       \range{pages}{9}
       \keyw{roussopoulos1995nearest}
       \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'roussopoulos1995nearest'}
-    \endentry
-    \entry{tang2011retrieving}{article}{}
-      \name{author}{6}{}{%
-        {{hash=4618bdc69309f3fd0cba8ccd098964c8}{%
-           family={Tang},
-           family_i={T\bibinitperiod},
-           given={Lu-An},
-           given_i={L\bibinithyphendelim A\bibinitperiod}}}%
-        {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
-           family={Zheng},
-           family_i={Z\bibinitperiod},
-           given={Yu},
-           given_i={Y\bibinitperiod}}}%
-        {{hash=0801da56d6877e3eff32e6a6030425d3}{%
-           family={Xie},
-           family_i={X\bibinitperiod},
-           given={Xing},
-           given_i={X\bibinitperiod}}}%
-        {{hash=0b662dbfd96e443e0657559c33de2e45}{%
-           family={Yuan},
-           family_i={Y\bibinitperiod},
-           given={Jing},
-           given_i={J\bibinitperiod}}}%
-        {{hash=f180cd4b8fde24b498399bd396ea92a0}{%
-           family={Yu},
-           family_i={Y\bibinitperiod},
-           given={Xiao},
-           given_i={X\bibinitperiod}}}%
-        {{hash=7cacfe272c4d395c979d6aecd2f5ec9c}{%
-           family={Han},
-           family_i={H\bibinitperiod},
-           given={Jiawei},
-           given_i={J\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{dcfcf03bf30d6255c6210be18550f25e}
-      \strng{fullhash}{196901802c0bdb3b2a4a1e7696343bce}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{International Symposium on Spatial and Temporal Databases}
-      \field{title}{Retrieving k-nearest neighboring trajectories by a set of point locations}
-      \field{usera}{J}
-      \field{usere}{Tang, Lu-An and Zheng, Yu and Xie, Xing and Yuan, Jing and Yu, Xiao and Han, Jiawei}
-      \field{userf}{Tang, Lu-An and Zheng, Yu and Xie, Xing and Yuan, Jing and Yu, Xiao and Han, Jiawei}
-      \field{year}{2011}
-      \field{pages}{223\bibrangedash 241}
-      \range{pages}{19}
-      \keyw{tang2011retrieving}
-      \warn{\item Overwriting field 'year' with year value from field 'date' for entry 'tang2011retrieving'}
     \endentry
     \entry{AutoNavi}{report}{}
       \list{institution}{1}{%

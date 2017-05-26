@@ -19,13 +19,13 @@
 \contentsline {chapter}{\numberline {第二章\hspace {0.3em}}相关工作}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}国内外研究现状}{6}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}相似轨迹查询方法}{6}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}相似度方程比较}{7}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}相关实现技术介绍}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Flask应用框架}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.1.2}相似度方程比较}{8}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}相关实现技术介绍}{9}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Flask应用框架}{9}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Bootstrap}{9}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}大规模数据集群处理}{9}{subsection.2.2.3}
 \contentsline {subsubsection}{\numberline {2.2.3.1}Spark处理引擎简介}{9}{subsubsection.2.2.3.1}
-\contentsline {subsubsection}{\numberline {2.2.3.2}弹性分布数据集RDD}{9}{subsubsection.2.2.3.2}
+\contentsline {subsubsection}{\numberline {2.2.3.2}弹性分布数据集RDD}{10}{subsubsection.2.2.3.2}
 \contentsline {subsubsection}{\numberline {2.2.3.3}Spark Standalone集群模式}{10}{subsubsection.2.2.3.3}
 \contentsline {subsection}{\numberline {2.2.4}轨迹数据预处理}{11}{subsection.2.2.4}
 \contentsline {subsubsection}{\numberline {2.2.4.1}WGS84坐标系统转换至GCJ-02坐标系统}{11}{subsubsection.2.2.4.1}

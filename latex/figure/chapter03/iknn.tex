@@ -1,13 +1,13 @@
 
 \begin{tikzpicture}[node distance=2cm]
 
-	\node (input) [startstop] {输入轨迹数据类型判断};
-	\node (input_judge) [decision, below of=input,yshift=-0.5cm,aspect=2.5] {是否为用户指定一组轨迹点集?};
+	\node (input) [startstop,font=\bf,fill=green!20] {输入轨迹数据类型判断};
+	\node (input_judge) [decision, below of=input,yshift=-0.5cm,aspect=2.5,fill=red!20] {是否为用户指定一组轨迹点集?};
 	\node (ts) [process, right of=input_judge,xshift=5cm] {轨迹简化};
 	\node (iknn) [process, below of=input_judge,yshift=-0.5cm]{增长型k相似轨迹查询};
-	\node (bound_judge) [decision, below of=iknn,yshift=-0.5cm,aspect=2.5]{是否满足相似度上下界条件?};
+	\node (bound_judge) [decision, below of=iknn,yshift=-0.5cm,aspect=2.5,fill=red!20]{是否满足相似度上下界条件?};
 	\node (refinement)[process, below of=bound_judge,yshift=-0.5cm]{备选轨迹集筛选};
-	\node (output)[startstop, below of=refinement]{k条最相似轨迹输入};
+	\node (output)[startstop, below of=refinement,font=\bf,fill=green!20]{k条最相似轨迹输入};
 	
 
 	\draw [arrow] (input) -- (input_judge);
