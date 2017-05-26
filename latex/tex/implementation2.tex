@@ -50,7 +50,7 @@
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=0.7\textwidth]{chapter03/similarity.png}
-  \bicaption[similarity]{查询点与轨迹点之间的匹配}{查询点与轨迹点之间的匹配}{Fig}{Match between query points and trajectory point}
+  \bicaption[similarity]{查询点与轨迹点之间的匹配}{查询点与轨迹点之间的匹配\cite{chen2010searching}}{Fig}{Match between query points and trajectory point}
 \end{figure}
 
 有序查询的相似性计算和无序查询也有区别。给定一组有序的查询点$Q_{o} = \{q_{o1},q_{o2},q_{o3},\cdots, q_{on}\}$和一条已有轨迹$R$，我们通过递归思想为有序查询重新定义相似度方程为$Sim_{o}(Q,R)$，式\ref{eq3-3}。其中$Head(x)$函数代表$x$中的第一个点，例如$Head(Q)$是查询点$q_{1}$；同时$Rest(x)$表示$x$去掉x第一个点之后剩余的部分，例如$Rest(Q)$代表\{$q_{2},q_{3},\cdots, q_{n}$\}。在式\ref{eq3-3}中，通过递归的想法，本文将对$Sim_{o}(Q,R)$的求最大值问题分为对两个子问题的求解，即分别计算$Sim_{o}(Rest(Q),R)$和$Sim_{o}(Q,Rest(R))$的最大值问题。当$Head(Q)$和$Head(R)$的两个轨迹点匹配的时候，我们可以将$e^{-D_{e}(Head(Q), Head(R))}$提前计算并加入当后面计算的$Sim_{o}(Rest(Q),R)$之中。在这种情况下，$Head(R)$需要为下一轮的比较计算继续保留，因为对于$Rest(Q)$中的查询点来说，$Head(R)$依旧有可能成为最佳匹配点。而当当$Head(Q)$和$Head(R)$不匹配的时候时我们则跳过$Head(R)$计算$Sim_{o}(Q,Rest(R))$。这种求解思路类似于动态规划的思路，这也为我们再后面优化过程中通过动态规划的来解决这一问题提供了参考。式\ref{eq3-3}结合了动态时间规整（DTW）利用重复点和最长公共子序列（LCSS）省略不匹配点的优点来计算相似度方程。

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  23 MAY 2017 01:28
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.5.2)  26 MAY 2017 10:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3115,24 +3115,22 @@ ude; longitude\OT1/cmr/m/n/10.53937 )$\EU1/FandolSong-Regular(0)/m/n/10.53937 �
  []
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [4]
+<use  "figure/sjtubanner.png" > [4])
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [5])
-File: figure/sjtubanner.png Graphic file (type QTm)
-
-<use  "figure/sjtubanner.png" > [6]
+ <use  "figure/sjtubanner.png" > [5]
 \openout2 = `tex/relatedwork.aux'.
 
- (./tex/relatedwork.tex
+
+(./tex/relatedwork.tex
 第二章
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [7
+<use  "figure/sjtubanner.png" > [6
 
 
 
 ]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [8]
+ <use  "figure/sjtubanner.png" > [7]
 File: figure/chapter02/definition.png Graphic file (type QTm)
 
 <use  "figure/chapter02/definition.png" >
@@ -3145,7 +3143,7 @@ LaTeX Font Warning: Font shape `U/wasy/m/n' in size <7.52812> not available
 (Font)              size <8> substituted on input line 54.
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [9]
+<use  "figure/sjtubanner.png" > [8]
 Overfull \hbox (2.40337pt too wide) in paragraph at lines 85--87
 []\EU1/TeXGyreTermes(0)/m/it/10.53937 Spark \EU1/FandolSong-Regular(0)/m/n/10.5
 3937 集 群 计 算 处 理 引 擎 与 之 前 集 群 处 理 的 主 要 不 同 点 即 在 于 其 引 入 的 弹 性 分 布 式 数 据 集  |
@@ -3154,7 +3152,7 @@ Overfull \hbox (2.40337pt too wide) in paragraph at lines 85--87
  []
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [10]
+<use  "figure/sjtubanner.png" > [9]
 File: figure/chapter04/clustermanager.png Graphic file (type QTm)
 
 <use  "figure/chapter04/clustermanager.png" >
@@ -3163,9 +3161,9 @@ File: figure/chapter04/standalone.png Graphic file (type QTm)
 <use  "figure/chapter04/standalone.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" >
-[11]
+[10]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [12]
+ <use  "figure/sjtubanner.png" > [11]
 Underfull \hbox (badness 10000) in paragraph at lines 170--172
 
  []
@@ -3173,10 +3171,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--172
 File: figure/chapter02/rtree.png Graphic file (type QTm)
 <use  "figure/chapter02/rtree.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [13])
+ <use  "figure/sjtubanner.png" > [12])
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [14]
+<use  "figure/sjtubanner.png" > [13]
 \openout2 = `tex/implementation2.aux'.
 
  (./tex/implementation2.tex
@@ -3184,7 +3182,7 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 
 第三章
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [15
+<use  "figure/sjtubanner.png" > [14
 
 
 
@@ -3199,11 +3197,11 @@ S/cmsy/m/n/10.53937 f\OML/cmm/m/it/10.53937 q[]; q[]; q[]; []  ; q[]\OMS/cmsy/m
  []
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [16]
+<use  "figure/sjtubanner.png" > [15]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 83.
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [17]
+ <use  "figure/sjtubanner.png" > [16]
 Overfull \hbox (0.7725pt too wide) in paragraph at lines 123--123
 []|$\OML/cmm/m/it/10.53937 D[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 q[]
 ; p[]\OT1/cmr/m/n/10.53937 )$| 
@@ -3219,24 +3217,24 @@ File: figure/chapter03/similar-search.png Graphic file (type QTm)
 <use  "figure/chapter03/similar-search.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" >
-[18]
+[17]
 
-LaTeX Warning: Reference `algo:iknn' on page 19 undefined on input line 204.
+LaTeX Warning: Reference `algo:iknn' on page 18 undefined on input line 204.
 
 (./figure/chapter03/iknn.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [19]
+ <use  "figure/sjtubanner.png" > [18]
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [20]
+<use  "figure/sjtubanner.png" > [19]
 File: figure/chapter04/distributed.png Graphic file (type QTm)
 
 <use  "figure/chapter04/distributed.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" >
-[21])
+[20])
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [22]
+ <use  "figure/sjtubanner.png" > [21]
 \openout2 = `tex/requirement.aux'.
 
  (./tex/requirement.tex
@@ -3324,53 +3322,53 @@ File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 )
 第四章
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [23
+<use  "figure/sjtubanner.png" > [22
 
 
 
 ] (./figure/requirement/feasibility.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [24] (./figure/requirement/user-func.tex)
+<use  "figure/sjtubanner.png" > [23] (./figure/requirement/user-func.tex)
 (./figure/requirement/interface-func.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
  <use  "figure/sjtubanner.png" >
-[25]
+[24]
 File: figure/requirement/query-accuracy.png Graphic file (type QTm)
  <use  "figure/requirement/query-accuracy.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [26])
+<use  "figure/sjtubanner.png" > [25])
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [27]
+ <use  "figure/sjtubanner.png" > [26]
 \openout2 = `tex/design.aux'.
 
 
 (./tex/design.tex
 第五章
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [28
+<use  "figure/sjtubanner.png" > [27
 
 
 
 ]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [29]
+ <use  "figure/sjtubanner.png" > [28]
 File: figure/design/system-architecture.png Graphic file (type QTm)
 
 <use  "figure/design/system-architecture.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [30] (./figure/design/systemflow.tex)
+<use  "figure/sjtubanner.png" > [29] (./figure/design/systemflow.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [31] (./figure/design/systemlevel.tex)
+<use  "figure/sjtubanner.png" > [30] (./figure/design/systemlevel.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [32] (./figure/design/module.tex)
+<use  "figure/sjtubanner.png" > [31] (./figure/design/module.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [33]
+<use  "figure/sjtubanner.png" > [32]
 File: figure/design/login.png Graphic file (type QTm)
  <use  "figure/design/login.png" >
 File: figure/design/search.png Graphic file (type QTm)
@@ -3383,16 +3381,16 @@ File: figure/design/interface.png Graphic file (type QTm)
 
 <use  "figure/design/interface.png" >)
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [34]
+ <use  "figure/sjtubanner.png" > [33]
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [35]
+<use  "figure/sjtubanner.png" > [34]
 \openout2 = `tex/evaluation.aux'.
 
  (./tex/evaluation.tex
 第六章
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [36
+<use  "figure/sjtubanner.png" > [35
 
 
 
@@ -3401,9 +3399,9 @@ File: figure/evaluation/obd.png Graphic file (type QTm)
  <use  "figure/evaluation/obd.png" >
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [37]
+<use  "figure/sjtubanner.png" > [36]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [38]
+ <use  "figure/sjtubanner.png" > [37]
 File: figure/evaluation/figure1.png Graphic file (type QTm)
 
 <use  "figure/evaluation/figure1.png" >
@@ -3432,14 +3430,14 @@ File: figure/evaluation/figure8.png Graphic file (type QTm)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [39]
+<use  "figure/sjtubanner.png" > [38]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [40])
+<use  "figure/sjtubanner.png" > [39])
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [41]
+ <use  "figure/sjtubanner.png" > [40]
 \openout2 = `tex/conclusion.aux'.
 
 
@@ -3447,13 +3445,13 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 第七章
 )
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [42
+ <use  "figure/sjtubanner.png" > [41
 
 
 
 ]
 File: figure/sjtubanner.png Graphic file (type QTm)
- <use  "figure/sjtubanner.png" > [43
+ <use  "figure/sjtubanner.png" > [42
 
 
 
@@ -3464,13 +3462,13 @@ File: figure/sjtubanner.png Graphic file (type QTm)
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
 File: figure/sjtubanner.png Graphic file (type QTm)
-<use  "figure/sjtubanner.png" > [44]
+<use  "figure/sjtubanner.png" > [43]
 \openout2 = `tex/ack.aux'.
 
  (./tex/ack.tex)
 File: figure/sjtubanner.png Graphic file (type QTm)
 
-<use  "figure/sjtubanner.png" > [45
+<use  "figure/sjtubanner.png" > [44
 
 
 ]
@@ -3516,10 +3514,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 Here is how much of TeX's memory you used:
  54295 strings out of 493591
  1101804 string characters out of 6143547
- 1412704 words of memory out of 5000000
+ 1412697 words of memory out of 5000000
  56637 multiletter control sequences out of 15000+600000
  31026 words of font info for 187 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  71i,16n,84p,10440b,4651s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (57 pages).
+Output written on thesis.pdf (56 pages).
