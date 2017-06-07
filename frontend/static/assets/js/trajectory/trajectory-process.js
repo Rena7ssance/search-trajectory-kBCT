@@ -10,7 +10,7 @@ var trajectoryPoints = [];
 var date;
 var trajectoryPath;
 
-var strokeColors = ['#CD2626', '#458B74', '#3366FF',]
+var strokeColors = ['#CD2626', '#3366FF', '#458B74',]
 
 $(document).ready(function () {
 
@@ -147,7 +147,7 @@ $(document).ready(function () {
         });
     });
 
-    // Display the trajectory
+    // Display the history trajectory
     $(function () {
         $(".details").each(function () {
             $(this).click(function () {
@@ -158,7 +158,6 @@ $(document).ready(function () {
                 map.clearMap();
                 trajectoryPoints = [];
                 date = $(this).attr("id").split(" ")[1].substring(0, 2)
-                console.log(date);
                 trajectoryPath = $(this).attr("id") + ".txt";
 
                 $.post(
@@ -172,11 +171,11 @@ $(document).ready(function () {
                             path: data, //设置线覆盖物路径 #
                             strokeColor: '#000000', //线颜色
                             strokeOpacity: 1, //线透明度
-                            strokeWeight: 6, //线宽
+                            strokeWeight: 8, //线宽
                             strokeStyle: "solid", //线样式
                             strokeDasharray: [10, 5] //补充线样式
                         });
-                        map.setZoom(12);
+                        map.setZoom(11);
                         map.setCenter(data[Object.keys(data).length / 2]);
                         polyline.setMap(map);
                     },
@@ -186,14 +185,12 @@ $(document).ready(function () {
         });
     });
 
-
-})
+});
 
 // Search Part
 function _search() {
     var temp, type;
     var date = document.getElementById("date").value;
-    console.log(date);
     if (Object.keys(markers).length == 0) {
         temp = trajectoryPoints;
         type = 't'
@@ -211,20 +208,30 @@ function _search() {
             queryDate: date
         },
         function (data) {
-            $.each(data, function (index) {
-                var pathData = data[index];
+
+            trajectoryRes = data[0];
+            pointsRes = data[1];
+
+            $('#searching-result-display').empty();
+            $.each(trajectoryRes, function (index) {
+                var resultContent = "<div class=\"desc\"><div class=\"thumb\"<span class=\"badge bg-theme\"><i class=\"fa fa-clock-o\"></i></span></div><div class=\"details\"><h style='color:" + strokeColors[index] +"'>" + trajectoryRes[index] + "</h></div></div>";
+                $("#searching-result-display").append(resultContent);
+            });
+
+            $.each(pointsRes, function (index) {
+                var pathData = pointsRes[index];
                 var polyline = new AMap.Polyline({
                     path: pathData, //设置线覆盖物路径 #
                     strokeColor: strokeColors[index], //线颜色
                     strokeOpacity: 2, //线透明度
-                    strokeWeight: 6 - (index * 2), //线宽
-                    strokeStyle: "solid", //线样式
+                    strokeWeight:  5 - (index), //线宽
+                    strokeStyle: "dashed", //线样式
                     strokeDasharray: [10, 5] //补充线样式
                 });
                 polyline.setMap(map);
             })
             map.setZoom(11);
-            map.setCenter([121.47199, 31.231973]);
+            // map.setCenter([121.47199, 31.231973]);
         },
         'json'
     );

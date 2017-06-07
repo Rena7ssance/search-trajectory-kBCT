@@ -4,8 +4,12 @@ import sys
 import math
 
 import operator
+
+import time
 from rtree import index
 from backend.helper import Helper
+from distance.edwp import EDwP
+from distance.lcss import LCSS
 
 
 class Querier(object):
@@ -38,30 +42,32 @@ class Querier(object):
             lambda_delta_prev.update({i: 0})
 
         count = 0
+        t_first, t_second = 0,0
         while True:
             # list_lambda is union of lambda_nn_i. list_candidate is union of trajectory_scanned_i
             list_lambda, list_candidate = [], []
 
-            #
-            # for query_point in query_points:
-            #     lambda_nn_i, trajectory_scanned_i = self.knn_algorithm(query_point, _lambda)
-            #     list_lambda.append(lambda_nn_i)
-            #     list_candidate.append(trajectory_scanned_i)
-            # candidate = [trajectory for sub_list in list_candidate for trajectory in sub_list]
-            #
+            '''
+            # Without Optimization
+            for i in range(0, len(query_points)):
+                 lambda_nn_i, trajectory_scanned_i = self.knn_algorithm(rtree, query_points[i], _lambda)
+                 list_lambda.append(lambda_nn_i)
+                 list_candidate.append(trajectory_scanned_i)
+            candidate = [trajectory for sub_list in list_candidate for trajectory in sub_list]
+            '''
 
+            # '''
             # Optimization: specified delta for each query point
-
             for i in range(0, len(query_points)):
                 lambda_nn_i, trajectory_scanned_i = self.knn_algorithm(rtree, query_points[i], lambda_delta[i])
                 list_lambda.append(lambda_nn_i)
                 list_candidate.append(trajectory_scanned_i)
             candidate = [trajectory for candicate_i in list_candidate for trajectory in candicate_i]
+            # '''
 
             # remove the duplicate elements in candidate
             candidate = list(set(candidate))
             if len(candidate) >= k:
-
                 # compute lower bound for all the trajectory, LB = {'trajectory': lb}
                 for trajectory in candidate:
                     lowerbound.update({trajectory: self.compute_lb(trajectory, list_candidate, query_points)})
@@ -74,8 +80,13 @@ class Querier(object):
                 k_lb = lb_sorted[0:k]
                 if k_lb[-1][1] >= ub_n:
                     return self.refine(candidate, list_candidate, query_points, list_lambda, k)
+            '''
+            # Without Optimization
+            count += 1
+            _lambda += k * pow(2, count)  # TODO optimize
+            '''
 
-
+            # '''
             # Optimization
             count += 1
             assert len(query_points) == len(list_lambda)
@@ -97,6 +108,7 @@ class Querier(object):
                 lambda_delta_prev.update({i: current_lambda})
                 delta_i = delta * (mu * (dec_rate_list[i] / dec_rate) + nu * (ret_rate_list[i] / ret_rate))
                 lambda_delta.update({i: int(current_lambda + delta_i)})
+                # '''
 
     """
     class function: nearest-neighbor algorithm
@@ -168,8 +180,16 @@ class Querier(object):
             trajectory_path = '%s/%s' % (self._prepath, trajectory)
             trajectory_points = Helper.file2points(trajectory_path)
 
-            similarity = Querier.similarity(trajectory_points, query_points) # Without order
+            '''
+            choose similarity
+            '''
+            similarity = Querier.similarity(trajectory_points, query_points)  # Without order
             # similarity = Querier.similarity_order(trajectory_points, query_points)  # With order
+            # similarity = Querier.dp_similarity_order(trajectory_points, query_points)  # With order
+
+            # similarity = EDwP.get_distance(trajectory_points, query_points)
+            # similarity = LCSS.get_distance(trajectory_points, query_points)
+            # similarity = EDR.get_distance(trajectory_points, query_points)
 
             if i < k:
                 k_BCT.update({upperbound_sorted[i][0]: similarity})
@@ -226,6 +246,20 @@ class Querier(object):
     def similarity_order(trajectory_points, query_points):
         if len(trajectory_points) == 0 or len(query_points) == 0:
             return 0
-        return math.pow(math.e, -(Helper.lnglat_eucildean_distance(trajectory_points[0], query_points[0]))) + max(
-            Querier.similarity_order(trajectory_points[1:], query_points),
-            Querier.similarity_order(trajectory_points, query_points[1:]))
+        return max(math.pow(math.e, -(Helper.lnglat_eucildean_distance(trajectory_points[0], query_points[0]))) +
+                   Querier.similarity_order(trajectory_points[1:], query_points),
+                   Querier.similarity_order(trajectory_points, query_points[1:]))
+
+    @staticmethod
+    def dp_similarity_order(trajectory_points, query_points):
+        m, n = len(trajectory_points), len(query_points)
+        matrix = [([0] * n) for col in range(m)]
+
+        for i in range(1, m):
+            for j in range(1, n):
+                temp = math.pow(math.e, -(Helper.lnglat_eucildean_distance(trajectory_points[i], query_points[j])))
+                if temp + matrix[i - 1][j] > matrix[i][j - 1]:
+                    matrix[i][j] = temp + matrix[i - 1][j]
+                else:
+                    matrix[i][j] = matrix[i][j - 1]
+        return matrix[m - 1][n - 1]/len(trajectory_points)
